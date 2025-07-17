@@ -18,13 +18,13 @@ jobs:
   build-pdf:
     uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@main
     with:
-      file_name: 'GithubLatexTemplate'
+      file_name: 'surprising-polynomial-identities-classical-interpolation'
       enable_patch_version: false
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build PDF'
       build_assets_path: |
-        src/GithubLatexTemplate.tex
-        src/GithubLatexTemplate.bbl
-        src/GithubLatexTemplate.bib
+        src/surprising-polynomial-identities-classical-interpolation.tex
+        src/surprising-polynomial-identities-classical-interpolation.bbl
+        src/surprising-polynomial-identities-classical-interpolation.bib
         src/sections
       working_directory_for_latex: 'src'
