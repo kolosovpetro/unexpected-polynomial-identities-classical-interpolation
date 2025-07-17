@@ -16,7 +16,7 @@ jobs:
     secrets: inherit
     with:
       file_name: 'surprising-polynomial-identities-classical-interpolation'
-      enable_patch_version: false
+      enable_patch_version: true
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build and Deploy PDF'
       build_assets_path: |
