@@ -25,6 +25,10 @@
 \newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
+% for brack coefficient
+\newcommand \brackCoefficient [3] {{#1 \brack #2}_{#3}}
+\newcommand \braceCoefficient [3] {{#1 \brace #2}_{#3}}
+
 % free foot note
 %\let\svthefootnote\thefootnote
 %\newcommand\freefootnote[1]{%
@@ -98,15 +102,38 @@
 %    \freefootnote{Sources: \url{https://github.com/kolosovpetro/github-latex-template}}
 
 
-    \section{Introduction} \label{sec:introduction}
-    \input{sections/02_introduction}
+    \section{History and evolution of the polynomial P}
+    \label{sec:history-and-evolution-of-the-topic}
+    \input{sections/02_history_and_evolution}
+
+
+    \section{Related works}\label{sec:related-works}
+    \input{sections/03_related_works}
+
+
+    \section{Future research and activities}\label{sec:future-research}
+    \input{sections/04_future_research}
 
 
     \section{Conclusions}\label{sec:conclusions}
-    \input{sections/03_conclusions}
+    \input{sections/conclusions}
 
     \bibliographystyle{unsrt}
     \bibliography{surprising-polynomial-identities-classical-interpolation}
     \noindent \textbf{Version:} \input{sections/version}
+
+    \section{Addendum 1: Examples of the polynomial \texorpdfstring{$\polynomialP{m}{b}{x}$}{P[m,b,x]}}
+    \label{sec:addendum-1}
+    \input{sections/addendum_1_polynomials_p}
+
+
+    \section{Addendum 2: Derivation of the coefficients \texorpdfstring{$\coeffA{m}{r}$}{A[m,r]}}
+    \label{sec:addendum-2}
+    \input{sections/addendum_2_coefficients_a}
+
+
+    \section{Addendum 3: Odd power identities}
+    \label{sec:addendum-3}
+    \input{sections/addendum_3_odd_power_identities}
 
 \end{document}
