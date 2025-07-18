@@ -10,10 +10,10 @@ The first question that triggered his mind was
     \label{quest:interpolation-cubes}
     How to reconstruct the value of $n^3$ from its finite differences?
 \end{question}
-Precisely, the question was to reconstruct the values of $\{0, 1, 8, 27, 64, \ldots\}$
+Precisely, the inquiry was to find a way to reconstruct the values of $\{0, 1, 8, 27, 64, \ldots\}$
 having values of finite differences in the table.
 
-In its essence, the problem is quite old, so old that it can be traced back to ancient Babylonian and Greek times,
+In its essence, the problem is so old that it can be traced back to ancient Babylonian and Greek times,
 several centuries BC and first centuries AD~\cite{gautschi2012interpolation}.
 The process of finding new data points based on the range of a discrete set
 of known data points is called interpolation.
@@ -173,57 +173,12 @@ The following recurrence holds for $T(n,k)$
 \begin{align*}
     T(n, k) = 2T(n-1, k) - T(n-2, k)
 \end{align*}
-%By applying compact sigma sum notation yields an identity for cubes $n^3$
-%\begin{align*}
-%    n^3 = n + \sum_{k=0}^{n-1} 6k(n-k)
-%\end{align*}
-%The term $n$ in the sum above can be moved under sigma notation, because there is exactly $n$ iterations, therefore
-%\begin{align*}
-%    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
-%\end{align*}
-%By inspecting the expression $6k(n-k) + 1$ we iterate under summation,
-%we can notice that it is symmetric over $k$.
-%Let be $T(n,k) = 6k(n-k) + 1$ then
-%\begin{align*}
-%    T(n,k) = T(n,n-k)
-%\end{align*}
-%This symmetry allows us to alter summation bounds easily, so that
-%\begin{align*}
-%    n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
-%\end{align*}
-
-%However, as was said, I was not the experienced one mathematician back then,
-%so that I reviewed the relation~\eqref{eq:general-cube-eq} from a little bit different perspective.
-%Not following the convenient solution~\eqref{eq:cubes-difference-binomial-theorem},
-%I have introduced the explicit formula for cubes, using~\eqref{eq:cubes_interpolation}
-%\begin{align}
-%    \label{eq:rearrangement_to_get_cubes}
-%    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2]+\cdots \nonumber \\
-%    &+[1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
-%\end{align}
-%Then, rearranging the terms in equation~\eqref{eq:rearrangement_to_get_cubes} so that it turns into summation
-%in terms of $k (n-k)$
-%\begin{equation*}
-%    \begin{split}
-%        n^3 &= n + [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] + \cdots \\
-%        &\cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)]
-%    \end{split}
-%\end{equation*}
-%By applying compact sigma notation and moving $n$ under summation because there is exactly $n$ iteration, yields
-%\begin{equation}
-%    \label{eq:cube_identity}
-%    n^3 = n + \sum_{k=1}^{n} 6k(n-k); \quad \quad n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
-%\end{equation}
-%\input{sections/figures/02_fig_triangle_row_sums_give_cubes}
-%Therefore, we have reached our base case by successfully interpolating the polynomial $n^3$.
-%Fairly enough that the next curiosity would be
-%\begin{question}
-%    Well, if the relation~\eqref{eq:cube_identity} true for the polynomial $n^3$,
-%    then is it true that~\eqref{eq:cube_identity} can be generalized for higher powers, e.g.\ for $n^4$ or $n^5$ similarly?
-%    \label{question:higher_powers}
-%\end{question}
-%That was the next question, however without any expectation of the final form of generalized formula.
-%Long story short, the answer to this question is also \textit{Yes}, by utilizing certain approaches
-%in terms of systems of linear equations or recurrence formula, which is discussed.
-%
-%Let us begin from the background and history overview of systems of linear equations approach.
+Finally, our curious student has reached the first milestone, by finding his own
+answer to the question~\eqref{quest:interpolation-cubes} and the answer was positive.
+What an excitement he felt!
+However, it wouldn't take long.
+Indeed, curiosity is not something that can be fulfilled completely,
+and thus new questions arise.
+Somehow, he got a strong feeling that something bigger, something even more general
+hides behind the identity $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$.
+Quite intuitive he was.
