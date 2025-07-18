@@ -1,27 +1,36 @@
-Back then, in 2016 being a student at the faculty of mechanical engineering,
-I remember myself playing with finite differences of the polynomial $n^3$ over the domain of natural numbers $n\in\mathbb{N}$
-having at most $0 \leq n \leq 20$ values.
-Looking to the values in my finite difference tables, the first and very naive question that came to my mind was
-\begin{question}
-    Is it possible to re-assemble the value of the polynomial $n^3$ backwards
-    having its finite differences?
-\end{question}
-The answer to this question is certainly \textit{Yes}, by utilizing interpolation methods.
-Interpolation is a process of finding new data points based on the range of a discrete set of known data points.
-It has been well-developed in between 1674--1684
-by Issac Newton's fundamental works, nowadays known as foundation of classical interpolation
-theory~\cite{meijering2002chronology}.
+Once there was a curious student, curious in general and especially in mathematics.
+He was not an educated mathematician, but he was strongly captured by the mathematical
+beauty and aesthetics.
 
-At that time, in 2016, I was a first-year mechanical engineering undergraduate.
-Therefore, due to lack of knowledge in mathematics, I started re-inventing interpolation
-formula myself, fueled by purest passion and feeling of mystery.
-\textit{All mathematical laws and relations exist from the very beginning, but we only reveal and describe them}, I thought.
-That mindset truly inspired me so that my own mathematical journey began.
-
-Let's start considering the table of finite differences of the polynomial $n^3$
+One day this student was having fun with tables of finite differences, precisely finite differences of cubes.
+By observing the table
 \input{sections/figures/01_fig_finite_differences_cubes}
-First and foremost, we can observe that finite difference $\Delta(n^3)$ of the polynomial $n^3$
-can be expressed through summation over $n$, e.g
+The first question that triggered his mind was
+\begin{question}
+    How to reconstruct the value of $n^3$ from its finite differences?
+\end{question}
+The question is quite old, it can be traced back to ancient Babylonian and Greek times,
+several centuries BC and first centuries AD [citation].
+The process is called interpolation which is a process
+of finding new data points based on the range of a discrete set
+of known data points.
+Interpolation we know nowadays was developed in 1674--1684 by Issac Newton
+in his works referenced as foundation of classical interpolation theory [citation].
+
+Great!
+But there is one thing, the one who rised the question (1.1) had no clue about all this.
+What he decided then?
+Exactly, he decided to try to re-invent interpolation formula himself,
+fueled by the purest feeling of mystery.
+His mind was occupied by only a single thought:
+\textit{
+    All mathematical truths exist timelessly, we only reveal and describe them.
+}
+That mindset inspired our student to start his own mathematical journey.
+
+By observing the table of finite differences (1) we can notice that
+the first order finite difference of cubes may be expressed in terms of its
+third order finite difference $\Delta^3(n^3) = 6$, as follows
 \begin{align}
     \label{eq:cubes_interpolation}
     \begin{split}
@@ -29,59 +38,89 @@ can be expressed through summation over $n$, e.g
         \Delta(1^3) &= 1+6\cdot0+6\cdot1 \\
         \Delta(2^3) &= 1+6\cdot0+6\cdot1+6\cdot2 \\
         \Delta(3^3) &= 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3 \\
-        &\; \; \vdots
+        &\; \; \vdots \\
+        \Delta(n^3) &= 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3 + \cdots + 6n
     \end{split}
 \end{align}
-Finally reaching its generic form
+By using sigma notation for sums we get
 \begin{equation}
-    \Delta(n^3) = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n = 1 + 6 \sum_{k=0}^{n} k\label{eq:general-cube-eq}
+    \Delta(n^3) = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n = 1 + 6 \sum_{k=0}^{n} k
+    \label{eq:general-cube-eq}
 \end{equation}
-The one experienced mathematician would immediately notice a spot to apply Faulhaber's formula~\cite{beardon1996sums}
-to expand the term $\sum_{k=0}^{n} k$ reaching expected result that matches Binomial theorem~\cite{abramowitz1988handbook},
-so that
+An experienced mathematician would immediately notice a spot to apply Faulhaber's formula~\cite{beardon1996sums}
+to expand the term $\sum_{k=0}^{n} k$
+%so that
 \begin{equation*}
     \sum_{k=0}^{n} k = \frac{1}{2}(n+n^2)
 \end{equation*}
-Then our relation~\eqref{eq:general-cube-eq} immediately turns into Binomial expansion
-\begin{equation}
+Thus, the identity $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$ takes a well-known view
+that matches Binomial theorem~\cite{abramowitz1988handbook}
+so that
+\begin{align}
     \Delta(n^3) = (n+1)^3 - n^3 = 1 + 6 \left[ \frac{1}{2}(n+n^2) \right] = 1 + 3 n + 3 n^2 = \sum_{k=0}^{2} \binom{3}{k} n^k
     \label{eq:cubes-difference-binomial-theorem}
-\end{equation}
-However, as was said, I was not the experienced one mathematician back then,
-so that I reviewed the relation~\eqref{eq:general-cube-eq} from a little bit different perspective.
-Not following the convenient solution~\eqref{eq:cubes-difference-binomial-theorem},
-I have introduced the explicit formula for cubes, using~\eqref{eq:cubes_interpolation}
-\begin{align}
-    \label{eq:rearrangement_to_get_cubes}
-    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2]+\cdots \nonumber \\
-    &+[1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
 \end{align}
-Then, rearranging the terms in equation~\eqref{eq:rearrangement_to_get_cubes} so that it turns into summation
-in terms of $k (n-k)$
-\begin{equation*}
-    \begin{split}
-        n^3 &= n + [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] + \cdots \\
-        &\cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)]
-    \end{split}
-\end{equation*}
-By applying compact sigma notation and moving $n$ under summation because there is exactly $n$ iteration, yields
-\begin{equation}
-    \label{eq:cube_identity}
-    n^3 = n + \sum_{k=1}^{n} 6k(n-k); \quad \quad n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
-\end{equation}
-\input{sections/figures/02_fig_triangle_row_sums_give_cubes}
-Therefore, we have reached our base case by successfully interpolating the polynomial $n^3$.
-Fairly enough that the next curiosity would be
-\begin{question}
-    Well, if the relation~\eqref{eq:cube_identity} true for the polynomial $n^3$,
-    then is it true that~\eqref{eq:cube_identity} can be generalized for higher powers, e.g.\ for $n^4$ or $n^5$ similarly?
-    \label{question:higher_powers}
-\end{question}
-That was the next question, however without any expectation of the final form of generalized formula.
-Long story short, the answer to this question is also \textit{Yes}, by utilizing certain approaches
-in terms of systems of linear equations or recurrence formula, which is discussed.
 
-Let us begin from the background and history overview of systems of linear equations approach.
-%\input{sections/03_system_of_linear_equations_approach}
+There is a more beautiful way to express finite difference of cubes $\Delta(n^3)$.
+We refer to one of the prominent articles in area of polynomials, power sums etc.,
+that is \textit{Johann Faulhaber and sums of powers} written by Donald Knuth~\cite{knuth1993johann}.
+Indeed, this article is a great source to reach piece of mind in mathematics.
+The thing that occupied my attention was the odd power identity in terms of Binomial coefficients and
+Central factorial numbers, which can be found on page 9
+\begin{align*}
+    n^1 &= \binom{n}{1} \\
+    n^3 &= 6 \binom{n+1}{3} + \binom{n}{1} \\
+    n^5 &= 120 \binom{n+2}{5} + 30 \binom{n+1}{3} + \binom{n}{1}
+\end{align*}
+
+It is particularly interesting that well-known identity in terms of triangular numbers [citation]
+and finite differences of cubes becomes clear and obvious
+\begin{align*}
+    \Delta n^3 = (n+1)^3 - n^3
+    =  6 \binom{n+1}{2} + \binom{n}{0}
+\end{align*}
+where $\binom{n+1}{2}$ are triangular numbers.
+It is true that
+\begin{align*}
+    \Delta n^3 = \left[ 6 \binom{n+2}{3} + \binom{n+1}{1} \right] - \left[ 6 \binom{n+1}{3} + \binom{n}{1} \right] = 6 \binom{n+1}{2} + \binom{n}{0}
+\end{align*}
+by means of binomial coefficients' recurrence.
+Moreover, the concept above allows to reach $N$-order power sum $\sum^N k^{2m+1}$
+or finite difference $\Delta^N k^{2m+1}$ of odd powers simply by changing
+binomial coefficients indexes.
+Quite strong and impressive.
+%However, as was said, I was not the experienced one mathematician back then,
+%so that I reviewed the relation~\eqref{eq:general-cube-eq} from a little bit different perspective.
+%Not following the convenient solution~\eqref{eq:cubes-difference-binomial-theorem},
+%I have introduced the explicit formula for cubes, using~\eqref{eq:cubes_interpolation}
+%\begin{align}
+%    \label{eq:rearrangement_to_get_cubes}
+%    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2]+\cdots \nonumber \\
+%    &+[1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
+%\end{align}
+%Then, rearranging the terms in equation~\eqref{eq:rearrangement_to_get_cubes} so that it turns into summation
+%in terms of $k (n-k)$
+%\begin{equation*}
+%    \begin{split}
+%        n^3 &= n + [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] + \cdots \\
+%        &\cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)]
+%    \end{split}
+%\end{equation*}
+%By applying compact sigma notation and moving $n$ under summation because there is exactly $n$ iteration, yields
+%\begin{equation}
+%    \label{eq:cube_identity}
+%    n^3 = n + \sum_{k=1}^{n} 6k(n-k); \quad \quad n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+%\end{equation}
+%\input{sections/figures/02_fig_triangle_row_sums_give_cubes}
+%Therefore, we have reached our base case by successfully interpolating the polynomial $n^3$.
+%Fairly enough that the next curiosity would be
+%\begin{question}
+%    Well, if the relation~\eqref{eq:cube_identity} true for the polynomial $n^3$,
+%    then is it true that~\eqref{eq:cube_identity} can be generalized for higher powers, e.g.\ for $n^4$ or $n^5$ similarly?
+%    \label{question:higher_powers}
+%\end{question}
+%That was the next question, however without any expectation of the final form of generalized formula.
+%Long story short, the answer to this question is also \textit{Yes}, by utilizing certain approaches
+%in terms of systems of linear equations or recurrence formula, which is discussed.
 %
-%\input{sections/04_recurrence_relation_approach}
+%Let us begin from the background and history overview of systems of linear equations approach.
