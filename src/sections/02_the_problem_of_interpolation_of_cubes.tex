@@ -31,8 +31,7 @@ That mindset inspired our student to start his own mathematical journey.
 By observing the table of finite differences (1) we can notice that
 the first order finite difference of cubes may be expressed in terms of its
 third order finite difference $\Delta^3(n^3) = 6$, as follows
-\begin{align}
-    \label{eq:cubes_interpolation}
+\begin{align*}
     \begin{split}
         \Delta(0^3) &= 1+6 \cdot 0 \\
         \Delta(1^3) &= 1+6\cdot0+6\cdot1 \\
@@ -41,54 +40,67 @@ third order finite difference $\Delta^3(n^3) = 6$, as follows
         &\; \; \vdots \\
         \Delta(n^3) &= 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3 + \cdots + 6n
     \end{split}
-\end{align}
+\end{align*}
 By using sigma notation for sums we get
-\begin{equation}
+\begin{align*}
     \Delta(n^3) = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n = 1 + 6 \sum_{k=0}^{n} k
-    \label{eq:general-cube-eq}
-\end{equation}
-An experienced mathematician would immediately notice a spot to apply Faulhaber's formula~\cite{beardon1996sums}
-to expand the term $\sum_{k=0}^{n} k$
-%so that
-\begin{equation*}
-    \sum_{k=0}^{n} k = \frac{1}{2}(n+n^2)
-\end{equation*}
-Thus, the identity $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$ takes a well-known view
-that matches Binomial theorem~\cite{abramowitz1988handbook}
-so that
-\begin{align}
-    \Delta(n^3) = (n+1)^3 - n^3 = 1 + 6 \left[ \frac{1}{2}(n+n^2) \right] = 1 + 3 n + 3 n^2 = \sum_{k=0}^{2} \binom{3}{k} n^k
-    \label{eq:cubes-difference-binomial-theorem}
-\end{align}
+\end{align*}
 
-There is a more beautiful way to express finite difference of cubes $\Delta(n^3)$.
+However, there is a more beautiful way to prove that $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$.
 We refer to one of the prominent articles in area of polynomials, power sums etc.,
 that is \textit{Johann Faulhaber and sums of powers} written by Donald Knuth~\cite{knuth1993johann}.
 Indeed, this article is a great source to reach piece of mind in mathematics.
-The thing that occupied my attention was the odd power identity in terms of Binomial coefficients and
-Central factorial numbers, which can be found on page 9
+We now focus on the following odd power identities shown on p.9 of~\cite{knuth1993johann}
 \begin{align*}
     n^1 &= \binom{n}{1} \\
     n^3 &= 6 \binom{n+1}{3} + \binom{n}{1} \\
     n^5 &= 120 \binom{n+2}{5} + 30 \binom{n+1}{3} + \binom{n}{1}
 \end{align*}
 
-It is particularly interesting that well-known identity in terms of triangular numbers [citation]
+It is particularly interesting that well-known identity that connects triangular numbers [citation]
 and finite differences of cubes becomes clear and obvious
 \begin{align*}
     \Delta n^3 = (n+1)^3 - n^3
     =  6 \binom{n+1}{2} + \binom{n}{0}
 \end{align*}
 where $\binom{n+1}{2}$ are triangular numbers.
-It is true that
+It easy to see that
 \begin{align*}
     \Delta n^3 = \left[ 6 \binom{n+2}{3} + \binom{n+1}{1} \right] - \left[ 6 \binom{n+1}{3} + \binom{n}{1} \right] = 6 \binom{n+1}{2} + \binom{n}{0}
 \end{align*}
-by means of binomial coefficients' recurrence.
-Moreover, the concept above allows to reach $N$-order power sum $\sum^N k^{2m+1}$
-or finite difference $\Delta^N k^{2m+1}$ of odd powers simply by changing
+by means of binomial coefficients' recurrence $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$.
+
+Moreover, the concept above allows to reach $N$-fold power sum $\sum^N k^{2m+1}$
+or finite difference $\Delta^N k^{2m+1}$ of odd powers by simply altering
 binomial coefficients indexes.
 Quite strong and impressive.
+
+We can observe that triangular
+numbers in $\Delta n^3 = (n+1)^3 - n^3 =  6 \binom{n+1}{2} + \binom{n}{0}$
+are equivalent to the sum of first $n$ non-negative integers
+\begin{align*}
+    \binom{n+1}{2} = \sum_{k=0}^{n} k
+\end{align*}
+Which leads to identity in terms of finite differences of cubes
+\begin{align*}
+    \Delta n^3 = (n+1)^3 - n^3 = 1 + 6 \sum_{k=0}^{n} k
+\end{align*}
+
+An experienced mathematician would immediately notice a spot to apply Faulhaber's formula~\cite{beardon1996sums}
+to expand the term $\sum_{k=0}^{n} k$
+\begin{align*}
+    \sum_{k=0}^{n} k = \frac{1}{2}(n+n^2)
+\end{align*}
+Thus, the identity $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$ takes a well-known view
+that matches Binomial theorem~\cite{abramowitz1988handbook}
+so that
+\begin{align*}
+    \Delta(n^3) = (n+1)^3 - n^3
+    = 1 + 6 \left[ \frac{1}{2}(n+n^2) \right]
+    = 1 + 3 n + 3 n^2
+    = \sum_{k=0}^{2} \binom{3}{k} n^k
+\end{align*}
+
 %However, as was said, I was not the experienced one mathematician back then,
 %so that I reviewed the relation~\eqref{eq:general-cube-eq} from a little bit different perspective.
 %Not following the convenient solution~\eqref{eq:cubes-difference-binomial-theorem},
