@@ -7,6 +7,7 @@ By observing the table
 \input{sections/figures/01_fig_finite_differences_cubes}
 The first question that triggered his mind was
 \begin{question}
+    \label{quest:interpolation-cubes}
     How to reconstruct the value of $n^3$ from its finite differences?
 \end{question}
 The question is quite old, it can be traced back to ancient Babylonian and Greek times,
@@ -18,7 +19,8 @@ Interpolation we know nowadays was developed in 1674--1684 by Issac Newton
 in his works referenced as foundation of classical interpolation theory [citation].
 
 Great!
-But there is one thing, the one who rised the question (1.1) had no clue about all this.
+But there is one thing, the student who has risen the question~\eqref{quest:interpolation-cubes}
+had no clue about interpolation theory at all.
 What he decided then?
 Exactly, he decided to try to re-invent interpolation formula himself,
 fueled by the purest feeling of mystery.
@@ -28,7 +30,7 @@ His mind was occupied by only a single thought:
 }
 That mindset inspired our student to start his own mathematical journey.
 
-By observing the table of finite differences (1) we can notice that
+By observing the table of finite differences~\eqref{tab:finite-differences-cubes} we can notice that
 the first order finite difference of cubes may be expressed in terms of its
 third order finite difference $\Delta^3(n^3) = 6$, as follows
 \begin{align*}
@@ -47,7 +49,7 @@ By using sigma notation for sums we get
 \end{align*}
 
 However, there is a more beautiful way to prove that $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$.
-We refer to one of the prominent articles in area of polynomials, power sums etc.,
+We refer to one of the finest articles in the area of polynomials and power sums,
 that is \textit{Johann Faulhaber and sums of powers} written by Donald Knuth~\cite{knuth1993johann}.
 Indeed, this article is a great source to reach piece of mind in mathematics.
 We now focus on the following odd power identities shown on p.9 of~\cite{knuth1993johann}
@@ -57,49 +59,94 @@ We now focus on the following odd power identities shown on p.9 of~\cite{knuth19
     n^5 &= 120 \binom{n+2}{5} + 30 \binom{n+1}{3} + \binom{n}{1}
 \end{align*}
 
-It is particularly interesting that well-known identity that connects triangular numbers [citation]
+It is particularly interesting that well-known identity that connects triangular numbers $\binom{n+1}{2}$
 and finite differences of cubes becomes clear and obvious
 \begin{align*}
     \Delta n^3 = (n+1)^3 - n^3
     =  6 \binom{n+1}{2} + \binom{n}{0}
 \end{align*}
-where $\binom{n+1}{2}$ are triangular numbers.
 It easy to see that
 \begin{align*}
-    \Delta n^3 = \left[ 6 \binom{n+2}{3} + \binom{n+1}{1} \right] - \left[ 6 \binom{n+1}{3} + \binom{n}{1} \right] = 6 \binom{n+1}{2} + \binom{n}{0}
+    \Delta n^3
+    = \left[ 6 \binom{n+2}{3} + \binom{n+1}{1} \right] - \left[ 6 \binom{n+1}{3} + \binom{n}{1} \right]
+    = 6 \binom{n+1}{2} + \binom{n}{0}
 \end{align*}
-by means of binomial coefficients' recurrence $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$.
+because $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$.
 
-Moreover, the concept above allows to reach $N$-fold power sum $\sum^N k^{2m+1}$
-or finite difference $\Delta^N k^{2m+1}$ of odd powers by simply altering
+Moreover, the concept above allows to reach $N$-fold power sums $\sum^N k^{2m+1}$
+or finite differences $\Delta^N k^{2m+1}$ of odd powers by simply altering
 binomial coefficients indexes.
 Quite strong and impressive.
 
-We can observe that triangular
-numbers in $\Delta n^3 = (n+1)^3 - n^3 =  6 \binom{n+1}{2} + \binom{n}{0}$
-are equivalent to the sum of first $n$ non-negative integers
+We can observe that triangular numbers $\binom{n+1}{2}$ are equivalent to
 \begin{align*}
     \binom{n+1}{2} = \sum_{k=0}^{n} k
 \end{align*}
-Which leads to identity in terms of finite differences of cubes
+because $\binom{n+1}{m+1} = \sum_{k=0}^{n} \binom{k}{m}$.
+This leads to the identity in finite differences of cubes
 \begin{align*}
     \Delta n^3 = (n+1)^3 - n^3 = 1 + 6 \sum_{k=0}^{n} k
 \end{align*}
-
 An experienced mathematician would immediately notice a spot to apply Faulhaber's formula~\cite{beardon1996sums}
 to expand the term $\sum_{k=0}^{n} k$
 \begin{align*}
     \sum_{k=0}^{n} k = \frac{1}{2}(n+n^2)
 \end{align*}
-Thus, the identity $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$ takes a well-known view
+Thus, the finite difference $\Delta(n^3)$ takes a well-known form such
 that matches Binomial theorem~\cite{abramowitz1988handbook}
-so that
 \begin{align*}
-    \Delta(n^3) = (n+1)^3 - n^3
+    \Delta(n^3)
     = 1 + 6 \left[ \frac{1}{2}(n+n^2) \right]
     = 1 + 3 n + 3 n^2
     = \sum_{k=0}^{2} \binom{3}{k} n^k
 \end{align*}
+And\ldots that could be the end of the story, isn't it?
+Because all what remains is to say that
+\begin{align*}
+    n^3
+    = \sum_{k=0}^{n-1} (k+1)^3 - k^3
+    = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right)
+    = \sum_{k=0}^{n-1} 1 + 3 k + 3 k^2
+\end{align*}
+Thus, the polynomial $n^3$ is interpolated successfully, and thus, the question~\eqref{quest:interpolation-cubes} is answered
+positively.
+Because we have successfully found the function that matches $n^3$ from the values of its finite differences from the
+table~\eqref{tab:finite-differences-cubes}.
+
+However, not this time.
+Luckily enough (say), the student who has stated the question~\eqref{quest:interpolation-cubes}
+wasn't really aware of the approaches above.
+Probably, that's exactly the case when unawareness leads to a fresh sight to century-old questions,
+leading to unexpected results and new insights.
+%Instead, our student tried something different.
+%More precisely, he rewrote the cubes identity $n^3 = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right)$
+%explicitly
+%\begin{align*}
+%    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2] \\
+%    &+ \cdots + [1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
+%\end{align*}
+%\begin{align*}
+%    n^3 = n &+ [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] \\
+%    &+ \cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)] \nonumber
+%\end{align*}
+%By applying compact sigma sum notation yields an identity for cubes $n^3$
+%\begin{align*}
+%    n^3 = n + \sum_{k=0}^{n-1} 6k(n-k)
+%\end{align*}
+%The term $n$ in the sum above can be moved under sigma notation, because there is exactly $n$ iterations, therefore
+%\begin{align*}
+%    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
+%\end{align*}
+%By inspecting the expression $6k(n-k) + 1$ we iterate under summation,
+%we can notice that it is symmetric over $k$.
+%Let be $T(n,k) = 6k(n-k) + 1$ then
+%\begin{align*}
+%    T(n,k) = T(n,n-k)
+%\end{align*}
+%This symmetry allows us to alter summation bounds easily, so that
+%\begin{align*}
+%    n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+%\end{align*}
 
 %However, as was said, I was not the experienced one mathematician back then,
 %so that I reviewed the relation~\eqref{eq:general-cube-eq} from a little bit different perspective.
