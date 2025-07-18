@@ -10,12 +10,14 @@ The first question that triggered his mind was
     \label{quest:interpolation-cubes}
     How to reconstruct the value of $n^3$ from its finite differences?
 \end{question}
-The question is quite old, it can be traced back to ancient Babylonian and Greek times,
+Precisely, the question was to reconstruct the values of $\{0, 1, 8, 27, 64, \ldots\}$
+having values of finite differences in the table.
+
+In its essence, the problem is quite old, so old that it can be traced back to ancient Babylonian and Greek times,
 several centuries BC and first centuries AD [citation].
-The process is called interpolation which is a process
-of finding new data points based on the range of a discrete set
-of known data points.
-Interpolation we know nowadays was developed in 1674--1684 by Issac Newton
+The process of finding new data points based on the range of a discrete set
+of known data points is called interpolation.
+Interpolation, as we know it today, was developed in 1674--1684 by Isaac Newton
 in his works referenced as foundation of classical interpolation theory [citation].
 
 Great!
@@ -43,7 +45,7 @@ third order finite difference $\Delta^3(n^3) = 6$, as follows
         \Delta(n^3) &= 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3 + \cdots + 6n
     \end{split}
 \end{align*}
-By using sigma notation for sums we get
+By using sigma notation, we get
 \begin{align*}
     \Delta(n^3) = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n = 1 + 6 \sum_{k=0}^{n} k
 \end{align*}
@@ -59,10 +61,11 @@ We now focus on the following odd power identities shown on p.9 of~\cite{knuth19
     n^5 &= 120 \binom{n+2}{5} + 30 \binom{n+1}{3} + \binom{n}{1}
 \end{align*}
 
-It is particularly interesting that well-known identity that connects triangular numbers $\binom{n+1}{2}$
+It is in particular interesting that well-known identity which connects triangular numbers $\binom{n+1}{2}$
 and finite differences of cubes becomes clear and obvious
 \begin{align*}
-    \Delta n^3 = (n+1)^3 - n^3
+    \Delta n^3
+    = (n+1)^3 - n^3
     =  6 \binom{n+1}{2} + \binom{n}{0}
 \end{align*}
 It easy to see that
@@ -118,17 +121,46 @@ Luckily enough (say), the student who has stated the question~\eqref{quest:inter
 wasn't really aware of the approaches above.
 Probably, that's exactly the case when unawareness leads to a fresh sight to century-old questions,
 leading to unexpected results and new insights.
-%Instead, our student tried something different.
-%More precisely, he rewrote the cubes identity $n^3 = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right)$
-%explicitly
-%\begin{align*}
-%    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2] \\
-%    &+ \cdots + [1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
-%\end{align*}
-%\begin{align*}
-%    n^3 = n &+ [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] \\
-%    &+ \cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)] \nonumber
-%\end{align*}
+Instead, our student spotted a little bit different pattern in $\Delta n^3= 6 \binom{n+1}{2} + \binom{n}{0}$.
+
+Consider the polynomial $n^3$ as sum of its finite differences
+\begin{align*}
+    n^3
+    &= [1+6\cdot0] \\
+    &+ [1+6\cdot0+6\cdot1] \\
+    &+ [1+6\cdot0+6\cdot1+6\cdot2] + \cdots \\
+    &+ [1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
+\end{align*}
+We can observe that the term $1$ appears $n$ times, the item $6\cdot0$ appears $n-0$ times,
+the item $6\cdot1$ appears $n-1$ times and so on.
+By rearranging recurring common terms
+\begin{align*}
+    n^3 = n
+    &+ [(n-0) \cdot 6 \cdot 0] \\
+    &+ [(n-1)\cdot6\cdot1] \\
+    &+ [(n-2)\cdot6\cdot2] + \cdots \\
+    &+ [(n-k)\cdot 6 \cdot k] + \cdots \\
+    &+ [1\cdot6\cdot(n-1)]
+\end{align*}
+By applying compact sigma sum notation yields an identity for cubes $n^3$
+\begin{align*}
+    n^3 = n + \sum_{k=0}^{n-1} 6k(n-k)
+\end{align*}
+We can freely move the term $n$ under the summation because there are exactly $n$ iterations.
+Therefore,
+\begin{align*}
+    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
+\end{align*}
+By inspecting the expression $6k(n-k) + 1$, we can notice that it is symmetric over $k$.
+Let be $T(n,k) = 6k(n-k) + 1$ then
+\begin{align*}
+    T(n,k) = T(n,n-k)
+\end{align*}
+This symmetry allows us to alter summation bounds easily.
+Hence,
+\begin{align*}
+    n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+\end{align*}
 %By applying compact sigma sum notation yields an identity for cubes $n^3$
 %\begin{align*}
 %    n^3 = n + \sum_{k=0}^{n-1} 6k(n-k)
