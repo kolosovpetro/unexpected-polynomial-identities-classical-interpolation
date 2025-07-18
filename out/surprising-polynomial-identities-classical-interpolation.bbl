@@ -105,49 +105,4 @@ Albert Tkaczyk.
   f(n)=n\^m}, September 2023.
 \newblock \url{https://doi.org/10.5281/zenodo.8371454}.
 
-\bibitem{study_on_partial_dynamic_eq_on_time_scales_with_poly_derivatives}
-Petro Kolosov.
-\newblock A study on partial dynamic equation on time scales involving
-  derivatives of polynomials.
-\newblock {\em arXiv preprint arXiv:1608.00801}, 2016.
-\newblock \url{https://arxiv.org/abs/1608.00801}.
-
-\bibitem{another_approach_to_get_derivative_of_odd_power}
-Petro Kolosov.
-\newblock Another approach to get derivative of odd-power.
-\newblock {\em arXiv preprint arXiv:2310.07804}, 2023.
-\newblock \url{https://arxiv.org/abs/2310.07804}.
-
-\bibitem{barbero2020two}
-J.~Fernando Barbero~G., Juan Margalef-Bentabol, and Eduardo~J.S.
-  Villase{\~n}or.
-\newblock {A two-sided Faulhaber-like formula involving Bernoulli polynomials}.
-\newblock {\em Comptes Rendus. Math{\'e}matique}, 358(1):41--44, 2020.
-\newblock \url{https://doi.org/10.5802/crmath.10}.
-
-\bibitem{derivative_of_polynomials_via_double_limit}
-Petro Kolosov.
-\newblock Finding the derivative of polynomials via double limit.
-\newblock {\em GitHub}, 2024.
-\newblock
-  \url{https://kolosovpetro.github.io/pdf/FindingTheDerivativeOfPolynomialsViaDoubleLimit.pdf}.
-
-\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_1}
-Petro Kolosov.
-\newblock {The coefficients U(m, l, k), m = 1 defined by the polynomial
-  identity}, 2018.
-\newblock \url{https://oeis.org/A320047}.
-
-\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_2}
-Petro Kolosov.
-\newblock {The coefficients U(m, l, k), m = 2 defined by the polynomial
-  identity}, 2018.
-\newblock \url{https://oeis.org/A316349}.
-
-\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_3}
-Petro Kolosov.
-\newblock {The coefficients U(m, l, k), m = 3 defined by the polynomial
-  identity}, 2018.
-\newblock \url{https://oeis.org/A316387}.
-
 \end{thebibliography}

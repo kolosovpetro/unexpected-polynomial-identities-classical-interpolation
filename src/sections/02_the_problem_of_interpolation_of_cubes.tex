@@ -82,42 +82,6 @@ Long story short, the answer to this question is also \textit{Yes}, by utilizing
 in terms of systems of linear equations or recurrence formula, which is discussed.
 
 Let us begin from the background and history overview of systems of linear equations approach.
-\input{sections/subsections/01_system_of_linear_equations_approach}
-However, constructing and solving a system of linear equations for every odd-power $2m+1$ requires a huge effort
-\begin{assumption}
-    There must be a formula that generates a set of real coefficients $\coeffA{m}{0},\coeffA{m}{0}, \dots \coeffA{m}{m}$
-    for each fixed $m$ such that
-    \begin{align*}
-        n^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} k^{r} (n-k)^{r}
-    \end{align*}
-\end{assumption}
-I thought.
-
-\input{sections/subsections/02_recurrence_relation_approach}
-
-Finally, we got our road to definition of $2m+1$-degree polynomial $\polynomialP{m}{b}{x}$.
-Introducing the parameter $b$ to the upper summation bound of the equation~\eqref{eq:odd-power-theorem},
-we have the definition
-\begin{definition} (Polynomial $\polynomialP{m}{b}{x} $of degree $2m+1$.)
-    \begin{equation}
-        \polynomialP{m}{b}{x} = \sum_{k=0}^{b-1} \sum_{r=0}^{m} \coeffA{m}{r} k^r(x-k)^r
-        \label{eq:definition_polynomial_p}
-    \end{equation}
-\end{definition}
-where $\coeffA{m}{r}$ are real coefficients~\eqref{eq:definition_coefficient_a}.
-A comprehensive discussion on the polynomial $\polynomialP{m}{b}{x}$ as well as its properties can be found at~\cite{on_the_link_between_binomial_theorem_and_discrete_convolution}.
-For example,
-\begin{align*}
-    \polynomialP{0}{b}{x}
-    &=b, \\
-    \polynomialP{1}{b}{x}
-    &=3 b^2 - 2 b^3 - 3 b x + 3 b^2 x, \\
-    \polynomialP{2}{b}{x}
-    &=10 b^3 - 15 b^4 + 6 b^5 - 15 b^2 x + 30 b^3 x - 15 b^4 x \\
-    &+ 5 b x^2 - 15 b^2 x^2 + 10 b^3 x^2 \\
-    \polynomialP{3}{b}{x}
-    &=-7 b^2 + 28 b^3 - 70 b^5 + 70 b^6 - 20 b^7 + 7 b x - 42 b^2 x + 175 b^4 x - 210 b^5 x + 70 b^6 x \\
-    &+ 14 b x^2 - 140 b^3 x^2 + 210 b^4 x^2 - 84 b^5 x^2 + 35 b^2 x^3 - 70 b^3 x^3 + 35 b^4 x^3
-\end{align*}
-In 2023, Albert Tkaczyk yet again extended the theorem~\eqref{eq:odd-power-theorem} to the so-called three dimension case
-so that it gives polynomials of the form $n^{3l+2}$ at~\cite{albert_tkaczyk_2023_8371454}.
+%\input{sections/03_system_of_linear_equations_approach}
+%
+%\input{sections/04_recurrence_relation_approach}
