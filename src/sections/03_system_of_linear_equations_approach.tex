@@ -1,8 +1,6 @@
 In 2018, Albert Tkaczyk published two papers~\cite{tkaczyk2018problem, tkaczyk2018continuation}
 presenting analogous identities for polynomials $n^5, \; n^7$ and $n^9$
 derived in a manner similar to $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$.
-%In short, it appears that relation~\eqref{eq:cube_identity} could be generalized
-%for any non-negative odd power $2m+1$ solving a system of linear equations.
 Tkaczyk assumed that the identity for $n^5$ takes the following explicit form
 \begin{align*}
     n^5 = \sum_{k=1}^{n} \left[ A k^2(n-k)^2 + Bk(n-k) + C \right]
@@ -83,7 +81,7 @@ Consider an example for $n^7$.
     &+ \coeffA{m}{2} \left[ \frac{1}{30} (-n + n^5) \right] \\
     &+ \coeffA{m}{3} \left[ \frac{1}{420} (-10 n + 7 n^3 + 3 n^7) \right]
 \end{align*}
-By multiplying by $420$ both RHS and LHS, we get the equation
+By multiplying by $30$ both right-hand side and left-hand side, we get
 \begin{align*}
     420 \coeffA{3}{0} n + 70 \coeffA{2}{1} (-n + n^3) + 14 \coeffA{2}{2} (-n + n^5) + \coeffA{3}{3} (-10 n + 7 n^3 + 3 n^7) - 420n^7 = 0
 \end{align*}
@@ -101,16 +99,16 @@ Combining the common terms yields
     + n^7 (3 \coeffA{3}{3} - 420)
     = 0
 \end{align*}
-Therefore, the system of linear equations follows
+Therefore, we receive the following system of linear equations
 \begin{align*}
     \begin{cases}
-    420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3} = 0 \\
-    70 \coeffA{3}{1} + 7 \coeffA{3}{3} = 0 \\
-    \coeffA{3}{2} - 30 = 0 \\
-    3 \coeffA{3}{3} - 420 = 0
+        420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3} = 0 \\
+        70 \coeffA{3}{1} + 7 \coeffA{3}{3} = 0 \\
+        \coeffA{3}{2} - 30 = 0 \\
+        3 \coeffA{3}{3} - 420 = 0
     \end{cases}
 \end{align*}
-Solving it, we get
+By solving it for $\coeffA{3}{0}, \coeffA{3}{1}, \coeffA{3}{2}, \coeffA{3}{3}$, we obtain
 \begin{equation*}
     \begin{cases}
         \coeffA{3}{3} = 140 \\
@@ -119,14 +117,28 @@ Solving it, we get
         \coeffA{3}{0} = \frac{(70 \coeffA{3}{1} + 10 \coeffA{3}{3})}{420} = 1
     \end{cases}
 \end{equation*}
-So that odd-power identity~\eqref{eq:odd-power-identity} holds
+Therefore, the identity for $n^7$ holds
 \begin{equation*}
     n^7 = \sum_{k=1}^{n} 140 k^3 (n-k)^3 - 14k(n-k) + 1
 \end{equation*}
-It is also clearly seen
-why the above identity is true evaluating the terms $140 k^3 (n-k)^3 - 14k(n-k) + 1$ over $0 \leq k \leq n$ as
-the OEIS sequence \href{https://oeis.org/A300785}{\textit{A300785}}~\cite{oeis_numerical_triangle_row_sums_give_seventh_powers} shows
+The values of $140 k^3 (n-k)^3 - 14k(n-k) + 1$ are symmetric over $k$.
+Let be $T_3 (n,k) = 140 k^3 (n-k)^3 - 14k(n-k) + 1$ then
+\begin{align*}
+    T_3 (n,k) = T_3 (n, n-k)
+\end{align*}
+By arranging the values of $T_{3} (n,k)$ as a triangular array, we see that the identity for $n^7$ is indeed true
+%It is also clearly seen
+%why the above identity is true evaluating the terms $140 k^3 (n-k)^3 - 14k(n-k) + 1$ over $0 \leq k \leq n$ as
+%the OEIS sequence \href{https://oeis.org/A300785}{\textit{A300785}}~\cite{oeis_numerical_triangle_row_sums_give_seventh_powers} shows
 \input{sections/figures/04_fig_triangle_row_sums_give_seventh_power}
+The following recurrence holds for $T_{3} (n,k)$
+\begin{align*}
+    T_{3} (n, k) = 4T_{3} (n-1, k) - 6T_{3} (n-2, k) + 4T_{3} (n-3, k) - T_{3} (n-4, k)
+\end{align*}
+Which is true indeed because
+\begin{align*}
+    T_{3} (7, 1) = 4 \cdot 17431 -6 \cdot 8905 + 4 \cdot 3739 - 1 \cdot 1093 = 30157
+\end{align*}
 
 
 %Now we can see that the relation~\eqref{eq:cube_identity}
