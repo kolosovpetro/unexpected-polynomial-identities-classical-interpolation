@@ -1,45 +1,45 @@
 In 2018, Albert Tkaczyk published two papers~\cite{tkaczyk2018problem, tkaczyk2018continuation}
-presenting analogous identities for polynomials $n^5, \; n^7$ and $n^9$ derived in a manner similar to~\eqref{eq:cube_identity}.
-In short, it appears that relation~\eqref{eq:cube_identity} could be generalized
-for any non-negative odd power $2m+1$ solving a system of linear equations.
-It was proposed that the case for $n^5$ has explicit form
+presenting analogous identities for polynomials $n^5, \; n^7$ and $n^9$
+derived in a manner similar to $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$.
+%In short, it appears that relation~\eqref{eq:cube_identity} could be generalized
+%for any non-negative odd power $2m+1$ solving a system of linear equations.
+Tkaczyk assumed that the identity for $n^5$ takes the following explicit form
 \begin{align*}
     n^5 = \sum_{k=1}^{n} \left[ A k^2(n-k)^2 + Bk(n-k) + C \right]
 \end{align*}
 where $A,B,C$ are yet-unknown coefficients.
-Denote $A,B,C$ as $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
-to reach the form of a compact double sum
+We denote $A,B,C$ as $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
+to reach the compact form of double sum
 \begin{align*}
     n^5 = \sum_{k=1}^{n} \sum_{r=0}^{2} \coeffA{2}{r} k^r (n-k)^r
 \end{align*}
-Observing the equation above, the potential form of generalized odd-power identity becomes more obvious.
+By observing the previous equation, the potential form of generalized odd-power identity becomes more obvious.
 To evaluate the coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
-it is necessary construct and solve a system of linear equations following the process
+we construct and solve a certain system of linear equations, which is
+built as follows
 \begin{align*}
-    n^5 &= \sum_{r=0}^{2} \coeffA{2}{r} \sum_{k=1}^{n} k^r (n-k)^r \\
-    &= \coeffA{2}{0} \sum_{k=1}^{n} k^0 (n-k)^0 + \coeffA{2}{1} \sum_{k=1}^{n} k^1 (n-k)^1 + \coeffA{2}{2} \sum_{k=1}^{n} k^2 (n-k)^2
+    n^5 = \coeffA{2}{0} \sum_{k=1}^{n} k^0 (n-k)^0 + \coeffA{2}{1} \sum_{k=1}^{n} k^1 (n-k)^1 + \coeffA{2}{2} \sum_{k=1}^{n} k^2 (n-k)^2
 \end{align*}
-Expand the terms $\sum_{k=1}^{n} k^r (n-k)^r$ applying the
-Faulhaber's formula~\cite{beardon1996sums}
-to get the equation
+By expanding the sums $\sum_{k=1}^{n} k^r (n-k)^r$ using Faulhaber's formula~\cite{beardon1996sums}, we get
+an equation
 \begin{equation*}
     \coeffA{m}{0} n
     + \coeffA{m}{1} \left[ \frac{1}{6} (-n + n^3) \right]
     + \coeffA{m}{2} \left[ \frac{1}{30} (-n + n^5) \right] - n^5 = 0
 \end{equation*}
-Multiplying by $30$ both right-hand side and left-hand side, we get
+By multiplying by $30$ both right-hand side and left-hand side, we get
 \begin{equation*}
     30 \coeffA{2}{0} n + 5 \coeffA{2}{1} (-n + n^3) + \coeffA{2}{2} (-n + n^5) - 30n^5 = 0
 \end{equation*}
-Expanding the brackets and rearranging the terms gives
+By expanding the brackets and rearranging the terms
 \begin{equation*}
     30 \coeffA{2}{0} - 5 \coeffA{2}{1} n + 5 \coeffA{2}{1} n^3 - \coeffA{2}{2} n + \coeffA{2}{2} n^5 - 30n^5 = 0
 \end{equation*}
-Combining the common terms yields
+By combining the common terms, we obtain
 \begin{equation*}
     n (30 \coeffA{2}{0} - 5 \coeffA{2}{1} - \coeffA{2}{2}) + 5 \coeffA{2}{1} n^3 + n^5 (\coeffA{2}{2} - 30) = 0
 \end{equation*}
-Therefore, the system of linear equations follows
+Therefore,
 \begin{equation*}
     \begin{cases}
         30 \coeffA{2}{0} - 5 \coeffA{2}{1} - \coeffA{2}{2} = 0 \\
@@ -47,7 +47,7 @@ Therefore, the system of linear equations follows
         \coeffA{2}{2} - 30 = 0
     \end{cases}
 \end{equation*}
-Solving it, we get
+By solving the system above, we evaluate the coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
 \begin{equation*}
     \begin{cases}
         \coeffA{2}{2} = 30 \\
@@ -55,13 +55,16 @@ Solving it, we get
         \coeffA{2}{0} = 1
     \end{cases}
 \end{equation*}
-So that the odd-power identity holds
+Thus, the identity for $n^5$
 \begin{equation*}
     n^5 = \sum_{k=1}^{n} 30k^2(n-k)^2 + 1
 \end{equation*}
-It is also clearly seen
-why the above identity is true by arranging the terms $30k^2(n-k)^2 + 1$ over $0 \leq k \leq n$ as tabular.
-See the OEIS sequence~\cite{oeis_numerical_triangle_row_sums_give_fifth_powers}
+Again, the terms $30k^2(n-k)^2 + 1$ are symmetric over $k$.
+Let be $T_2 (n,k) = 30k^2(n-k)^2 + 1$ then
+\begin{align*}
+    T_2 (n,k) = T_2 (n,n-k)
+\end{align*}
+By arranging the values of $T_{2} (n,k)$ as a triangular array, we see that the identity for $n^5$ is indeed true
 \input{sections/figures/03_fig_triangle_row_sums_give_fifth_power}
 
 Now we can see that the relation~\eqref{eq:cube_identity}
