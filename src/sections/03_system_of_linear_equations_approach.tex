@@ -22,12 +22,12 @@ By expanding the sums $\sum_{k=1}^{n} k^r (n-k)^r$ using Faulhaber's formula~\ci
 an equation
 \begin{equation*}
     \coeffA{m}{0} n
-    + \coeffA{m}{1} \left[ \frac{1}{6} (-n + n^3) \right]
-    + \coeffA{m}{2} \left[ \frac{1}{30} (-n + n^5) \right] - n^5 = 0
+    + \coeffA{m}{1} \left[ \frac{1}{6} (n^3-n) \right]
+    + \coeffA{m}{2} \left[ \frac{1}{30} (n^5-n) \right] - n^5 = 0
 \end{equation*}
 By multiplying by $30$ both right-hand side and left-hand side, we get
 \begin{equation*}
-    30 \coeffA{2}{0} n + 5 \coeffA{2}{1} (-n + n^3) + \coeffA{2}{2} (-n + n^5) - 30n^5 = 0
+    30 \coeffA{2}{0} n + 5 \coeffA{2}{1} (n^3-n) + \coeffA{2}{2} (n^5-n) - 30n^5 = 0
 \end{equation*}
 By expanding the brackets and rearranging the terms
 \begin{equation*}
@@ -77,13 +77,14 @@ Consider an example for $n^7$.
 \begin{align*}
     n^7 =
     \coeffA{m}{0} n
-    + \coeffA{m}{1} \left[ \frac{1}{6} (-n + n^3) \right]
-    &+ \coeffA{m}{2} \left[ \frac{1}{30} (-n + n^5) \right] \\
-    &+ \coeffA{m}{3} \left[ \frac{1}{420} (-10 n + 7 n^3 + 3 n^7) \right]
+    + \coeffA{m}{1} \left[ \frac{1}{6} (n^3-n) \right]
+    &+ \coeffA{m}{2} \left[ \frac{1}{30} (n^5-n) \right] \\
+    &+ \coeffA{m}{3} \left[ \frac{1}{420} (3n^7+7n^3-10n) \right]
 \end{align*}
 By multiplying by $30$ both right-hand side and left-hand side, we get
 \begin{align*}
-    420 \coeffA{3}{0} n + 70 \coeffA{2}{1} (-n + n^3) + 14 \coeffA{2}{2} (-n + n^5) + \coeffA{3}{3} (-10 n + 7 n^3 + 3 n^7) - 420n^7 = 0
+    420 \coeffA{3}{0} n + 70 \coeffA{2}{1} (n^3-n) + 14 \coeffA{2}{2} (n^5-n)
+    + \coeffA{3}{3} (3n^7+7n^3-10n) - 420n^7 = 0
 \end{align*}
 By expanding the brackets and rearranging terms, we obtain
 \begin{align*}
