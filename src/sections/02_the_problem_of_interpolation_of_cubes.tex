@@ -158,20 +158,24 @@ Therefore,
     n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
 \end{align*}
 By inspecting the expression $6k(n-k) + 1$, we can notice that it is symmetric over $k$.
-Let be $T(n,k) = 6k(n-k) + 1$ then
+Let be $T_{1} (n,k) = 6k(n-k) + 1$ then
 \begin{align*}
-    T(n,k) = T(n,n-k)
+    T_{1} (n,k) = T_{1} (n,n-k)
 \end{align*}
 This symmetry allows us to alter summation bounds easily.
 Hence,
 \begin{align*}
     n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
 \end{align*}
-By arranging the values of $T(n,k)$ as a triangular array, we see that cube identities indeed are true
+By arranging the values of $T_{1} (n,k)$ as a triangular array, we see that cube identities indeed are true
 \input{sections/figures/02_fig_triangle_row_sums_give_cubes}
-The following recurrence holds for $T(n,k)$
+The following recurrence holds for $T_{1} (n,k)$
 \begin{align*}
-    T(n, k) = 2T(n-1, k) - T(n-2, k)
+    T_{1} (n, k) = 2T_{1} (n-1, k) - T_{1} (n-2, k)
+\end{align*}
+Which is indeed true, because
+\begin{align*}
+    T_{1} (5, 2) = 2 \cdot 25 - 13 = 37
 \end{align*}
 Finally, our curious student has reached the first milestone, by finding his own
 answer to the question~\eqref{quest:interpolation-cubes} and the answer was positive.
@@ -194,6 +198,7 @@ However, this time it was not so easy to find identity for $n^4$ or $n^5$
 by simply observing the tables of finite differences.
 The previous approach to express the difference of cubes $\Delta n^3$ in terms of
 $\Delta^3 n^3 = 6$ and then express the cubes as $n^3 = \sum_k 6k (n-k) +1$ --- was not successful.
-Moreover, it wasn't even clear what is the generic form of an identity out student was looking for.
-Thus, he reached mathematical community in search of an advice.
+Moreover, it wasn't even clear what is the generic form of an identity out student was looking for,
+a lot of concerns came from a simple interpolation task.
+Thus, he reached mathematical community in search of advice.
 And there was a response.

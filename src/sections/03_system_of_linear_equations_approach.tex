@@ -1,27 +1,24 @@
-Soon enough my question~\eqref{question:higher_powers} got attention from other people.
-In 2018, Albert Tkaczyk has published two of his works~\cite{tkaczyk2018problem, tkaczyk2018continuation}
-showing the cases for polynomials $n^5, \; n^7$ and $n^9$ that were obtained similarly as~\eqref{eq:cube_identity}.
+In 2018, Albert Tkaczyk published two papers~\cite{tkaczyk2018problem, tkaczyk2018continuation}
+presenting analogous identities for polynomials $n^5, \; n^7$ and $n^9$ derived in a manner similar to~\eqref{eq:cube_identity}.
 In short, it appears that relation~\eqref{eq:cube_identity} could be generalized
 for any non-negative odd power $2m+1$ solving a system of linear equations.
 It was proposed that the case for $n^5$ has explicit form
-\begin{equation*}
+\begin{align*}
     n^5 = \sum_{k=1}^{n} \left[ A k^2(n-k)^2 + Bk(n-k) + C \right]
-\end{equation*}
+\end{align*}
 where $A,B,C$ are yet-unknown coefficients.
 Denote $A,B,C$ as $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
 to reach the form of a compact double sum
-\begin{equation*}
+\begin{align*}
     n^5 = \sum_{k=1}^{n} \sum_{r=0}^{2} \coeffA{2}{r} k^r (n-k)^r
-\end{equation*}
+\end{align*}
 Observing the equation above, the potential form of generalized odd-power identity becomes more obvious.
 To evaluate the coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
 it is necessary construct and solve a system of linear equations following the process
-\begin{equation*}
-    \begin{split}
-        n^5 &= \sum_{r=0}^{2} \coeffA{2}{r} \sum_{k=1}^{n} k^r (n-k)^r \\
-        &= \coeffA{2}{0} \sum_{k=1}^{n} k^0 (n-k)^0 + \coeffA{2}{1} \sum_{k=1}^{n} k^1 (n-k)^1 + \coeffA{2}{2} \sum_{k=1}^{n} k^2 (n-k)^2
-    \end{split}
-\end{equation*}
+\begin{align*}
+    n^5 &= \sum_{r=0}^{2} \coeffA{2}{r} \sum_{k=1}^{n} k^r (n-k)^r \\
+    &= \coeffA{2}{0} \sum_{k=1}^{n} k^0 (n-k)^0 + \coeffA{2}{1} \sum_{k=1}^{n} k^1 (n-k)^1 + \coeffA{2}{2} \sum_{k=1}^{n} k^2 (n-k)^2
+\end{align*}
 Expand the terms $\sum_{k=1}^{n} k^r (n-k)^r$ applying the
 Faulhaber's formula~\cite{beardon1996sums}
 to get the equation
@@ -72,64 +69,61 @@ we got via interpolation of cubes
 can be generalized for all non-negative odd-powers $2m+1$ by constructing
 and solving a certain system of linear equations.
 Therefore, the generalized form of odd-power identity has the form
-\begin{equation}
-    n^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} k^{r} (n-k)^{r}\label{eq:odd-power-identity}
-\end{equation}
+\begin{align*}
+    n^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} k^{r} (n-k)^{r}
+    \label{eq:odd-power-identity}
+\end{align*}
 where $\coeffA{m}{r}$ are real coefficients.
 In more details, the identity~\eqref{eq:odd-power-identity} is discussed
 separately in~\cite{unusual_identity_for_odd_powers, polynomial_identity_with_binomial_theorem_and_faulhabers_formula}.
 
 As one more example, let be $m=3$ so that we have the following relation defined by~\eqref{eq:odd-power-identity}
-\begin{equation*}
+\begin{align*}
     \coeffA{m}{0} n
     + \coeffA{m}{1} \left[ \frac{1}{6} (-n + n^3) \right]
     + \coeffA{m}{2} \left[ \frac{1}{30} (-n + n^5) \right]
     + \coeffA{m}{3} \left[ \frac{1}{420} (-10 n + 7 n^3 + 3 n^7) \right] - n^7 = 0
-\end{equation*}
+\end{align*}
 Multiplying by $420$ right-hand side and left-hand side, we get
-\begin{equation*}
+\begin{align*}
     420 \coeffA{3}{0} n + 70 \coeffA{2}{1} (-n + n^3) + 14 \coeffA{2}{2} (-n + n^5) + \coeffA{3}{3} (-10 n + 7 n^3 + 3 n^7) - 420n^7 = 0
-\end{equation*}
+\end{align*}
 Expanding brackets and rearranging the terms gives
-\begin{equation*}
-    \begin{split}
-        420 \coeffA{3}{0} n
-        &- 70 \coeffA{3}{1} + 70 \coeffA{3}{1} n^3 - 14 \coeffA{3}{2} n + 14 \coeffA{3}{2} n^5 \\
-        &- 10 \coeffA{3}{3} n + 7 \coeffA{3}{3} n^3 + 3 \coeffA{3}{3} n^7 - 420n^7 = 0
-    \end{split}
-\end{equation*}
+\begin{align*}
+    420 \coeffA{3}{0} n
+    &- 70 \coeffA{3}{1} + 70 \coeffA{3}{1} n^3 - 14 \coeffA{3}{2} n + 14 \coeffA{3}{2} n^5 \\
+    &- 10 \coeffA{3}{3} n + 7 \coeffA{3}{3} n^3 + 3 \coeffA{3}{3} n^7 - 420n^7 = 0
+\end{align*}
 Combining the common terms yields
-\begin{equation*}
-    \begin{split}
-        &n (420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3}) \\
-        &+ n^3 (70 \coeffA{3}{1} + 7 \coeffA{3}{3})
-        + n^5 14 \coeffA{3}{2}
-        + n^7 (3 \coeffA{3}{3} - 420)
-        = 0
-    \end{split}
-\end{equation*}
+\begin{align*}
+    &n (420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3}) \\
+    &+ n^3 (70 \coeffA{3}{1} + 7 \coeffA{3}{3})
+    + n^5 14 \coeffA{3}{2}
+    + n^7 (3 \coeffA{3}{3} - 420)
+    = 0
+\end{align*}
 Therefore, the system of linear equations follows
-\begin{equation*}
+\begin{align*}
     \begin{cases}
         420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3} = 0 \\
         70 \coeffA{3}{1} + 7 \coeffA{3}{3} = 0 \\
         \coeffA{3}{2} - 30 = 0 \\
         3 \coeffA{3}{3} - 420 = 0
     \end{cases}
-\end{equation*}
+\end{align*}
 Solving it, we get
-\begin{equation*}
+\begin{align*}
     \begin{cases}
         \coeffA{3}{3} = 140 \\
         \coeffA{3}{2} = 0 \\
         \coeffA{3}{1} = -\frac{7}{70} \coeffA{3}{3} = -14 \\
         \coeffA{3}{0} = \frac{(70 \coeffA{3}{1} + 10 \coeffA{3}{3})}{420} = 1
     \end{cases}
-\end{equation*}
+\end{align*}
 So that odd-power identity~\eqref{eq:odd-power-identity} holds
-\begin{equation*}
+\begin{align*}
     n^7 = \sum_{k=1}^{n} 140 k^3 (n-k)^3 - 14k(n-k) + 1
-\end{equation*}
+\end{align*}
 It is also clearly seen
 why the above identity is true evaluating the terms $140 k^3 (n-k)^3 - 14k(n-k) + 1$ over $0 \leq k \leq n$ as
 the OEIS sequence \href{https://oeis.org/A300785}{\texttt{A300785}}~\cite{oeis_numerical_triangle_row_sums_give_seventh_powers} shows.
