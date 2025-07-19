@@ -40,17 +40,17 @@ By combining the common terms, we obtain
 Therefore,
 \begin{equation*}
     \begin{cases}
-        30 \coeffA{2}{0} - 5 \coeffA{2}{1} - \coeffA{2}{2} = 0 \\
-        \coeffA{2}{1} = 0 \\
-        \coeffA{2}{2} - 30 = 0
+        30 \coeffA{2}{0} - 5 \coeffA{2}{1} - \coeffA{2}{2} &= 0 \\
+        \coeffA{2}{1} &= 0 \\
+        \coeffA{2}{2} - 30 &= 0
     \end{cases}
 \end{equation*}
 By solving the system above, we evaluate the coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
 \begin{equation*}
     \begin{cases}
-        \coeffA{2}{2} = 30 \\
-        \coeffA{2}{1} = 0 \\
-        \coeffA{2}{0} = 1
+        \coeffA{2}{2} &= 30 \\
+        \coeffA{2}{1} &= 0 \\
+        \coeffA{2}{0} &= 1
     \end{cases}
 \end{equation*}
 Thus, the identity for $n^5$
@@ -83,8 +83,9 @@ Consider an example for $n^7$.
 \end{align*}
 By multiplying by $30$ both right-hand side and left-hand side, we get
 \begin{align*}
-    420 \coeffA{3}{0} n + 70 \coeffA{2}{1} (n^3-n) + 14 \coeffA{2}{2} (n^5-n)
-    + \coeffA{3}{3} (3n^7+7n^3-10n) - 420n^7 = 0
+    420 \coeffA{3}{0} n + 70 \coeffA{2}{1} (n^3-n)
+    &+ 14 \coeffA{2}{2} (n^5-n) \\
+    &+ \coeffA{3}{3} (3n^7+7n^3-10n) - 420n^7 = 0
 \end{align*}
 By expanding the brackets and rearranging terms, we obtain
 \begin{align*}
@@ -94,28 +95,28 @@ By expanding the brackets and rearranging terms, we obtain
 \end{align*}
 Combining the common terms yields
 \begin{align*}
-    &n (420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3}) \\
-    &+ n^3 (70 \coeffA{3}{1} + 7 \coeffA{3}{3})
-    + n^5 14 \coeffA{3}{2}
+    n (420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3})
+    &+ n^3 (70 \coeffA{3}{1} + 7 \coeffA{3}{3}) \\
+    &+ n^5 14 \coeffA{3}{2}
     + n^7 (3 \coeffA{3}{3} - 420)
     = 0
 \end{align*}
 Therefore, we receive the following system of linear equations
 \begin{align*}
     \begin{cases}
-        420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3} = 0 \\
-        70 \coeffA{3}{1} + 7 \coeffA{3}{3} = 0 \\
-        \coeffA{3}{2} - 30 = 0 \\
-        3 \coeffA{3}{3} - 420 = 0
+        420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3} &= 0 \\
+        70 \coeffA{3}{1} + 7 \coeffA{3}{3} &= 0 \\
+        \coeffA{3}{2} - 30 &= 0 \\
+        3 \coeffA{3}{3} - 420 &= 0
     \end{cases}
 \end{align*}
 By solving it for $\coeffA{3}{0}, \coeffA{3}{1}, \coeffA{3}{2}, \coeffA{3}{3}$, we obtain
 \begin{equation*}
     \begin{cases}
-        \coeffA{3}{3} = 140 \\
-        \coeffA{3}{2} = 0 \\
-        \coeffA{3}{1} = -\frac{7}{70} \coeffA{3}{3} = -14 \\
-        \coeffA{3}{0} = \frac{(70 \coeffA{3}{1} + 10 \coeffA{3}{3})}{420} = 1
+        \coeffA{3}{3} &= 140 \\
+        \coeffA{3}{2} &= 0 \\
+        \coeffA{3}{1} = -\frac{7}{70} \coeffA{3}{3} &= -14 \\
+        \coeffA{3}{0} = \frac{(70 \coeffA{3}{1} + 10 \coeffA{3}{3})}{420} &= 1
     \end{cases}
 \end{equation*}
 Therefore, the identity for $n^7$ holds
