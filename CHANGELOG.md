@@ -16,3 +16,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Refactors
 - Add license CC BY 4.0
 - Add note on 0^x = 1 for all x
+- Add section for recurrence formula
