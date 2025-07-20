@@ -58,15 +58,15 @@ However, there is a more beautiful way to prove that $\Delta(n^3) = 1 + 6 \sum_{
 We refer to one of the finest articles in the area of polynomials and power sums,
 that is \textit{Johann Faulhaber and sums of powers} written by Donald Knuth~\cite{knuth1993johann}.
 Indeed, this article is a great source to reach piece of mind in mathematics.
-We now focus on the following odd power identities shown at~\cite[~p. 9]{knuth1993johann}
+We now focus on the odd power identities shown at~\cite[~p. 9]{knuth1993johann}
 \begin{align*}
     n^1 &= \binom{n}{1} \\
     n^3 &= 6 \binom{n+1}{3} + \binom{n}{1} \\
     n^5 &= 120 \binom{n+2}{5} + 30 \binom{n+1}{3} + \binom{n}{1}
 \end{align*}
 
-It is in particular interesting that well-known identity which connects triangular numbers $\binom{n+1}{2}$
-and finite differences of cubes becomes clear and obvious
+It is quite interesting that the identity in terms of triangular numbers $\binom{n+1}{2}$
+and finite differences of cubes becomes more obvious
 \begin{align*}
     \Delta n^3
     = (n+1)^3 - n^3
@@ -95,12 +95,12 @@ This leads to the identity in finite differences of cubes
     \Delta n^3 = (n+1)^3 - n^3 = 1 + 6 \sum_{k=0}^{n} k
 \end{align*}
 An experienced mathematician would immediately notice a spot to apply Faulhaber's formula~\cite{beardon1996sums}
-to expand the term $\sum_{k=0}^{n} k$
+to get the closed form of the sum $\sum_{k=0}^{n} k$
 \begin{align*}
     \sum_{k=0}^{n} k = \frac{1}{2}(n+n^2)
 \end{align*}
-Thus, the finite difference $\Delta(n^3)$ takes a well-known form such
-that matches Binomial theorem~\cite{abramowitz1988handbook}
+Thus, the finite difference $\Delta(n^3)$ takes a well-known form,
+which matches Binomial theorem~\cite{abramowitz1988handbook}
 \begin{align*}
     \Delta(n^3)
     = 1 + 6 \left[ \frac{1}{2}(n+n^2) \right]
@@ -115,8 +115,8 @@ Because all what remains is to say that
     = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right)
     = \sum_{k=0}^{n-1} 1 + 3 k + 3 k^2
 \end{align*}
-Thus, the polynomial $n^3$ is interpolated successfully, and thus, the question~\eqref{quest:interpolation-cubes} is answered
-positively.
+Thus, the polynomial $n^3$ is interpolated successfully, and thus,
+our protégée's question~\eqref{quest:interpolation-cubes} is answered positively.
 Because we have successfully found the function that matches $n^3$ from the values of its finite differences from the
 table~\eqref{tab:finite-differences-cubes}.
 
@@ -126,7 +126,7 @@ wasn't really aware of the approaches above neither.
 What a lazy student!
 Probably, that's exactly the case when unawareness leads to a fresh sight to century-old questions,
 leading to unexpected results and new insights.
-Instead, our student spotted a little bit different pattern in $\Delta n^3= 6 \binom{n+1}{2} + \binom{n}{0}$.
+Instead, our investigator spotted a little bit different pattern in $\Delta n^3= 6 \binom{n+1}{2} + \binom{n}{0}$.
 
 Consider the polynomial $n^3$ as sum of its finite differences
 \begin{align*}
@@ -176,15 +176,15 @@ Which is indeed true, because
 \begin{align*}
     T_{1} (5, 2) = 2 \cdot 25 - 13 = 37
 \end{align*}
-Finally, our curious student has reached the first milestone, by finding his own
+Finally, our curious learner has reached the first milestone, by finding his own
 answer to the question~\eqref{quest:interpolation-cubes} and the answer was positive.
 What an excitement it was!
 However, it wouldn't take long.
 Indeed, curiosity is not something that can be fulfilled completely,
 and thus new questions arise.
-Somehow, he got a strong feeling that something bigger, something even more general
+Somehow, the inquirer got a strong feeling that something bigger, something even more general
 hides behind the identity $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$.
-Quite intuitive he was.
+That was quite intuitive.
 Fair enough that the next question was
 \begin{question}
     Given that the identity $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$ holds for the polynomial $n^3$,
@@ -193,11 +193,11 @@ Fair enough that the next question was
     \label{question:higher_powers}
 \end{question}
 
-However, this time it was not so easy to find identity for $n^4$ or $n^5$
+However, this time it was not so easy for the young explorer to find identity for $n^4$ or $n^5$
 by simply observing the tables of finite differences.
 The previous approach to express the difference of cubes $\Delta n^3$ in terms of
 $\Delta^3 n^3 = 6$ and then express the cubes as $n^3 = \sum_k 6k (n-k) +1$ --- was not successful.
-Moreover, it wasn't even clear what is the generic form of an identity out student was looking for,
+Moreover, it wasn't even clear what is the generic form of an identity our student was looking for,
 a lot of concerns came from a simple interpolation task.
-Thus, he reached mathematical community in search of advice.
-And there was a response.
+Thus, the question~\eqref{question:higher_powers} was shared with the mathematical community.
+And there was an answer.
