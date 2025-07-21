@@ -8,21 +8,21 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{theorem}
 
-\begin{definition}[Bivariate sum $T_m(n,k)$]
+\begin{definition}[Bivariate sum $T_m$]
     \begin{align*}
         T_{m}(n,k) = \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
 \end{definition}
 
-\begin{proposition}[Recurrence for $T_m$]
+\begin{proposition}[Recurrence for $T_m$] For non-negative integers $m$ and $n$
     \begin{align*}
-        T_{m} (n, k) = \sum_{t=1}^{m+1} (-1)^t \binom{m+1}{t} T_{m} (n-t, k)
+        T_{m} (n, k) = \sum_{t=1}^{m+1} (-1)^{t-1} \binom{m+1}{t} T_{m} (n-t, k)
     \end{align*}
 \end{proposition}
 
-\begin{proposition}[Odd power decomposition]
+\begin{proposition}[Odd power decomposition] For non-negative integers $m$ and $n$
     \begin{align*}
-        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^t \binom{m+1}{t} T_{m} (n-t, k)
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t-1} \binom{m+1}{t} T_{m} (n-t, k)
     \end{align*}
 \end{proposition}
 
@@ -32,10 +32,10 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{corollary}
 
-\begin{proposition}[Odd power binomial form]
+\begin{proposition}[Odd power binomial form] For integers $n$ and $a$ such that $n-2a \geq 0$
     \begin{align*}
-    (x-2a)
-        ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{x-a} \coeffA{m}{r} (k-a)^r (x-k-a)^r
+    (n-2a)
+        ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
     \end{align*}
 \end{proposition}
 
