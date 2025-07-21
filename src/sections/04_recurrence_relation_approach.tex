@@ -1,10 +1,5 @@
-%Assume that the following odd power identity holds
-%\begin{align}
-%    \label{eq:odd-power-identity}
-%    n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
-%\end{align}
-In 2018, the recurrence relation to evaluate the coefficients $\coeffA{m}{r}$ was provided by
-Max Alekseyev, George Washington University.
+In 2018, the recurrence relation~\cite{alekseyev2018mathoverflow} that evaluates the coefficients $\coeffA{m}{r}$ for
+non-negative integer $m$ was provided by Max Alekseyev, George Washington University.
 The main idea of Alekseyev's approach was to utilize a recurrence relation to evaluate the set of coefficients $\coeffA{m}{r}$
 starting from the base case $\coeffA{m}{m}$ and then evaluating the next coefficient $\coeffA{m}{m-1}$
 recursively, and so on up to $\coeffA{m}{0}$.
@@ -52,17 +47,22 @@ By rearranging the sums we obtain
     &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right] \nonumber
 \end{align}
 We can notice that
-\begin{equation}
-    \label{eq:combinatorial-identity}
-    \sum_{t} \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j}
-    =\begin{cases}
-         \frac{1}{(2r+1) \binom{2r}r} & \text{if } j=0\\
-         \frac{(-1)^r}{j} \binom{r}{2r-j+1} & \text{if } j>0
-    \end{cases}
-\end{equation}
-An elegant proof of the binomial identity~\eqref{eq:combinatorial-identity} is done by Markus Scheuer in~\cite{scheuer2023mathstackexchange}.
-In particular, the equation~\eqref{eq:combinatorial-identity} is zero for $0< t \leq j$.
-To utilize the equation~\eqref{eq:combinatorial-identity}, we have to move $j=0$ out of summation
+\begin{corollary}
+    \label{cor:combinatorial-identity}
+    For integers $r, j$
+    \begin{align*}
+        \sum_{t} \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j}
+        =\begin{cases}
+             \frac{1}{(2r+1) \binom{2r}r} & \text{if } j=0\\
+             \frac{(-1)^r}{j} \binom{r}{2r-j+1} & \text{if } j>0
+        \end{cases}
+    \end{align*}
+    \begin{proof}
+        An elegant proof is done by Markus Scheuer in~\cite{scheuer2023mathstackexchange}.
+    \end{proof}
+\end{corollary}
+In particular, the sum in corollary~\eqref{cor:combinatorial-identity} is zero for $0< j \leq r$.
+To utilize the corollary~\eqref{cor:combinatorial-identity}, we have to move $j=0$ out of summation
 in~\eqref{eq:rearranging-terms} to avoid division by zero in $\frac{(-1)^r}{j}$.
 Therefore,
 \begin{equation*}
@@ -73,7 +73,7 @@ Therefore,
         &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
     \end{split}
 \end{equation*}
-Hence, we simplify the equation above by using~\eqref{eq:combinatorial-identity} so that
+Hence, we simplify the equation above by using~\eqref{cor:combinatorial-identity} so that
 \begin{equation*}
     \begin{split}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}
@@ -193,9 +193,10 @@ by using previously computed values $\coeffA{m}{d}$ for $d > r$, via the relatio
 \end{equation*}
 
 Finally, we define the following recurrence relation for coefficients $\coeffA{m}{r}$
-\begin{definition} (Definition of coefficient $\coeffA{m}{r}$.)
-    \begin{equation}
-        \label{eq:definition_coefficient_a}
+\begin{proposition}
+    For integers $m$ and $r$
+    \label{prop:coefficients_a}
+    \begin{align*}
         \coeffA{m}{r} =
         \begin{cases}
         (2r+1)
@@ -204,10 +205,10 @@ Finally, we define the following recurrence relation for coefficients $\coeffA{m
             \bernoulli{2d-2r} & \mathrm{if} \; 0 \leq r<m \\
             0 & \mathrm{if} \; r<0 \; \mathrm{or} \; r>m
         \end{cases}
-    \end{equation}
-\end{definition}
-where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher}.
-It is assumed that $\bernoulli{1}=\frac{1}{2}$.
+    \end{align*}
+    where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher}.
+    It is assumed that $\bernoulli{1}=\frac{1}{2}$.
+\end{proposition}
 
 Thus, the conjecture~\eqref{conj:odd-power-identity} is true
 
@@ -231,3 +232,12 @@ Properties of the coefficients $\coeffA{m}{r}$
     \item $\coeffA{m}{r}$ are integers for $m \leq 11$
     \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$
 \end{itemize}
+
+\begin{align*}
+    n^3 &= \sum_{k=1}^{n} 6k(n-k) + 1 \\
+    n^5 &= \sum_{k=1}^{n} 30k^2(n-k)^2 + 1 \\
+    n^7 &= \sum_{k=1}^{n} 140 k^3 (n-k)^3 - 14k(n-k) + 1 \\
+    n^9 &= \sum_{k=1}^{n} 630 k^4(n-k)^4 - 120k(n-k) + 1 \\
+    n^{11} &= \sum_{k=1}^{n} 2772 k^5(n-k)^5 + 660 k^2(n-k)^2 - 1386k(n-k) + 1 \\
+    n^{13} &= \sum_{k=1}^{n} 51480 k^7(n-k)^7 - 60060 k^3(n-k)^3 + 491400k^2(n-k)^{2} - 450054k(n-k) + 1
+\end{align*}
