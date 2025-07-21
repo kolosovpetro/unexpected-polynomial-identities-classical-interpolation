@@ -77,68 +77,22 @@ Which is indeed true because
     T_2 (6,2) = 3 \cdot 1081 - 3 \cdot 481 + 271 = 1921
 \end{align*}
 
-%Consider an example for $n^7$.
-%\begin{align*}
-%    n^7 =
-%    \coeffA{3}{0} n
-%    + \coeffA{3}{1} \left[ \frac{1}{6} (n^3-n) \right]
-%    &+ \coeffA{3}{2} \left[ \frac{1}{30} (n^5-n) \right] \\
-%    &+ \coeffA{3}{3} \left[ \frac{1}{420} (3n^7+7n^3-10n) \right]
-%\end{align*}
-%By multiplying by $30$ both right-hand side and left-hand side, we get
-%\begin{align*}
-%    420 \coeffA{3}{0} n + 70 \coeffA{2}{1} (n^3-n)
-%    &+ 14 \coeffA{2}{2} (n^5-n) \\
-%    &+ \coeffA{3}{3} (3n^7+7n^3-10n) - 420n^7 = 0
-%\end{align*}
-%By expanding the brackets and rearranging terms, we obtain
-%\begin{align*}
-%    420 \coeffA{3}{0} n
-%    &- 70 \coeffA{3}{1} + 70 \coeffA{3}{1} n^3 - 14 \coeffA{3}{2} n + 14 \coeffA{3}{2} n^5 \\
-%    &- 10 \coeffA{3}{3} n + 7 \coeffA{3}{3} n^3 + 3 \coeffA{3}{3} n^7 - 420n^7 = 0
-%\end{align*}
-%Combining the common terms yields
-%\begin{align*}
-%    n (420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3})
-%    &+ n^3 (70 \coeffA{3}{1} + 7 \coeffA{3}{3}) \\
-%    &+ n^5 14 \coeffA{3}{2}
-%    + n^7 (3 \coeffA{3}{3} - 420)
-%    = 0
-%\end{align*}
-%Therefore, we receive the following system of linear equations
-%\begin{align*}
-%    \begin{cases}
-%        420 \coeffA{3}{0} - 70 \coeffA{3}{1} - 14 \coeffA{3}{2} - 10 \coeffA{3}{3} &= 0 \\
-%        70 \coeffA{3}{1} + 7 \coeffA{3}{3} &= 0 \\
-%        \coeffA{3}{2} - 30 &= 0 \\
-%        3 \coeffA{3}{3} - 420 &= 0
-%    \end{cases}
-%\end{align*}
-%By solving it for $\coeffA{3}{0}, \coeffA{3}{1}, \coeffA{3}{2}, \coeffA{3}{3}$, we obtain
-%\begin{equation*}
-%    \begin{cases}
-%        \coeffA{3}{3} &= 140 \\
-%        \coeffA{3}{2} &= 0 \\
-%        \coeffA{3}{1} = -\frac{7}{70} \coeffA{3}{3} &= -14 \\
-%        \coeffA{3}{0} = \frac{(70 \coeffA{3}{1} + 10 \coeffA{3}{3})}{420} &= 1
-%    \end{cases}
-%\end{equation*}
-%Therefore, the identity for $n^7$ holds
-%\begin{equation*}
-%    n^7 = \sum_{k=1}^{n} 140 k^3 (n-k)^3 - 14k(n-k) + 1
-%\end{equation*}
-%The values of $140 k^3 (n-k)^3 - 14k(n-k) + 1$ are symmetric over $k$.
-%Let be $T_3 (n,k) = 140 k^3 (n-k)^3 - 14k(n-k) + 1$ then
-%\begin{align*}
-%    T_3 (n,k) = T_3 (n, n-k)
-%\end{align*}
-%By arranging the values of $T_{3} (n,k)$ as a triangular array, we see that the identity for $n^7$ is indeed true
-%\input{sections/figures/04_fig_triangle_row_sums_give_seventh_power}
-%The following recurrence holds for $T_{3} (n,k)$
-%\begin{align*}
-%    T_{3} (n, k) = 4T_{3} (n-1, k) - 6T_{3} (n-2, k) + 4T_{3} (n-3, k) - T_{3} (n-4, k)
-%\end{align*}
-%Which is true indeed because
-%\begin{align*}
-%    T_{3} (7, 1) = 4 \cdot 17431 -6 \cdot 8905 + 4 \cdot 3739 - 1 \cdot 1093 = 30157
-%\end{align*}
+Thus, our curious learner who stated the question~\eqref{question:higher_powers} got the answer, yet again
+green light was lit.
+This time, the answer contained even more than methodology to find
+a set of coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \ldots, \coeffA{2}{2}$ --- it contained a generic
+form of odd power identity $n^{2m+1}$ for any natural $m$.
+Hence, the part of questions-answers we discuss so far ends here, it is time to state a conjecture.
+\begin{conjecture}
+    \label{conj:odd-power-identity}
+    There is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
+    \begin{align*}
+        n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
+    \end{align*}
+\end{conjecture}
+We already know that to identify the coefficients we have to build and solve
+a certain system of linear equations, however, we cannot perform any kind of induction
+on that, hence conjecture cannot be proven just by building and solving endless
+systems of linear equations.
+There must be a formula that evaluates the set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$
+for every non-negative integer $m$ --- our young investigator thought.
