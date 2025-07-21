@@ -11,7 +11,7 @@ of Faulhaber's formula~\cite{beardon1996sums}
     &= \frac{1}{p+1} \left[ \sum_{j=0}^{p+1} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1} \\
     &= \frac{1}{p+1} \left[ \sum_{j} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
 \end{align*}
-The reason we use modified version of Faulhaber's formula is because we want to omit summation bounds, for simplicity.
+The reason we use modified version of Faulhaber's formula is because we tend to omit summation bounds, for simplicity.
 This helps us to collapse the common terms across complex sums, see also~\cite[~p. 2]{knuth1992two}.
 Therefore, we expand the sum $\sum_{k=1}^{n} k^{r} (n-k)^{r}$ using Binomial theorem
 \begin{align*}
@@ -257,5 +257,18 @@ Properties of the coefficients $\coeffA{m}{r}$
 \begin{proposition}
     \begin{align*}
         n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^t \binom{m}{t} T_{m-1} (n-t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    \begin{align*}
+    (x-2a)
+        ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=a+1}^{x-a} (k-a)^r (x-k-a)^r
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    \begin{align*}
+        \sum_{t=1}^{n} t^{2m+1} = \sum_{t=1}^{n} \sum_{k=1}^{t} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
 \end{proposition}
