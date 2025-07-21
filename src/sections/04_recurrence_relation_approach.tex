@@ -84,31 +84,36 @@ Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqr
 \end{equation*}
 By introducing $\ell=2r-j+1$ to $(\star)$ and $\ell=r-t$ to $(\diamond)$
 we collapse the common terms across two sums
-\begin{equation*}
-    \begin{split}
-        \sum_{k=1}^{n} k^{r} (n-k)^{r}
-        &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
-        + \left[ \sum_{\ell} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell} \right] \\
-        &- \left[ \sum_{\ell} \binom{r}{\ell} \frac{(-1)^{r-\ell}}{2r+1-\ell} \bernoulli{2r+1-\ell} n^{\ell} \right]\\
-        &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1} + 2 \sum_{\mathrm{odd \; \ell}} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell}
-    \end{split}
-\end{equation*}
+\begin{align*}
+    \sum_{k=1}^{n} k^{r} (n-k)^{r}
+    &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
+    + \left[ \sum_{\ell} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell} \right] \\
+    &- \left[ \sum_{\ell} \binom{r}{\ell} \frac{(-1)^{r-\ell}}{2r+1-\ell} \bernoulli{2r+1-\ell} n^{\ell} \right]\\
+    &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1} + 2 \sum_{\mathrm{odd \; \ell}} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell}
+\end{align*}
+By replacing odd $\ell$ by $\ell = 2k+1$, and by simplifying 2's, we get
+\begin{proposition}[Bivariate Faulhaber's Formula]
+    \begin{align*}
+        \sum_{k=1}^{n} k^{r} (n-k)^{r} &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1} + \sum_{k=0}^{\infty} \frac{(-1)^r}{2r-2k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}
+    \end{align*}
+\end{proposition}
+
+
 Assuming that $\coeffA{m}{r}$ is defined by the odd-power identity in~\eqref{conj:odd-power-identity},
 we obtain the following relation for polynomials in $n$
-\begin{equation*}
-    \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
-    + 2 \sum_{r=0}^{m} \sum_{\mathrm{odd \; \ell}} \coeffA{m}{r} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell}
-    \equiv n^{2m+1}
-\end{equation*}
-Replacing odd $\ell$ by $\ell = 2k+1$ we get
-\begin{align*}
-    \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}{r}} n^{2r+1} + 2 \sum_{r=0}^{m} \sum_{k=0}^{\infty} \coeffA{m}{r} \frac{(-1)^r}{2r-2k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}  \equiv n^{2m+1}
-\end{align*}
-By simplifying the term $2$
 \begin{align}
     \label{eq:main_relation}
     \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}{r}} n^{2r+1} + \sum_{r=0}^{m} \sum_{k=0}^{\infty} \coeffA{m}{r} \frac{(-1)^r}{r-k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}  \equiv n^{2m+1}
 \end{align}
+%By replacing odd $\ell$ by $\ell = 2k+1$ we get
+%\begin{align*}
+%    \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}{r}} n^{2r+1} + 2 \sum_{r=0}^{m} \sum_{k=0}^{\infty} \coeffA{m}{r} \frac{(-1)^r}{2r-2k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}  \equiv n^{2m+1}
+%\end{align*}
+%By simplifying the term $2$
+%\begin{align}
+%    \label{eq:main_relation}
+%    \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}{r}} n^{2r+1} + \sum_{r=0}^{m} \sum_{k=0}^{\infty} \coeffA{m}{r} \frac{(-1)^r}{r-k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}  \equiv n^{2m+1}
+%\end{align}
 Basically, the relation~\eqref{eq:main_relation} is the generating function we utilize to
 evaluate the values of $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$.
 We now fix the unused values of $\coeffA{m}{r}$ so that $\coeffA{m}{r} = 0$ for every $r < 0$ or $r > m$.
