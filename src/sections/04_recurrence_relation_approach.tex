@@ -47,7 +47,7 @@ By rearranging the sums we obtain
     &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right] \nonumber
 \end{align}
 We can notice that
-\begin{corollary}
+\begin{lemma}
     \label{cor:combinatorial-identity}
     For integers $r, j$
     \begin{align*}
@@ -60,9 +60,9 @@ We can notice that
     \begin{proof}
         An elegant proof is done by Markus Scheuer in~\cite{scheuer2023mathstackexchange}.
     \end{proof}
-\end{corollary}
-In particular, the sum in corollary~\eqref{cor:combinatorial-identity} is zero for $0< j \leq r$.
-To utilize the corollary~\eqref{cor:combinatorial-identity}, we have to move $j=0$ out of summation
+\end{lemma}
+In particular, the sum in lemma~\eqref{cor:combinatorial-identity} is zero for $0< j \leq r$.
+To utilize the lemma~\eqref{cor:combinatorial-identity}, we have to move $j=0$ out of summation
 in~\eqref{eq:rearranging-terms} to avoid division by zero in $\frac{(-1)^r}{j}$.
 Therefore,
 \begin{equation*}
@@ -73,7 +73,7 @@ Therefore,
         &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
     \end{split}
 \end{equation*}
-Hence, we simplify the equation above by using~\eqref{cor:combinatorial-identity} so that
+Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqref{cor:combinatorial-identity}
 \begin{equation*}
     \begin{split}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}
@@ -93,7 +93,7 @@ we collapse the common terms across two sums
         &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1} + 2 \sum_{\mathrm{odd \; \ell}} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell}
     \end{split}
 \end{equation*}
-Assuming that $\coeffA{m}{r}$ is defined by the odd-power identity~\eqref{conj:odd-power-identity},
+Assuming that $\coeffA{m}{r}$ is defined by the odd-power identity in~\eqref{conj:odd-power-identity},
 we obtain the following relation for polynomials in $n$
 \begin{equation*}
     \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
