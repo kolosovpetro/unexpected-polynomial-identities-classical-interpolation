@@ -210,16 +210,6 @@ Finally, we define the following recurrence relation for coefficients $\coeffA{m
     It is assumed that $\bernoulli{1}=\frac{1}{2}$.
 \end{proposition}
 
-Thus, the conjecture~\eqref{conj:odd-power-identity} is true
-
-\begin{theorem}
-    \label{theorem:odd-power-identity}
-    There is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
-    \begin{align*}
-        n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
-    \end{align*}
-\end{theorem}
-
 For example,
 \input{sections/figures/05_fig_coefficients_a}
 Properties of the coefficients $\coeffA{m}{r}$
@@ -241,34 +231,3 @@ Properties of the coefficients $\coeffA{m}{r}$
     n^{11} &= \sum_{k=1}^{n} 2772 k^5(n-k)^5 + 660 k^2(n-k)^2 - 1386k(n-k) + 1 \\
     n^{13} &= \sum_{k=1}^{n} 51480 k^7(n-k)^7 - 60060 k^3(n-k)^3 + 491400k^2(n-k)^{2} - 450054k(n-k) + 1
 \end{align*}
-
-\begin{proposition}
-    \begin{align*}
-        T_{m} (n, k) = \sum_{t=1}^{m+1} (-1)^t \binom{m+1}{t} T_{m} (n-t, k)
-    \end{align*}
-\end{proposition}
-
-\begin{proposition}
-    \begin{align*}
-        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^t \binom{m+1}{t} T_{m} (n-t, k)
-    \end{align*}
-\end{proposition}
-
-\begin{proposition}
-    \begin{align*}
-        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^t \binom{m}{t} T_{m-1} (n-t, k)
-    \end{align*}
-\end{proposition}
-
-\begin{proposition}
-    \begin{align*}
-    (x-2a)
-        ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=a+1}^{x-a} (k-a)^r (x-k-a)^r
-    \end{align*}
-\end{proposition}
-
-\begin{proposition}
-    \begin{align*}
-        \sum_{t=1}^{n} t^{2m+1} = \sum_{t=1}^{n} \sum_{k=1}^{t} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
-    \end{align*}
-\end{proposition}

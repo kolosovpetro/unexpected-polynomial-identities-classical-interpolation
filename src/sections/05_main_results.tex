@@ -1,0 +1,40 @@
+﻿Thus, the conjecture~\eqref{conj:odd-power-identity} is true
+
+\begin{theorem}
+    \label{theorem:odd-power-identity}
+    There is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
+    \begin{align*}
+        n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
+    \end{align*}
+\end{theorem}
+
+\begin{proposition}
+    \begin{align*}
+        T_{m} (n, k) = \sum_{t=1}^{m+1} (-1)^t \binom{m+1}{t} T_{m} (n-t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    \begin{align*}
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^t \binom{m+1}{t} T_{m} (n-t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    \begin{align*}
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^t \binom{m}{t} T_{m-1} (n-t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    \begin{align*}
+    (x-2a)
+        ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=a+1}^{x-a} (k-a)^r (x-k-a)^r
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    \begin{align*}
+        \sum_{t=1}^{n} t^{2m+1} = \sum_{t=1}^{n} \sum_{k=1}^{t} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
+    \end{align*}
+\end{proposition}

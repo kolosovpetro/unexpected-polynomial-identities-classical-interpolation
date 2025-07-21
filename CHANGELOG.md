@@ -19,3 +19,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add section for recurrence formula
 - Add acknowledgements
 - Update recurrence relation section
+- Add section for main results
