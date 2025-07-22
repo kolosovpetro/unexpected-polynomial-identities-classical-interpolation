@@ -60,6 +60,12 @@ Petro Kolosov.
   \href{https://www.linkedin.com/pulse/problem-triangle-developing-polynomial-function-f-n-m-albert-tkaczyk/}{\texttt{LinkedIn}},
   2018.
 
+\bibitem{unusual_identity_for_odd_powers}
+{Kolosov, Petro}.
+\newblock {106.37 An unusual identity for odd-powers}.
+\newblock {\em {The Mathematical Gazette}}, 106(567):509--513, 2022.
+\newblock \url{https://doi.org/10.1017/mag.2022.129}.
+
 \bibitem{oeis_numerical_triangle_row_sums_give_fifth_powers}
 Petro Kolosov.
 \newblock {Numerical triangle, row sums give fifth power, Entry A300656 in The
@@ -105,12 +111,6 @@ Petro Kolosov.
   derivatives of polynomials.
 \newblock {\em arXiv preprint arXiv:1608.00801}, 2016.
 \newblock \url{https://arxiv.org/abs/1608.00801}.
-
-\bibitem{unusual_identity_for_odd_powers}
-{Kolosov, Petro}.
-\newblock {106.37 An unusual identity for odd-powers}.
-\newblock {\em {The Mathematical Gazette}}, 106(567):509--513, 2022.
-\newblock \url{https://doi.org/10.1017/mag.2022.129}.
 
 \bibitem{another_approach_to_get_derivative_of_odd_power}
 Petro Kolosov.
