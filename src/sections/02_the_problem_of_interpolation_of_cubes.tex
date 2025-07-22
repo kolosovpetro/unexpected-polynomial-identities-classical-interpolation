@@ -21,9 +21,15 @@ The process of finding new data points based on the range of a discrete set
 of known data points is called interpolation.
 Interpolation, as we know it today, was developed in 1674--1684 by Isaac Newton
 in his works referenced as foundation of classical interpolation theory~\cite{meijering2002chronology}.
-For instance, Newton's series for $n^3$ is
+For instance, Newton's interpolation formula addresses the question~\eqref{quest:interpolation-cubes} immediately,
+because
 \begin{align*}
-    n^3 = 6 \binom{n}{3} + 6\binom{n}{2} + 1 \binom{n}{1} + 0\binom{n}{0}
+    27 = 6 \binom{3}{3} + 6 \binom{3}{2} + 1 \binom{3}{1} + 0\binom{3}{0} = 6 + 18 + 3
+\end{align*}
+where $6,6,1,0$ is the first row in table~\eqref{tab:finite-differences-cubes}.
+In general,
+\begin{align*}
+    n^3 = 6 \binom{n}{3} + 6 \binom{n}{2} + 1\binom{n}{1} + 0 \binom{n}{0}
 \end{align*}
 because $f(x) = \sum_{k=0}^{d} \Delta^{d-k} f(0) \binom{x}{d-k}$, see~\cite[~p. 190]{graham1994concrete}.
 
@@ -38,8 +44,8 @@ His mind was occupied by only a single thought:
 That mindset inspired our student to start his own mathematical journey.
 
 By observing the table of finite differences~\eqref{tab:finite-differences-cubes} we can notice that
-the first order finite difference of cubes may be expressed in terms of its
-third order finite difference $\Delta^3(n^3) = 6$, as follows
+the first finite difference of cubes may be expressed in terms of its
+third finite differences $\Delta^3(n^3) = 6$, as follows
 \begin{align*}
     \begin{split}
         \Delta(0^3) &= 1+6 \cdot 0 \\
@@ -58,7 +64,7 @@ By using sigma notation, we get
 However, there is a more beautiful way to prove that $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$.
 We refer to one of the finest articles in the area of polynomials and power sums,
 that is \textit{Johann Faulhaber and sums of powers} written by Donald Knuth~\cite{knuth1993johann}.
-Indeed, this article is a great source to reach piece of mind in mathematics.
+Indeed, this article is a great mean to reach piece of mind in mathematics.
 We now focus on the odd power identities shown at~\cite[~p. 9]{knuth1993johann}
 \begin{align*}
     n^1 &= \binom{n}{1} \\
@@ -91,7 +97,7 @@ We can observe that triangular numbers $\binom{n+1}{2}$ are equivalent to
     \binom{n+1}{2} = \sum_{k=0}^{n} k
 \end{align*}
 because $\binom{n+1}{m+1} = \sum_{k=0}^{n} \binom{k}{m}$.
-This leads to the identity in finite differences of cubes
+This leads us to the identity in finite differences of cubes
 \begin{align*}
     \Delta n^3 = (n+1)^3 - n^3 = 1 + 6 \sum_{k=0}^{n} k
 \end{align*}
