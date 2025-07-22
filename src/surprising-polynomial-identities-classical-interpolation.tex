@@ -30,14 +30,6 @@
 \newcommand \brackCoefficient [3] {{#1 \brack #2}_{#3}}
 \newcommand \braceCoefficient [3] {{#1 \brace #2}_{#3}}
 
-% free foot note
-%\let\svthefootnote\thefootnote
-%\newcommand\freefootnote[1]{%
-%    \let\thefootnote\relax%
-%    \footnotetext{#1}%
-%    \let\thefootnote\svthefootnote%
-%}
-
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
@@ -57,106 +49,110 @@
 \title[Surprising Polynomial Identities arising from a Class. Interpolation Problem]
 {Surprising Polynomial Identities arising from a Classical Interpolation Problem}
 \author[Petro Kolosov]{Petro Kolosov}
-%\date{\today}
+\date{\today}
 
 % metadata
-%\email{kolosovp94@gmail.com}
-%\address{Software Developer, DevOps Engineer}
-%\urladdr{https://kolosovpetro.github.io}
-%\subjclass[2010]{26E70, 05A30}
-%\keywords{Polynomial identities,
-%    Finite differences,
-%    Binomial coefficients,
-%    Faulhaber's formula,
-%    Power sums,
-%    Bernoulli numbers,
-%    Combinatorics,
-%    Pascal's triangle,
-%    OEIS}
-%\hypersetup{
-%    pdftitle={Surprising Polynomial Identities arising from a Classical Interpolation Problem},
-%    pdfproducer={LaTeX},
-%    pdfcreator={pdflatex},
-%    pdfauthor={Petro Kolosov},
-%    pdfsubject={New Polynomial Identities Derived via Classical Interpolation Techniques},
-%    pdfkeywords={Polynomial identities,
-%        Finite differences,
-%        Binomial coefficients,
-%        Faulhaber's formula,
-%        Power sums,
-%        Bernoulli numbers,
-%        Combinatorics,
-%        Pascal's triangle,
-%        OEIS}
-%}
+\email{kolosovp94@gmail.com}
+\address{Software Developer, DevOps Engineer}
+\urladdr{https://kolosovpetro.github.io}
+\subjclass[2010]{26E70, 05A30}
+\keywords{Polynomial identities,
+    Finite differences,
+    Binomial coefficients,
+    Faulhaber's formula,
+    Power sums,
+    Bernoulli numbers,
+    Combinatorics,
+    Pascal's triangle,
+    OEIS}
+\hypersetup{
+    pdftitle={Surprising Polynomial Identities arising from a Classical Interpolation Problem},
+    pdfproducer={LaTeX},
+    pdfcreator={pdflatex},
+    pdfauthor={Petro Kolosov},
+    pdfsubject={New Polynomial Identities Derived via Classical Interpolation Techniques},
+    pdfkeywords={Polynomial identities,
+    Finite differences,
+    Binomial coefficients,
+    Faulhaber's formula,
+    Power sums,
+    Bernoulli numbers,
+    Combinatorics,
+    Pascal's triangle,
+    OEIS}
+}
 
 \begin{document}
 
     \maketitle
 
-%    \begin{abstract}
-%        \input{sections/01_abstract}
-%    \end{abstract}
+    \begin{abstract}
+        \input{sections/00_abstract}
+    \end{abstract}
 
-%    \tableofcontents
-
-%    \freefootnote{Sources: \url{https://github.com/kolosovpetro/surprising-polynomial-identities-classical-interpolation}}
+    \tableofcontents
 
 
     \section{Discussion on interpolation of cubes}
     \label{sec:the-problem-of-interpolation-of-cubes}
-    \input{sections/02_the_problem_of_interpolation_of_cubes}
+    \input{sections/01_discussion_on_interpolation_of_cubes}
 
 
     \section{A system of linear equations}
     \label{sec:system-of-linear-equations-approach}
-    \input{sections/03_system_of_linear_equations_approach}
+    \input{sections/02_system_of_linear_equations_approach}
 
 
     \section{Recurrence relation}
     \label{sec:recurrence-relation-approach}
-    \input{sections/04_recurrence_relation_approach}
+    \input{sections/03_recurrence_relation}
 
 
     \section{Main results}
     \label{sec:main-results}
-    \input{sections/05_main_results}
+    \input{sections/04_main_results}
 
 
-%    \section{Related works}\label{sec:related-works}
-%    \input{sections/06_related_works}
-%
-%
-%    \section{Future research}\label{sec:future-research}
-%    \input{sections/07_future_research}
-%
-%
-%    \section{Conclusions}\label{sec:conclusions}
-%    \input{sections/conclusions}
-%
-%
-%    \section*{Acknowledgements}
-%    \input{sections/08_acknowledgements}
+    \section{Related research}\label{sec:related-research}
+    \input{sections/05_related_research}
+
+
+    \section{Future research}\label{sec:future-research}
+    \input{sections/06_future_research}
+
+
+    \section{Conclusions}\label{sec:conclusions}
+    \input{sections/07_conclusions}
+
+
+    \section*{Acknowledgements}
+    \input{sections/08_acknowledgements}
 
     \bibliographystyle{unsrt}
     \bibliography{surprising-polynomial-identities-classical-interpolation}
 
-%    \noindent \textbf{Version:} \input{sections/version}
-%    \\[1em]
-%    \noindent \textbf{License:} This work is licensed under a
-%    \href{https://creativecommons.org/licenses/by/4.0/}
-%    {\texttt{Creative Commons Attribution 4.0 International License (CC BY 4.0)}}.
+    \noindent \textbf{Version:} \input{sections/version}
+    \\[1em]
+    \noindent \textbf{License:} This work is licensed under a
+    \href{https://creativecommons.org/licenses/by/4.0/}
+    {\texttt{Creative Commons Attribution 4.0 International License (CC BY 4.0)}}.
+    \\[1em]
+    \noindent \textbf{Sources}:
+    \href{https://github.com/kolosovpetro/surprising-polynomial-identities-classical-interpolation}
+    {\texttt{github.com/kolosovpetro/surprising-polynomial-identities}}
 
     \clearpage
+
+
     \section*{Application 1: Mathematica programs}
     \input{sections/application_1_mathematica_programs}
 
 
-%    \section*{Application 2: Systems of linear equations examples}
-%    \input{sections/application_2_systems_of_linear_equations_examples}
-%
-%
-%    \section*{Application 3: Examples of coefficients A}
-%    \input{sections/application_3_coefficients_a}
+    \section*{Application 2: Systems of linear equations examples}
+    \input{sections/application_2_systems_of_linear_equations_examples}
+
+
+    \section*{Application 3: Examples of coefficients A}
+    \input{sections/application_3_coefficients_a}
 
 \end{document}

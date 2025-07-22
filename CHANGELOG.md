@@ -24,3 +24,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update manuscript structure
 - Implement mathematica programs
 - Add labels for main results
+- Update files structure
