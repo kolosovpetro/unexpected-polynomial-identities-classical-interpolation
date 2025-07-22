@@ -87,8 +87,8 @@ It easy to see that
 \end{align*}
 because $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$.
 
-Moreover, the concept above allows to reach $N$-fold power sums $\sum^N k^{2m+1}$
-or finite differences $\Delta^N k^{2m+1}$ of odd powers by simply altering
+Moreover, the concept above allows us to reach $N$-fold power sums $\sum^N k^{2m+1}$
+or finite differences $\Delta^N k^{2m+1}$ by simply altering
 binomial coefficients indexes.
 Quite strong and impressive.
 
@@ -97,7 +97,7 @@ We can observe that triangular numbers $\binom{n+1}{2}$ are equivalent to
     \binom{n+1}{2} = \sum_{k=0}^{n} k
 \end{align*}
 because $\binom{n+1}{m+1} = \sum_{k=0}^{n} \binom{k}{m}$.
-This leads us to the identity in finite differences of cubes
+This leads us to the fact that
 \begin{align*}
     \Delta n^3 = (n+1)^3 - n^3 = 1 + 6 \sum_{k=0}^{n} k
 \end{align*}
@@ -106,7 +106,7 @@ to get the closed form of the sum $\sum_{k=0}^{n} k$
 \begin{align*}
     \sum_{k=0}^{n} k = \frac{1}{2}(n+n^2)
 \end{align*}
-Thus, the finite difference $\Delta(n^3)$ takes a well-known form,
+Thus, the finite difference $\Delta(n^3)$ takes the well-known form,
 which matches Binomial theorem~\cite{abramowitz1988handbook}
 \begin{align*}
     \Delta(n^3)
@@ -158,7 +158,7 @@ By applying compact sigma sum notation yields an identity for cubes $n^3$
 \begin{align*}
     n^3 = n + \sum_{k=0}^{n-1} 6k(n-k)
 \end{align*}
-We can freely move the term $n$ under the summation because there are exactly $n$ iterations.
+We can freely move the term $n$ under the summation, because there are exactly $n$ iterations.
 Therefore,
 \begin{align*}
     n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1
