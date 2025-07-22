@@ -15,6 +15,14 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{definition}
 
+\begin{proposition}[Symmetry of $T_m$]
+    \label{prop:Tm-symmetry}
+    For integers $n$ and $k$
+    \begin{align*}
+        T_{m} (n, k) = T_{m} (n, n-k)
+    \end{align*}
+\end{proposition}
+
 \begin{proposition}[Recurrence for $T_m$]
     \label{prop:Tm-recurrence}
     For non-negative integers $m$ and $n$
@@ -34,7 +42,7 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
 \begin{corollary}[Odd power decomposition $m-1$]
     \label{cor:odd-power-decomposition-m-1}
     \begin{align*}
-        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^t \binom{m}{t} T_{m-1} (n-t, k)
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^{t-1} \binom{m}{t} T_{m-1} (n-t, k)
     \end{align*}
 \end{corollary}
 
@@ -42,9 +50,19 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \label{prop:odd-power-binomial}
     For integers $n$ and $a$ such that $n-2a \geq 0$
     \begin{align*}
-    (n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    (n-2a)
+        ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
     \end{align*}
 \end{proposition}
+
+\begin{corollary}[Odd power binomial form shifted]
+    \label{prop:odd-power-binomial-shifted}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n-2a)
+        ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a}^{n-a-1} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    \end{align*}
+\end{corollary}
 
 \begin{proposition}[Sum of odd powers]
     \label{prop:sum-of-odd-powers}

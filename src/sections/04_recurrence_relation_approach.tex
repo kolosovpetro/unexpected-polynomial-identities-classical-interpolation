@@ -206,20 +206,18 @@ Finally, we define the following recurrence relation for coefficients $\coeffA{m
     where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher}.
     It is assumed that $\bernoulli{1}=\frac{1}{2}$.
 \end{proposition}
-
 For example,
 \input{sections/figures/05_fig_coefficients_a}
 Properties of the coefficients $\coeffA{m}{r}$
 \begin{itemize}
-    \item $\coeffA{m}{m} = \binom{2m}{m}$
-    \item $\coeffA{m}{r} = 0$ for $m < 0$ and $r > m$
-    \item $\coeffA{m}{r} = 0$ for $r < 0$
-    \item $\coeffA{m}{r} = 0$ for $\frac{m}{2} \leq r < m$
-    \item $\coeffA{m}{0} = 1$ for $m \geq 0$
-    \item $\coeffA{m}{r}$ are integers for $m \leq 11$
-    \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$
+    \item $\coeffA{m}{m} = \binom{2m}{m}$.
+    \item $\coeffA{m}{r} = 0$ for $r < 0$ and $r > m$.
+    \item $\coeffA{m}{r} = 0$ for $m < 0$.
+    \item $\coeffA{m}{r} = 0$ for $\frac{m}{2} \leq r < m$.
+    \item $\coeffA{m}{0} = 1$ for $m \geq 0$.
+    \item $\coeffA{m}{r}$ are all integers up to row $m = 11$.
+    \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$.
 \end{itemize}
-
 \begin{align*}
     n^3 &= \sum_{k=1}^{n} 6k(n-k) + 1 \\
     n^5 &= \sum_{k=1}^{n} 30k^2(n-k)^2 + 1 \\

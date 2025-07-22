@@ -9,7 +9,11 @@ PrintTriangleA::usage="PrintTriangleA[m] prints triangle of coefficients A for g
 BivariateSumT::usage="Defines bivariate sum T(m,n,k)."
 RecurrenceForT::usage="Validates the recurrence for the bivariate sum T(m,n,k)."
 OddPowerDecomposition::usage="Validates the identity Odd power decomposition."
-OddPowerBinomialForm::usage="Validates the identity Odd power binomial form."
+OddPowerDecompositionMMinus1::usage="Validates the identity Odd power decomposition m-1."
+OddPowerBinomialForm::usage="Validates the identity Odd power binomial form shifted."
+OddPowerBinomialFormShifted::usage="Validates the identity Odd power binomial form."
+TableFormRecurrenceForT::usage="Prints Tm recurrence in the form of triangle."
+TableFormBivariateSumT::usage="Prints Tm in the form of triangle."
 
 Begin["`Private`"]
 Unprotect[Power];
@@ -26,7 +30,11 @@ PrintTriangleA[m_]:= TableForm[Table[A[n, k], {n, 0, m}, {k, 0, n}], TableAlignm
 BivariateSumT[m_, n_, k_]:= Sum[A[m, r] * k^r (n-k)^r, {r, 0, m}];
 RecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t-1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}];
 OddPowerDecomposition[n_, m_]:= Sum[Sum[(-1)^(t-1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}], {k, 1, n}];
+OddPowerDecompositionMMinus1[n_, m_]:= Sum[Sum[(-1)^(t-1) * Binomial[m, t] * BivariateSumT[m-1, n-t, k], {t, 1, m}], {k, 1, n}];
 OddPowerBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a)^r * (n - a - k)^r, {k, a+1, n - a}], {r, 0, m}];
+OddPowerBinomialFormShifted[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a)^r * (n - a - k)^r, {k, a, n - a - 1}], {r, 0, m}];
+TableFormRecurrenceForT[m_, rows_]:= TableForm[Table[RecurrenceForT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+TableFormBivariateSumT[m_, rows_]:=TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 
 End[ ]
 
