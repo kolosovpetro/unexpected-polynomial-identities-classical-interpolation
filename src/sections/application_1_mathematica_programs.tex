@@ -5,7 +5,22 @@ Refer to the
 {\texttt{GitHub repository}} to find the Mathematica files
 \begin{itemize}
     \item \texttt{surprising-polynomial-identities-classical-interpolation.m} --- is the package file
-    where all functions are defined.
+    where all functions are defined, execute it (Shift+Enter) before testing.
     \item \texttt{surprising-polynomial-identities-classical-interpolation.nb} --- is a working notebook
     where functions are used to validate the main results.
+\end{itemize}
+To test equation use the following commands
+\begin{itemize}
+    \item $\texttt{OddPowerIdentity[n, 2]} = (n+1) \left(n^3-n^2+n-1\right) n+n$ --- validates odd power
+    identity~\eqref{theorem:odd-power-identity} for $m=0,1,2,\ldots$, in this example $m=2$.
+    \item $\texttt{OddPowerIdentitySimplified[n, 4]} = n^9$ --- validates odd power
+    identity~\eqref{theorem:odd-power-identity} for $m=0,1,2,\ldots$ and simplifies it, in this example $m=4$.
+    \item $\texttt{BivariateSumT[10, 3, 2]}$
+    \item $\texttt{RecurrenceForT[10, 3 , 2]}$
+    \item \texttt{TableForm[Table[BivariateSumT[3, n, k], \{n, 0, 10\}, \{k, 0, n\}],
+        TableAlignments -> Left]}
+    \item \texttt{TableForm[Table[RecurrenceForT[3, n, k], \{n, 0, 10\}, \{k, 0, n\}],
+        TableAlignments -> Left]}
+    \item $\texttt{OddPowerDecomposition[n, 5]} = n^{11}$
+    \item $\texttt{OddPowerBinomialForm[2, 15, 5]} = 3125 = 5^5$
 \end{itemize}

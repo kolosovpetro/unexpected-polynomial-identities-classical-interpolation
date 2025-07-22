@@ -4,7 +4,7 @@ BeginPackage["SurprisingPolynomialIdentitiesClassicalInterpolation`"]
 
 A::usage="A[n, k] returns the real coefficient A of non-negative integers n, k such that n <= k."
 OddPowerIdentity::usage="Validates odd power identity."
-OddPowerIdentityExpanded::usage="Validates odd power identity expanded form."
+OddPowerIdentitySimplified::usage="Validates odd power identity expanded form."
 PrintTriangleA::usage="PrintTriangleA[m] prints triangle of coefficients A for given non negative integer m."
 BivariateSumT::usage="Defines bivariate sum T(m,n,k)."
 RecurrenceForT::usage="Validates the recurrence for the bivariate sum T(m,n,k)."
@@ -21,7 +21,7 @@ A[n_, k_] := (2k + 1) * Binomial[2k, k] * Sum[A[n, j] * Binomial[j, 2k + 1] * (-
 A[n_, k_] := (2n + 1) * Binomial[2n, n] /; k == n;
 
 OddPowerIdentity[n_, m_]:= Sum[Sum[A[m,r] * k^r * (n-k)^r, {k, 1, n}], {r, 0, m}];
-OddPowerIdentityExpanded[n_, m_]:= Expand[Sum[Sum[A[m,r] * k^r * (n-k)^r, {k, 1, n}], {r, 0, m}]];
+OddPowerIdentitySimplified[n_, m_]:= Expand[Sum[Sum[A[m,r] * k^r * (n-k)^r, {k, 1, n}], {r, 0, m}]];
 PrintTriangleA[m_]:= TableForm[Table[A[n, k], {n, 0, m}, {k, 0, n}], TableAlignments -> Left];
 BivariateSumT[m_, n_, k_]:= Sum[A[m, r] * k^r (n-k)^r, {r, 0, m}];
 RecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t-1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}];
