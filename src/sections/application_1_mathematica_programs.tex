@@ -1,24 +1,155 @@
-Wew support out research with additional Wolfram Mathematica programs to validate
-the main results.
-Refer to the
+We support our theoretical findings with Wolfram~Mathematica programs that verify the main results of this manuscript.
+All source code and computational notebooks are available in the
 \href{https://github.com/kolosovpetro/surprising-polynomial-identities-classical-interpolation}
-{\texttt{GitHub repository}} to find the Mathematica files
+{\texttt{GitHub repository}}.
+The repository includes the following files:
 \begin{itemize}
-    \item \texttt{surprising-polynomial-identities-classical-interpolation.m} --- is the package file
-    where all functions are defined, execute it (Shift+Enter) before testing.
-    \item \texttt{surprising-polynomial-identities-classical-interpolation.nb} --- is a working notebook
-    where functions are used to validate the main results.
+    \item \texttt{surprising-polynomial-identities-classical-interpolation.m} --- the package file where
+    all Mathematica functions are defined.
+    Load it into your session using \texttt{filename.m} or by evaluating the file with \texttt{Shift+Enter}.
+    \item \texttt{surprising-polynomial-identities-classical-interpolation.nb} --- a working notebook that demonstrates
+    the usage of these functions to validate the manuscript’s results.
 \end{itemize}
-To test equation use the following commands
-\begin{itemize}
-    \item \texttt{OddPowerIdentity[n, m]}
-    \item \texttt{OddPowerIdentitySimplified[n, m]}
-    \item \texttt{BivariateSumT[m, n, k]}
-    \item \texttt{RecurrenceForT[m, n, k]}
-    \item \texttt{TableFormBivariateSumT[m, rows]}
-    \item \texttt{TableFormRecurrenceForT[m, rows]}
-    \item \texttt{OddPowerDecomposition[n, m]}
-    \item \texttt{OddPowerDecompositionMMinus1[n, m]}
-    \item \texttt{OddPowerBinomialForm[m, n, a]}
-    \item \texttt{OddPowerBinomialFormShifted[m, n, a]}
-\end{itemize}
+
+Below we list the Mathematica functions with their corresponding mathematical statements:
+\begin{center}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Mathematica function}                 & \textbf{Validates}                                            \\
+        \midrule
+        \texttt{OddPowerIdentity[n, m]}               & Theorem~\ref{theorem:odd-power-identity}                      \\
+        \texttt{OddPowerIdentitySimplified[n, m]}     & Theorem~\ref{theorem:odd-power-identity} (in simplified form) \\
+        \texttt{BivariateSumT[m, n, k]}               & Definition~\ref{def:bivariate-sum-Tm}                         \\
+        \texttt{RecurrenceForT[m, n, k]}              & Proposition~\ref{prop:Tm-recurrence}                          \\
+        \texttt{TableFormBivariateSumT[m, rows]}      & Tabular view of $T_m(n,k)$                                    \\
+        \texttt{TableFormRecurrenceForT[m, rows]}     & Tabular view of the recurrence                                \\
+        \texttt{OddPowerDecomposition[n, m]}          & Proposition~\ref{prop:odd-power-decomposition}                \\
+        \texttt{OddPowerDecompositionMMinus1[n, m]}   & Corollary~\ref{cor:odd-power-decomposition-m-1}               \\
+        \texttt{OddPowerBinomialForm[m, n, a]}        & Proposition~\ref{prop:odd-power-binomial}                     \\
+        \texttt{OddPowerBinomialFormShifted[m, n, a]} & Corollary~\ref{prop:odd-power-binomial-shifted}               \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+To test and experiment with these identities computationally, load the package and call any of the
+functions listed above with appropriate parameters.
+
+\subsection*{Examples of Mathematica Functions}
+
+This subsection provides sample evaluations of the Mathematica functions
+developed to validate the main results presented in the manuscript.
+All computations were performed using the package \\
+\texttt{surprising-polynomial-identities-classical-interpolation.m}.
+
+\paragraph{Coefficients \texorpdfstring{$\coeffA{m}{r}$}{A(m,r)} table}
+\begin{verbatim}
+PrintTriangleA[5]
+\end{verbatim}
+\begin{align*}
+    \begin{array}{l}
+        \{1\} \\
+        \{1,\ 6\} \\
+        \{1,\ 0,\ 30\} \\
+        \{1,\ -14,\ 0,\ 140\} \\
+        \{1,\ -120,\ 0,\ 0,\ 630\} \\
+        \{1,\ -1386,\ 660,\ 0,\ 0,\ 2772\}
+    \end{array}
+\end{align*}
+
+\paragraph{Odd Power Identity}
+\begin{verbatim}
+OddPowerIdentity[n, 2]
+\end{verbatim}
+\begin{align*}
+    n + n(1 + n)(-1 + n - n^2 + n^3)
+\end{align*}
+\begin{verbatim}
+OddPowerIdentitySimplified[n, 4]
+\end{verbatim}
+\begin{align*}
+    n^9
+\end{align*}
+
+\paragraph{Recurrence and Definition of \texorpdfstring{$T_m(n,k)$}{Tm(n,k)}}
+\begin{verbatim}
+RecurrenceForT[10, 3, 2]
+BivariateSumT[10, 3, 2]
+\end{verbatim}
+\begin{align*}
+    T_{10}(3,2) = 5230176601 \quad \text{(both via recurrence and explicit form)}
+\end{align*}
+\begin{verbatim}
+Expand[BivariateSumT[2, n, k]]
+\end{verbatim}
+\begin{align*}
+    1 + 30k^4 - 60k^3 n + 30k^2 n^2
+\end{align*}
+\begin{verbatim}
+BivariateSumT[2, n, k]
+\end{verbatim}
+\begin{align*}
+    1 + 30k^2(n-k)^2
+\end{align*}
+
+\paragraph{Tables of \texorpdfstring{$T_m$}{Tm}}
+\begin{verbatim}
+TableFormRecurrenceForT[3, 5]
+TableFormBivariateSumT[3, 5]
+\end{verbatim}
+\begin{align*}
+    \begin{array}{l}
+        \{1\} \\
+        \{1,\ 1\} \\
+        \{1,\ 127,\ 1\} \\
+        \{1,\ 1093,\ 1093,\ 1\} \\
+        \{1,\ 3739,\ 8905,\ 3739,\ 1\} \\
+        \{1,\ 8905,\ 30157,\ 30157,\ 8905,\ 1\}
+    \end{array}
+\end{align*}
+
+\paragraph{Odd Power Decomposition}
+\begin{verbatim}
+OddPowerDecomposition[n, 5]
+\end{verbatim}
+\begin{align*}
+    n^{11}
+\end{align*}
+\begin{verbatim}
+OddPowerDecompositionMMinus1[n, 6]
+\end{verbatim}
+\begin{align*}
+    n^{11}
+\end{align*}
+
+\paragraph{Binomial Form and Shifted Version}
+\begin{verbatim}
+OddPowerBinomialForm[2, 15, 5]
+5^5
+\end{verbatim}
+\begin{align*}
+    3125
+\end{align*}
+\begin{verbatim}
+OddPowerBinomialForm[2, n, 3]
+Simplify[OddPowerBinomialForm[2, n, 3]]
+\end{verbatim}
+\begin{align*}
+    -7776 + 6480n - 2160n^2 + 360n^3 - 30n^4 + n^5 = (-6 + n)^5
+\end{align*}
+\begin{verbatim}
+OddPowerBinomialForm[3, 16, 4]
+8^7
+\end{verbatim}
+\begin{align*}
+    2097152
+\end{align*}
+\begin{verbatim}
+Simplify[OddPowerBinomialFormShifted[2, n, 2]]
+\end{verbatim}
+\begin{align*}
+(-4 + n)
+    ^5
+\end{align*}
+
+These examples confirm the correctness of main results of this manuscript.
+
