@@ -126,7 +126,8 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{proof}
 \end{proposition}
 
-\begin{proposition}[Odd power central decomposition] For non-negative integers $m$ and $n$
+\begin{proposition}[Odd power central decomposition]
+    For non-negative integers $m$ and $n$
     \label{prop:odd-power-decomposition-central}
     \begin{align*}
     (n+m)
@@ -138,7 +139,8 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{proof}
 \end{proposition}
 
-\begin{proposition}[Odd power central decomposition shifted] For non-negative integers $m$ and $n$
+\begin{proposition}[Odd power central decomposition shifted]
+    For non-negative integers $m$ and $n$
     \label{prop:odd-power-decomposition-central-shifted}
     \begin{align*}
     (n+m)
@@ -159,6 +161,13 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
         ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
     \end{align*}
     \begin{proof}
+        By observing the summation limits we can see that $k$ runs as $k=a+1,a+2,a+3,\ldots,a+n-a$, which
+        implies that $(k-a)=1,2,3,\ldots, n$.
+        By observing the term $(n-k-a)$ we see that $(n-k-a)=n-1,n-2,n-3,\ldots,0$.
+        Thus, by reindexing the sum
+        $(n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n-2a} \coeffA{m}{r} (a+k-a)^r (n-(a+k)-a)^r$
+        the statement~\eqref{prop:odd-power-binomial} is equivalent to~\eqref{theorem:odd-power-identity}
+        with setting $n \rightarrow n-2a$.
     \end{proof}
 \end{proposition}
 
