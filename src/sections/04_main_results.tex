@@ -8,7 +8,8 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{theorem}
 
-\begin{definition}[Bivariate sum $T_m$] For integers $n,k$ and $m \geq 0$
+\begin{definition}[Bivariate sum $T_m$]
+    For integers $n,k$ and $m \geq 0$
     \label{def:bivariate-sum-Tm}
     \begin{align*}
         T_{m}(n,k) = \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
@@ -30,7 +31,7 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
         T_{m} (n, k) = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
     \end{align*}
     \begin{proof}
-        The polynomial $T_{n} (n,k)$ is a polynomial of degree $m$ in $n$.
+        The polynomial $T_{m} (n,k)$ is a polynomial of degree $m$ in $n$.
         Thus, the backward difference with respect to $n$ is
         $\nabla^{m+1} T_{m} (n, k) = \sum_{t=0}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n-t, k) = 0$.
         By isolating $(-1)^{0} \binom{m+1}{0} T_{m} (n-0, k)$ yields
@@ -38,27 +39,8 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{proof}
 \end{proposition}
 
-\begin{proposition}[Forward Recurrence for $T_m$]
-    \label{prop:Tm-recurrence-forward}
-    \begin{align*}
-        T_{m} (n,k) = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
-    \end{align*}
-    \begin{proof}
-    \end{proof}
-\end{proposition}
-
-\begin{proposition}[Central Recurrence for $T_m$]
-    \label{prop:Tm-recurrence-central}
-    \begin{align*}
-        T_{m} \left(n + \frac{m}{2}, k \right)
-        = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} \left( n+\frac{m}{2}-t, k \right)
-    \end{align*}
-    \begin{proof}
-    \end{proof}
-\end{proposition}
-
 \begin{proposition}[Odd power backward decomposition]
-    \label{prop:odd-power-decomposition}
+    \label{prop:odd-power-decomposition-backward}
     For non-negative integers $m$ and $n$
     \begin{align*}
         n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
@@ -69,12 +51,105 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{proof}
 \end{proposition}
 
+\begin{proposition}[Odd power backward decomposition shifted]
+    \label{prop:odd-power-decomposition-backward-shifted}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity},
+        backward recurrence~\eqref{prop:Tm-recurrence-backward}, and symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}
+
 \begin{corollary}[Odd power backward decomposition $m-1$]
     \label{cor:odd-power-decomposition-m-1}
     \begin{align*}
         n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^{t+1} \binom{m}{t} T_{m-1} (n-t, k)
     \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-backward}.
+    \end{proof}
 \end{corollary}
+
+\begin{proposition}[Forward Recurrence for $T_m$]
+    \label{prop:Tm-recurrence-forward}
+    \begin{align*}
+        T_{m} (n,k) = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        The polynomial $T_{m} (n,k)$ is a polynomial of degree $m$ in $n$.
+        Thus, the forward difference with respect to $n$ is
+        $\Delta^{m+1} T_{m} (n, k) = \sum_{t=0}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n+t, k) = 0$.
+        By isolating $(-1)^{0} \binom{m+1}{0} T_{m} (n-0, k)$ yields
+        $T_{m} (n, k) = (-1) \sum_{t=1}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n+t, k)$.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition]
+    \label{prop:odd-power-decomposition-forward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}
+        and forward recurrence~\eqref{prop:Tm-recurrence-forward}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition shifted]
+    \label{prop:odd-power-decomposition-forward-shifted}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity},
+        forward recurrence~\eqref{prop:Tm-recurrence-forward}, and symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Central Recurrence for $T_m$]
+    \label{prop:Tm-recurrence-central}
+    \begin{align*}
+        T_{m} \left(n + \frac{m}{2}, k \right)
+        = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} \left( n+\frac{m}{2}-t, k \right)
+    \end{align*}
+    \begin{proof}
+        The polynomial $T_{m} (n,k)$ is a polynomial of degree $m$ in $n$.
+        Thus, the central difference with respect to $n$ is
+        $\delta^{m+1} T_{m} (n, k) = \sum_{t=0}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} \left(n+\frac{m}{2} - t, k\right) = 0$.
+        By isolating $(-1)^{0} \binom{m+1}{0} T_{m} \left(n+\frac{m}{2}-0, k\right)$ yields
+        $T_{m} \left(n+\frac{m}{2}-0, k\right) = (-1) \sum_{t=1}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n+t, k)$.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power central decomposition] For non-negative integers $m$ and $n$
+    \label{prop:odd-power-decomposition-central}
+    \begin{align*}
+    (n+m)
+        ^{4m+1} = \sum_{k=1}^{n} \sum_{t=1}^{2m+1} (-1)^{t} \binom{2m+1}{t} T_{2m} (n+m-t, 2)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}, central recurrence~\eqref{prop:Tm-recurrence-central},
+        by setting $m \rightarrow 2m$.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power central decomposition shifted] For non-negative integers $m$ and $n$
+    \label{prop:odd-power-decomposition-central-shifted}
+    \begin{align*}
+    (n+m)
+        ^{4m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{2m+1} (-1)^{t} \binom{2m+1}{t} T_{2m} (n+m-t, 2)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity},
+        central recurrence~\eqref{prop:Tm-recurrence-central}, and symmetry~\eqref{prop:Tm-symmetry},
+        by setting $m \rightarrow 2m$.
+    \end{proof}
+\end{proposition}
 
 \begin{proposition}[Odd power binomial form]
     \label{prop:odd-power-binomial}
