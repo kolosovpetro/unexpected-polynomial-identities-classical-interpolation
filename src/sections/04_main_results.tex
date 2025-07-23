@@ -41,7 +41,7 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
 \begin{proposition}[Forward Recurrence for $T_m$]
     \label{prop:Tm-recurrence-forward}
     \begin{align*}
-        T_{m} (n,k) = \sum_{t=1}^{m+1} (-1)^{m-t} \binom{m+1}{t} T_{m} (n+t, k)
+        T_{m} (n,k) = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
     \end{align*}
     \begin{proof}
     \end{proof}
@@ -49,6 +49,10 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
 
 \begin{proposition}[Central Recurrence for $T_m$]
     \label{prop:Tm-recurrence-central}
+    \begin{align*}
+        T_{m} \left(n + \frac{m}{2}, k \right)
+        = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} \left( n+\frac{m}{2}-t, k \right)
+    \end{align*}
     \begin{proof}
     \end{proof}
 \end{proposition}
