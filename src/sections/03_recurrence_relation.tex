@@ -1,6 +1,6 @@
 In 2018, the recurrence relation~\cite{alekseyev2018mathoverflow} that evaluates the coefficients $\coeffA{m}{r}$ for
 non-negative integer $m$ was provided by Max Alekseyev, George Washington University.
-The main idea of Alekseyev's approach was to utilize a recurrence relation to evaluate the set of coefficients $\coeffA{m}{r}$
+The main idea of Alekseyev's approach was to utilize a generating function to evaluate the set of coefficients $\coeffA{m}{r}$
 starting from the base case $\coeffA{m}{m}$ and then evaluating the next coefficient $\coeffA{m}{m-1}$
 recursively, and so on up to $\coeffA{m}{0}$.
 We utilize Binomial theorem $(n-k)^r=\sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} k^t$ and a specific version
@@ -12,7 +12,8 @@ of Faulhaber's formula~\cite{beardon1996sums}
     &= \frac{1}{p+1} \left[ \sum_{j} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
 \end{align*}
 The reason we use modified version of Faulhaber's formula is because we tend to omit summation bounds, for simplicity.
-This helps us to collapse the common terms across complex sums, see also~\cite[~p. 2]{knuth1992two}.
+This helps us to collapse the common terms across complex sums, because now the sum extends over all integers $j$,
+while only finitely many terms are non-zero, see also~\cite[~p. 2]{knuth1992two}.
 Therefore, we expand the sum $\sum_{k=1}^{n} k^{r} (n-k)^{r}$ using Binomial theorem
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r} = \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \sum_{k=1}^{n} k^{t+r}

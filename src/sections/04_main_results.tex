@@ -187,3 +187,26 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{proposition}
 
+\begin{proposition}[Sum of odd powers forward decomposition]
+    \label{prop:sum-odd-power-decomposition-forward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sum of odd powers backward decomposition]
+    \label{prop:sum-odd-power-decomposition-backward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sum of odd powers central decomposition]
+    For non-negative integers $m$ and $n$
+    \label{prop:sum-odd-power-decomposition-central}
+    \begin{align*}
+        \sum_{n=1}^{p} (n+m)^{4m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{2m+1} (-1)^{t} \binom{2m+1}{t} T_{2m} (n+m-t, 2)
+    \end{align*}
+\end{proposition}
