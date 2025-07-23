@@ -126,32 +126,6 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{proof}
 \end{proposition}
 
-%\begin{proposition}[Odd power central decomposition]
-%    For non-negative integers $m$ and $n$
-%    \label{prop:odd-power-decomposition-central}
-%    \begin{align*}
-%        n^{2m+1} = \sum_{k=1}^{n+\frac{m}{2}} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} \left( n+\frac{m}{2}-t, k)
-%    \end{align*}
-%    \begin{proof}
-%        Direct consequence of~\eqref{theorem:odd-power-identity}, central recurrence~\eqref{prop:Tm-recurrence-central},
-%        by setting $m \rightarrow 2m$.
-%    \end{proof}
-%\end{proposition}
-
-%\begin{proposition}[Odd power central decomposition shifted]
-%    For non-negative integers $m$ and $n$
-%    \label{prop:odd-power-decomposition-central-shifted}
-%    \begin{align*}
-%    (n+m)
-%        ^{4m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{2m+1} (-1)^{t} \binom{2m+1}{t} T_{2m} (n+m-t, 2)
-%    \end{align*}
-%    \begin{proof}
-%        Direct consequence of~\eqref{theorem:odd-power-identity},
-%        central recurrence~\eqref{prop:Tm-recurrence-central}, and symmetry~\eqref{prop:Tm-symmetry},
-%        by setting $m \rightarrow 2m$.
-%    \end{proof}
-%\end{proposition}
-
 \begin{proposition}[Odd power binomial form]
     \label{prop:odd-power-binomial}
     For integers $n$ and $a$ such that $n-2a \geq 0$
@@ -201,11 +175,3 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
         \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
     \end{align*}
 \end{proposition}
-
-%\begin{proposition}[Sum of odd powers central decomposition]
-%    For non-negative integers $m$ and $n$
-%    \label{prop:sum-odd-power-decomposition-central}
-%    \begin{align*}
-%        \sum_{n=1}^{p} (n+m)^{4m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{2m+1} (-1)^{t} \binom{2m+1}{t} T_{2m} (n+m-t, 2)
-%    \end{align*}
-%\end{proposition}
