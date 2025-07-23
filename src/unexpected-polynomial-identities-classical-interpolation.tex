@@ -1,0 +1,154 @@
+\documentclass[12pt,letterpaper,oneside,reqno]{amsart}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{mathrsfs}
+\usepackage{colonequals}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[pdfpagelabels,hyperindex,colorlinks=true,linkcolor=blue,urlcolor=magenta,citecolor=green]{hyperref}
+\usepackage{graphicx}
+\emergencystretch=1em
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{physics}
+\usepackage{booktabs}
+
+% margins and layout
+\linespread{1.7}
+\usepackage[left=1in,right=1in,bottom=1in,top=1in]{geometry}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\raggedbottom
+
+\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
+\newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
+\newcommand \bernoulli [2][B] {{#1}\sb{#2}}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+
+%\numberwithin{equation}{section}
+
+\title[Unexpected polynomial identities arising from a class. interpolation problem]
+{Unexpected polynomial identities arising from a classical interpolation problem}
+\author[Petro Kolosov]{Petro Kolosov}
+\date{\today}
+
+% metadata
+\email{kolosovp94@gmail.com}
+\address{Software Developer, DevOps Engineer}
+\urladdr{https://kolosovpetro.github.io}
+\subjclass[2010]{05A19, 05A10, 41A15, 11B83, 68W30}
+\keywords{Polynomial identities,
+    Finite differences,
+    Binomial coefficients,
+    Faulhaber's formula,
+    Sums of powers,
+    Bernoulli numbers,
+    Combinatorics,
+    Pascal's triangle,
+    OEIS}
+\hypersetup{
+    pdftitle={Unexpected Polynomial Identities arising from a Classical Interpolation Problem},
+    pdfproducer={LaTeX},
+    pdfcreator={pdflatex},
+    pdfauthor={Petro Kolosov},
+    pdfsubject={New Polynomial Identities that motivated by Classical Interpolation Problem},
+    pdfkeywords={Polynomial identities,
+    Finite differences,
+    Binomial coefficients,
+    Faulhaber's formula,
+    Sums of powers,
+    Power sums,
+    Bernoulli numbers,
+    Combinatorics,
+    Pascal's triangle,
+    OEIS}
+}
+
+\begin{document}
+
+    \maketitle
+
+    \begin{abstract}
+        \input{sections/00_abstract}
+    \end{abstract}
+
+    \tableofcontents
+
+
+    \section{Discussion on interpolation of cubes}
+    \label{sec:the-problem-of-interpolation-of-cubes}
+    \input{sections/01_discussion_on_interpolation_of_cubes}
+
+
+    \section{A system of linear equations}
+    \label{sec:system-of-linear-equations-approach}
+    \input{sections/02_system_of_linear_equations_approach}
+
+
+    \section{Recurrence relation}
+    \label{sec:recurrence-relation-approach}
+    \input{sections/03_recurrence_relation}
+
+
+    \section{Main results}
+    \label{sec:main-results}
+    \input{sections/04_main_results}
+
+
+    \section{Related research}\label{sec:related-research}
+    \input{sections/05_related_research}
+
+
+    \section{Future research}\label{sec:future-research}
+    \input{sections/06_future_research}
+
+
+    \section{Conclusions}\label{sec:conclusions}
+    \input{sections/07_conclusions}
+
+
+    \section*{Acknowledgements}
+    \input{sections/08_acknowledgements}
+
+    \bibliographystyle{unsrt}
+    \bibliography{unexpected-polynomial-identities-classical-interpolation}
+
+    \noindent \textbf{Version:} \input{sections/version}
+    \\[1em]
+    \noindent \textbf{License:} This work is licensed under a
+    \href{https://creativecommons.org/licenses/by/4.0/}
+    {\texttt{Creative Commons Attribution 4.0 International License (CC BY 4.0)}}.
+    \\[1em]
+    \noindent \textbf{Sources}:
+    \href{https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation}
+    {\texttt{github.com/kolosovpetro/surprising-polynomial-identities}}
+
+    \clearpage
+
+
+    \section*{Application 1: Mathematica programs}
+    \input{sections/application_1_mathematica_programs}
+
+    \section*{Application 2: Examples of coefficients A}
+    \input{sections/application_2_coefficients_a}
+
+
+%    \section*{Application 2: Systems of linear equations examples}
+%    \input{sections/application_2_systems_of_linear_equations_examples}
+
+\end{document}

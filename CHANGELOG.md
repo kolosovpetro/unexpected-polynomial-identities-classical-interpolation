@@ -15,3 +15,24 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Change manuscript structure
 - Refactors
 - Add license CC BY 4.0
+- Add note on 0^x = 1 for all x
+- Add section for recurrence formula
+- Add acknowledgements
+- Update recurrence relation section
+- Add section for main results
+- Add math objects name
+- Update manuscript structure
+- Implement mathematica programs
+- Add labels for main results
+- Update files structure
+- Add forward and backward recurrences for Tm
+- Add central recurrence for Tm
+- Edits in main results
+- Binomial form proposition proof
+- Update related research
+- Change title
+- Add conclusions
+- Add abstract
+- Change MSC2010 classification
+- Edit abstract
+- Edit readme

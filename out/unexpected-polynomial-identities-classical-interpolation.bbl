@@ -1,0 +1,127 @@
+\begin{thebibliography}{10}
+
+\bibitem{gautschi2012interpolation}
+Walter Gautschi.
+\newblock {Interpolation before and after Lagrange}.
+\newblock {\em {Rend. Semin. Mat. Univ. Politec. Torino}}, 70(4):347--368,
+  2012.
+\newblock \url{https://seminariomatematico.polito.it/rendiconti/70-4/347.pdf}.
+
+\bibitem{meijering2002chronology}
+{Meijering, Erik}.
+\newblock {A chronology of interpolation: from ancient astronomy to modern
+  signal and image processing}.
+\newblock {\em {Proceedings of the IEEE}}, 90(3):319--342, 2002.
+\newblock
+  \url{https://infoscience.epfl.ch/record/63085/files/meijering0201.pdf}.
+
+\bibitem{graham1994concrete}
+{Graham, Ronald L. and Knuth, Donald E. and Patashnik, Oren}.
+\newblock {\em {Concrete mathematics: A foundation for computer science (second
+  edition)}}.
+\newblock {Addison-Wesley Publishing Company, Inc.}, 1994.
+\newblock \url {https://archive.org/details/concrete-mathematics}.
+
+\bibitem{knuth1993johann}
+{Knuth, Donald E.}
+\newblock {Johann Faulhaber and sums of powers}.
+\newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
+\newblock \url{https://arxiv.org/abs/math/9207222}.
+
+\bibitem{beardon1996sums}
+Alan~F. Beardon.
+\newblock {Sums of powers of integers}.
+\newblock {\em {The American mathematical monthly}}, 103(3):201--213, 1996.
+\newblock \url{https://doi.org/10.1080/00029890.1996.12004725}.
+
+\bibitem{abramowitz1988handbook}
+{Abramowitz, Milton and Stegun, Irene A. and Romer, Robert H.}
+\newblock {Handbook of mathematical functions with formulas, graphs, and
+  mathematical tables}, 1988.
+
+\bibitem{oeis_numerical_triangle_row_sums_give_cubes}
+Petro Kolosov.
+\newblock {Numerical triangle, row sums give third power, Entry A287326 in The
+  On-Line Encyclopedia of Integer Sequences}, 2017.
+\newblock \url{https://oeis.org/A287326}.
+
+\bibitem{tkaczyk2018problem}
+{Tkaczyk, Albert}.
+\newblock {About the problem of a triangle developing the polynomial function},
+  2018.
+\newblock Published electronically at
+  \href{https://www.linkedin.com/pulse/problem-triangle-developing-polynomial-function-fn-nm-albert-tkaczyk/}{\texttt{LinkedIn}}.
+
+\bibitem{tkaczyk2018continuation}
+{Tkaczyk, Albert}.
+\newblock {On the problem of a triangle developing the polynomial function -
+  continuation}.
+\newblock Published electronically at
+  \href{https://www.linkedin.com/pulse/problem-triangle-developing-polynomial-function-f-n-m-albert-tkaczyk/}{\texttt{LinkedIn}},
+  2018.
+
+\bibitem{unusual_identity_for_odd_powers}
+{Kolosov, Petro}.
+\newblock {106.37 An unusual identity for odd-powers}.
+\newblock {\em {The Mathematical Gazette}}, 106(567):509--513, 2022.
+\newblock \url{https://doi.org/10.1017/mag.2022.129}.
+
+\bibitem{oeis_numerical_triangle_row_sums_give_fifth_powers}
+Petro Kolosov.
+\newblock {Numerical triangle, row sums give fifth power, Entry A300656 in The
+  On-Line Encyclopedia of Integer Sequences}, 2018.
+\newblock \url{https://oeis.org/A300656}.
+
+\bibitem{alekseyev2018mathoverflow}
+{Alekseyev, Max}.
+\newblock {MathOverflow answer 297916/113033}, 2018.
+\newblock \url{https://mathoverflow.net/a/297916/113033}.
+
+\bibitem{knuth1992two}
+{Knuth, Donald E}.
+\newblock Two notes on notation.
+\newblock {\em {The American Mathematical monthly}}, 99(5):403--422, 1992.
+\newblock \url{https://arxiv.org/abs/math/9205211}.
+
+\bibitem{scheuer2023mathstackexchange}
+{Scheuer, Markus}.
+\newblock {MathStackExchange answer 4724343/463487}, 2023.
+\newblock \url{https://math.stackexchange.com/a/4724343/463487}.
+
+\bibitem{bateman1953higher}
+Harry Bateman.
+\newblock {\em {Higher transcendental functions [volumes i-iii]}}, volume~1.
+\newblock {McGRAW-HILL book company}, 1953.
+
+\bibitem{oeis_numerators_of_the_coefficient_a_m_r}
+Petro Kolosov.
+\newblock {Entry A302971 in The On-Line Encyclopedia of Integer Sequences},
+  2018.
+\newblock \url{https://oeis.org/A302971}.
+
+\bibitem{oeis_denominators_of_the_coefficient_a_m_r}
+Petro Kolosov.
+\newblock {Entry A304042 in The On-Line Encyclopedia of Integer Sequences},
+  2018.
+\newblock \url{https://oeis.org/A304042}.
+
+\bibitem{kolosov2025efficient}
+Petro Kolosov.
+\newblock {An efficient method of spline approximation for power function}.
+\newblock {\em arXiv preprint arXiv:2503.07618}, 2025.
+\newblock \url{https://arxiv.org/abs/2503.07618}.
+
+\bibitem{barbero2020two}
+J.~Fernando Barbero~G., Juan Margalef-Bentabol, and Eduardo~J.S.
+  Villase{\~n}or.
+\newblock {A two-sided Faulhaber-like formula involving Bernoulli polynomials}.
+\newblock {\em Comptes Rendus. Math{\'e}matique}, 358(1):41--44, 2020.
+\newblock \url{https://doi.org/10.5802/crmath.10}.
+
+\bibitem{another_approach_to_get_derivative_of_odd_power}
+Petro Kolosov.
+\newblock Another approach to get derivative of odd-power.
+\newblock {\em arXiv preprint arXiv:2310.07804}, 2023.
+\newblock \url{https://arxiv.org/abs/2310.07804}.
+
+\end{thebibliography}
