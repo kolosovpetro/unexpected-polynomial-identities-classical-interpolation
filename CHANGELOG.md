@@ -35,3 +35,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add abstract
 - Change MSC2010 classification
 - Edit abstract
+- Edit readme
