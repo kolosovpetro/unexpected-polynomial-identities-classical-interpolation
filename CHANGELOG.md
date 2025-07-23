@@ -31,3 +31,6 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Binomial form proposition proof
 - Update related research
 - Change title
+- Add conclusions
+- Add abstract
+- Change MSC2010 classification
