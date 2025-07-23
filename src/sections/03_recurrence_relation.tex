@@ -48,7 +48,7 @@ By rearranging the sums we obtain
 \end{align}
 We can notice that
 \begin{lemma}
-    \label{cor:combinatorial-identity}
+    \label{lem:combinatorial-identity}
     For integers $r, j$
     \begin{align*}
         \sum_{t} \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j}
@@ -61,8 +61,8 @@ We can notice that
         An elegant proof is done by Markus Scheuer in~\cite{scheuer2023mathstackexchange}.
     \end{proof}
 \end{lemma}
-In particular, the sum in lemma~\eqref{cor:combinatorial-identity} is zero for $0< j \leq r$.
-To utilize the lemma~\eqref{cor:combinatorial-identity}, we have to move $j=0$ out of summation
+In particular, the sum in lemma~\eqref{lem:combinatorial-identity} is zero for $0< j \leq r$.
+To utilize the lemma~\eqref{lem:combinatorial-identity}, we have to move $j=0$ out of summation
 in~\eqref{eq:rearranging-terms} to avoid division by zero in $\frac{(-1)^r}{j}$.
 Therefore,
 \begin{equation*}
@@ -73,7 +73,7 @@ Therefore,
         &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
     \end{split}
 \end{equation*}
-Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqref{cor:combinatorial-identity}
+Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqref{lem:combinatorial-identity}
 \begin{equation*}
     \begin{split}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}
