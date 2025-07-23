@@ -105,4 +105,17 @@ Petro Kolosov.
   2018.
 \newblock \url{https://oeis.org/A304042}.
 
+\bibitem{kolosov2025efficient}
+Petro Kolosov.
+\newblock {An efficient method of spline approximation for power function}.
+\newblock {\em arXiv preprint arXiv:2503.07618}, 2025.
+\newblock \url{https://arxiv.org/abs/2503.07618}.
+
+\bibitem{barbero2020two}
+J.~Fernando Barbero~G., Juan Margalef-Bentabol, and Eduardo~J.S.
+  Villase{\~n}or.
+\newblock {A two-sided Faulhaber-like formula involving Bernoulli polynomials}.
+\newblock {\em Comptes Rendus. Math{\'e}matique}, 358(1):41--44, 2020.
+\newblock \url{https://doi.org/10.5802/crmath.10}.
+
 \end{thebibliography}

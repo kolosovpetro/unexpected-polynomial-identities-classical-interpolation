@@ -29,3 +29,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add central recurrence for Tm
 - Edits in main results
 - Binomial form proposition proof
+- Update related research
