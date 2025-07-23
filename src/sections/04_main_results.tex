@@ -8,7 +8,7 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{theorem}
 
-\begin{definition}[Bivariate sum $T_m$]
+\begin{definition}[Bivariate sum $T_m$] For integers $n,k$ and $m \geq 0$
     \label{def:bivariate-sum-Tm}
     \begin{align*}
         T_{m}(n,k) = \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
@@ -23,26 +23,52 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{proposition}
 
-\begin{proposition}[Recurrence for $T_m$]
-    \label{prop:Tm-recurrence}
+\begin{proposition}[Backward Recurrence for $T_m$]
+    \label{prop:Tm-recurrence-backward}
     For non-negative integers $m$ and $n$
     \begin{align*}
-        T_{m} (n, k) = \sum_{t=1}^{m+1} (-1)^{t-1} \binom{m+1}{t} T_{m} (n-t, k)
+        T_{m} (n, k) = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
     \end{align*}
+    \begin{proof}
+        The polynomial $T_{n} (n,k)$ is a polynomial of degree $m$ in $n$.
+        Thus, the backward difference with respect to $n$ is
+        $\nabla^{m+1} T_{m} (n, k) = \sum_{t=0}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n-t, k) = 0$.
+        By isolating $(-1)^{0} \binom{m+1}{0} T_{m} (n-0, k)$ yields
+        $T_{m} (n, k) = (-1) \sum_{t=1}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n-t, k)$.
+    \end{proof}
 \end{proposition}
 
-\begin{proposition}[Odd power decomposition]
+\begin{proposition}[Forward Recurrence for $T_m$]
+    \label{prop:Tm-recurrence-forward}
+    \begin{align*}
+        T_{m} (n,k) = \sum_{t=1}^{m+1} (-1)^{m-t} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Central Recurrence for $T_m$]
+    \label{prop:Tm-recurrence-central}
+    \begin{proof}
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power backward decomposition]
     \label{prop:odd-power-decomposition}
     For non-negative integers $m$ and $n$
     \begin{align*}
-        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t-1} \binom{m+1}{t} T_{m} (n-t, k)
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
     \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}
+        and backward recurrence~\eqref{prop:Tm-recurrence-backward}.
+    \end{proof}
 \end{proposition}
 
-\begin{corollary}[Odd power decomposition $m-1$]
+\begin{corollary}[Odd power backward decomposition $m-1$]
     \label{cor:odd-power-decomposition-m-1}
     \begin{align*}
-        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^{t-1} \binom{m}{t} T_{m-1} (n-t, k)
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^{t+1} \binom{m}{t} T_{m-1} (n-t, k)
     \end{align*}
 \end{corollary}
 
@@ -53,6 +79,8 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     (n-2a)
         ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
     \end{align*}
+    \begin{proof}
+    \end{proof}
 \end{proposition}
 
 \begin{corollary}[Odd power binomial form shifted]

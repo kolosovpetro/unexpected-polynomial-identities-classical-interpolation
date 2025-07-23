@@ -118,6 +118,13 @@ function Test-Encoding
             if ($bytesEqualsBom -and $Autofix)
             {
                 $fullContent = [IO.File]::ReadAllBytes($fullPath)
+
+                if ($fullContent.Count -le $bom.Length)
+                {
+                    Write-Output "Skipping empty file with only BOM character: $file ..."
+                    continue
+                }
+
                 $newContent = $fullContent | Select-Object -Skip $bom.Length
                 [IO.File]::WriteAllBytes($fullPath, $newContent)
                 Write-Output "Removed UTF-8 BOM from file $file"
