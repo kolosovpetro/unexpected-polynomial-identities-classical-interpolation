@@ -1,0 +1,53 @@
+﻿\begin{lemma}[Altering Binomial identity]
+    \label{lem:altering-binomial-identity}
+    For integers $r, j$, we have
+    \begin{align*}
+        \sum_{t} \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j}
+        = \begin{cases}
+              \displaystyle \frac{1}{(2r+1) \binom{2r}{r}} & \text{if } j=0, \\[0.8em]
+              \displaystyle \frac{(-1)^r}{j} \binom{r}{2r-j+1} & \text{if } j>0.
+        \end{cases}
+    \end{align*}
+    \begin{proof}
+        For $j=0$ we have
+        \begin{align*}
+            \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} = \sum_t \binom{r}{t} (-1)^t \int_0^1 z^{r+t} \, dz
+        \end{align*}
+        Because $\frac{1}{r+t+1} = \int_0^1 z^{r+t} \, dz$.
+        \begin{align*}
+            \sum_t \binom{r}{t} (-1)^t \int_0^1 z^{r+t} \, dz
+            = \int_0^1 z^r \left( \sum_t \binom{r}{t} (-1)^t z^{t} \right) \, dz
+            = \int_0^1 z^r (1 - z)^r \, dz
+        \end{align*}
+        Thus,
+        \begin{align*}
+            \sum_t \binom{r}{t} (-1)^t \int_0^1 z^{r+t} \, dz
+            = \int_0^1 z^r \left( \sum_t \binom{r}{t} (-1)^t z^{t} \right) \, dz
+            = \int_0^1 z^r (1 - z)^r \, dz
+        \end{align*}
+        The work~\cite{sury2004identities} provides the identity $\binom{n}{k}^{-1}=(n+1)\int_0^1z^k(1-z)^{n-k}\,dz$.
+        By setting $n=2r$ and $k=r$ yields
+        \begin{align*}
+            \binom{2r}{r}^{-1}=(2r+1) \int_0^1 z^r (1-z)^{r}\,dz
+        \end{align*}
+        Therefore, for $j=0$
+        \begin{align*}
+            \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} = \binom{2r}{r}^{-1} \frac{1}{2r+1}
+        \end{align*}
+        This completes the proof for the case $j=0$.
+
+        For $j > 0$:
+        \begin{align*}
+            \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j}
+            &= \frac{1}{j} \sum_t \binom{r}{t} \binom{r+t}{j-1} (-1)^t \\
+            &= \frac{1}{j} \sum_t \binom{r}{t} [z^{j-1}] (1+z)^{r+t} (-1)^t \\
+            &= \frac{1}{j} [z^{j-1}] (1+z)^r \sum_t \binom{r}{t} (-1)^t (1+z)^t \\
+            &= \frac{1}{j} [z^{j-1}] (1+z)^r \left(1 - (1+z)\right)^r \\
+            &= \frac{1}{j} [z^{j-1}] (1+z)^r (-z)^r \\
+            &= \frac{(-1)^r}{j} [z^{j-1-r}] (1+z)^r \\
+            &= \frac{(-1)^r}{j} \binom{r}{j - 1 - r} \\
+            &= \frac{(-1)^r}{j} \binom{r}{2r - j + 1}.
+        \end{align*}
+    \end{proof}
+\end{lemma}
+

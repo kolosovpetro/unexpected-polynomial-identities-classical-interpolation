@@ -13,7 +13,7 @@ of Faulhaber's formula~\cite{beardon1996sums} with upper bound $p+1$
 \end{align*}
 The reason we use the Faulhaber's formula above is because we tend to omit summation bounds, for simplicity.
 This helps us to collapse the common terms across complex sums, because now can extend the sum over all integers $j$,
-while only finitely many terms $\binom{p+1}{j}$ are non-zero, see also~\cite[~p. 2]{knuth1992two}.
+while only finitely many terms $\binom{p+1}{j}$ are non-zero, see also~\cite{knuth1992two}.
 Hence,
 \begin{align}
     \label{eq:modified-faulhabers-formula}
@@ -54,22 +54,23 @@ By rearranging the sums we obtain
     &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right] \nonumber
 \end{align}
 We can notice that
-\begin{lemma}
-    \label{lem:combinatorial-identity}
-    For integers $r, j$
-    \begin{align*}
-        \sum_{t} \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j}
-        =\begin{cases}
-             \frac{1}{(2r+1) \binom{2r}r} & \text{if } j=0\\
-             \frac{(-1)^r}{j} \binom{r}{2r-j+1} & \text{if } j>0
-        \end{cases}
-    \end{align*}
-    \begin{proof}
-        An elegant proof is done by Markus Scheuer in~\cite{scheuer2023mathstackexchange}.
-    \end{proof}
-\end{lemma}
-In particular, the sum above is zero for $0< j \leq r$.
-To simplify~\eqref{eq:rearranging-terms} using lemma~\eqref{lem:combinatorial-identity}, we have to move $j=0$ out of
+%\begin{lemma}[Altering Binomial identity]
+%    \label{lem:altering-binomial-identity}
+%    For integers $r, j$
+%    \begin{align*}
+%        \sum_{t} \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j}
+%        =\begin{cases}
+%             \frac{1}{(2r+1) \binom{2r}r} & \text{if } j=0\\
+%             \frac{(-1)^r}{j} \binom{r}{2r-j+1} & \text{if } j>0
+%        \end{cases}
+%    \end{align*}
+%    \begin{proof}
+%        An elegant proof is done by Markus Scheuer in~\cite{scheuer2023mathstackexchange}.
+%    \end{proof}
+%\end{lemma}
+\input{sections/equations/01_altering_binomial_identity_lemma}
+%In particular, the sum above is zero for $0< j \leq r$.
+To simplify~\eqref{eq:rearranging-terms} using lemma~\eqref{lem:altering-binomial-identity}, we have to move $j=0$ out of
 the sum $\Sigma$
 in~\eqref{eq:rearranging-terms} to avoid division by zero in $\frac{(-1)^r}{j}$.
 Therefore,
@@ -81,7 +82,7 @@ Therefore,
         &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
     \end{split}
 \end{equation*}
-Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqref{lem:combinatorial-identity}
+Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqref{lem:altering-binomial-identity}
 \begin{equation*}
     \begin{split}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}

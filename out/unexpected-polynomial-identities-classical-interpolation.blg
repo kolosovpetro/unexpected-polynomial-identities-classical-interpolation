@@ -7,42 +7,42 @@ Reallocating 'name_of_file' (item size: 1) to 57 items.
 Database file #1: unexpected-polynomial-identities-classical-interpolation.bib
 You've used 20 entries,
             1791 wiz_defined-function locations,
-            574 strings with 7797 characters,
-and the built_in function-call counts, 3376 in all, are:
-= -- 316
-> -- 87
+            576 strings with 7800 characters,
+and the built_in function-call counts, 3484 in all, are:
+= -- 329
+> -- 94
 < -- 1
-+ -- 42
-- -- 22
-* -- 148
-:= -- 538
-add.period$ -- 69
++ -- 44
+- -- 24
+* -- 166
+:= -- 558
+add.period$ -- 70
 call.type$ -- 20
 change.case$ -- 18
 chr.to.int$ -- 0
 cite$ -- 20
-duplicate$ -- 144
-empty$ -- 395
-format.name$ -- 22
-if$ -- 756
+duplicate$ -- 148
+empty$ -- 398
+format.name$ -- 24
+if$ -- 776
 int.to.chr$ -- 0
 int.to.str$ -- 20
-missing$ -- 13
-newline$ -- 112
+missing$ -- 14
+newline$ -- 113
 num.names$ -- 20
-pop$ -- 78
+pop$ -- 71
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 59
 stack$ -- 0
-substring$ -- 169
+substring$ -- 185
 swap$ -- 21
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 34
+while$ -- 36
 width$ -- 22
-write$ -- 228
+write$ -- 231
