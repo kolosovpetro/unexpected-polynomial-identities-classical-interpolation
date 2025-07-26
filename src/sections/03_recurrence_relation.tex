@@ -4,21 +4,27 @@ The main idea of Alekseyev's approach was to utilize a generating function to ev
 starting from the base case $\coeffA{m}{m}$ and then evaluating the next coefficient $\coeffA{m}{m-1}$
 recursively, and so on up to $\coeffA{m}{0}$.
 We utilize Binomial theorem $(n-k)^r=\sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} k^t$ and a specific version
-of Faulhaber's formula~\cite{beardon1996sums}
+of Faulhaber's formula~\cite{beardon1996sums} with upper bound $p+1$
 \begin{align*}
     \sum_{k=1}^{n} k^{p}
     = \frac{1}{p+1}\sum_{j=0}^{p} \binom{p+1}{j} \bernoulli{j} n^{p+1-j}
-    &= \frac{1}{p+1} \left[ \sum_{j=0}^{p+1} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1} \\
-    &= \frac{1}{p+1} \left[ \sum_{j} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
+    &= \frac{1}{p+1} \left[ \sum_{j=0}^{p+1} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
+%    &= \frac{1}{p+1} \left[ \sum_{j} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
 \end{align*}
-The reason we use modified version of Faulhaber's formula is because we tend to omit summation bounds, for simplicity.
-This helps us to collapse the common terms across complex sums, because now the sum extends over all integers $j$,
-while only finitely many terms are non-zero, see also~\cite[~p. 2]{knuth1992two}.
-Therefore, we expand the sum $\sum_{k=1}^{n} k^{r} (n-k)^{r}$ using Binomial theorem
+The reason we use the Faulhaber's formula above is because we tend to omit summation bounds, for simplicity.
+This helps us to collapse the common terms across complex sums, because now can extend the sum over all integers $j$,
+while only finitely many terms $\binom{p+1}{j}$ are non-zero, see also~\cite[~p. 2]{knuth1992two}.
+Hence,
+\begin{align}
+    \label{eq:modified-faulhabers-formula}
+    \sum_{k=1}^{n} k^{p}
+    = \frac{1}{p+1} \left[ \sum_{j} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
+\end{align}
+Now we expand the sum $\sum_{k=1}^{n} k^{r} (n-k)^{r}$ using Binomial theorem
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r} = \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \sum_{k=1}^{n} k^{t+r}
 \end{align*}
-By applying Faulhaber's formula above, we obtain
+By applying Faulhaber's formula~\eqref{eq:modified-faulhabers-formula}, we obtain
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r}
     = \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \left[ \left( \frac{1}{t+r+1} \sum_{j} \binom{t+r+1}{j} \bernoulli{j} n^{t+r+1-j} \right) - \frac{\bernoulli{t+r+1}}{t+r+1} \right]
@@ -62,8 +68,9 @@ We can notice that
         An elegant proof is done by Markus Scheuer in~\cite{scheuer2023mathstackexchange}.
     \end{proof}
 \end{lemma}
-In particular, the sum in lemma~\eqref{lem:combinatorial-identity} is zero for $0< j \leq r$.
-To utilize the lemma~\eqref{lem:combinatorial-identity}, we have to move $j=0$ out of summation
+In particular, the sum above is zero for $0< j \leq r$.
+To simplify~\eqref{eq:rearranging-terms} using lemma~\eqref{lem:combinatorial-identity}, we have to move $j=0$ out of
+the sum $\Sigma$
 in~\eqref{eq:rearranging-terms} to avoid division by zero in $\frac{(-1)^r}{j}$.
 Therefore,
 \begin{equation*}
@@ -79,12 +86,12 @@ Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqr
     \begin{split}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}
         &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
-        + \underbrace{\left[ \sum_{j = 1}^{\infty} \frac{(-1)^r}{j} \binom{r}{2r-j+1} \bernoulli{j} n^{2r-j+1} \right]}_{(\star)} \\
-        &- \underbrace{\left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]}_{(\diamond)}
+        + \left[ \sum_{j=1}^{\infty} \frac{(-1)^r}{j} \binom{r}{2r-j+1} \bernoulli{j} n^{2r-j+1} \right] \\
+        &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
     \end{split}
 \end{equation*}
-By introducing $\ell=2r-j+1$ to $(\star)$ and $\ell=r-t$ to $(\diamond)$
-we collapse the common terms across two sums
+By setting $\ell=2r-j+1$ to the sum $\sum_{j=1}^{\infty}$, and $\ell=r-t$ to the sum $\sum_{t}$,
+we collapse the common terms across two sums, thus
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r}
     &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
@@ -96,19 +103,21 @@ By replacing odd $\ell$ by $\ell = 2k+1$, and by simplifying 2's, we get
 \begin{proposition}[Bivariate Faulhaber's Formula]
     \label{prop:bivariate-faulhabers-formula}
     \begin{align*}
-        \sum_{k=1}^{n} k^{r} (n-k)^{r} &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1} + \sum_{k=0}^{\infty} \frac{(-1)^r}{2r-2k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}
+        \sum_{k=1}^{n} k^{r} (n-k)^{r}
+        = \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
+        + \sum_{k=0}^{\infty} \frac{(-1)^r}{r-k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}
     \end{align*}
 \end{proposition}
 
 Assuming that $\coeffA{m}{r}$ is defined
-by the odd-power identity $n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r$,
+by the odd-power identity in conjecture~\eqref{conj:odd-power-identity},
 we obtain the following relation for polynomials in $n$
 \begin{align}
     \label{eq:main_relation}
     \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}{r}} n^{2r+1} + \sum_{r=0}^{m} \sum_{k=0}^{\infty} \coeffA{m}{r} \frac{(-1)^r}{r-k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}  \equiv n^{2m+1}
 \end{align}
 Basically, the relation~\eqref{eq:main_relation} is the generating function we utilize to
-evaluate the values of $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$.
+evaluate the values of $\coeffA{m}{m}, \coeffA{m}{m-1}, \ldots, \coeffA{m}{0}$.
 We now fix the unused values of $\coeffA{m}{r}$ so that $\coeffA{m}{r} = 0$ for every $r < 0$ or $r > m$.
 
 Taking the coefficient of $n^{2m+1}$ in~\eqref{eq:main_relation} yields
@@ -137,7 +146,7 @@ We observe that the sum
 \begin{align*}
     \sum_{r=0}^{m} \coeffA{m}{r} \frac{(-1)^r}{r - m} \binom{r}{2m+1} \bernoulli{2r - 2m}
 \end{align*}
-does not contribute to the determination of the coefficients because the binomial coefficient
+does not contribute to the determination of the coefficients $\coeffA{m}{r}$, because the binomial coefficient
 $\binom{r}{2m+1}$ vanishes for all $r \leq m$.
 Consequently, all terms in the sum are zero.
 Thus,
@@ -180,9 +189,7 @@ Solving for $\coeffA{m}{d}$ yields
 \end{equation*}
 
 Proceeding recursively, we can compute each coefficient $\coeffA{m}{r}$ for integers $r$ in the ranges
-\begin{align*}
-    \frac{m}{2^{s+1}} \leq r < \frac{m}{2^s}, \quad \text{for } s = 1, 2, \ldots
-\end{align*}
+$\frac{m}{2^{s+1}} \leq r < \frac{m}{2^s}, \quad \text{for } s = 1, 2, \ldots$,
 by using previously computed values $\coeffA{m}{d}$ for $d > r$, via the relation
 \begin{equation*}
     \coeffA{m}{r} =
