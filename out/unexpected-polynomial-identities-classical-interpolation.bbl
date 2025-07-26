@@ -83,10 +83,12 @@ Petro Kolosov.
 \newblock {\em {The American Mathematical monthly}}, 99(5):403--422, 1992.
 \newblock \url{https://arxiv.org/abs/math/9205211}.
 
-\bibitem{scheuer2023mathstackexchange}
-{Scheuer, Markus}.
-\newblock {MathStackExchange answer 4724343/463487}, 2023.
-\newblock \url{https://math.stackexchange.com/a/4724343/463487}.
+\bibitem{sury2004identities}
+B.~Sury, Tianming Wang, and Feng-Zhen Zhao.
+\newblock Identities involving reciprocals of binomial coefficients.
+\newblock {\em {J. Integer Seq}}, 7(2):04--2, 2004.
+\newblock
+  \url{https://www.kurims.kyoto-u.ac.jp/EMIS/journals/JIS/VOL7/Sury/sury99.pdf}.
 
 \bibitem{bateman1953higher}
 Harry Bateman.
@@ -123,5 +125,10 @@ Petro Kolosov.
 \newblock Another approach to get derivative of odd-power.
 \newblock {\em arXiv preprint arXiv:2310.07804}, 2023.
 \newblock \url{https://arxiv.org/abs/2310.07804}.
+
+\bibitem{scheuer2023mathstackexchange}
+{Scheuer, Markus}.
+\newblock {MathStackExchange answer 4724343/463487}, 2023.
+\newblock \url{https://math.stackexchange.com/a/4724343/463487}.
 
 \end{thebibliography}

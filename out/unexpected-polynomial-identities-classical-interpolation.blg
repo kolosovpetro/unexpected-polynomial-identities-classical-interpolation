@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 57 items.
 Database file #1: unexpected-polynomial-identities-classical-interpolation.bib
-You've used 20 entries,
+You've used 21 entries,
             1791 wiz_defined-function locations,
-            574 strings with 7797 characters,
-and the built_in function-call counts, 3376 in all, are:
-= -- 316
-> -- 87
+            582 strings with 8022 characters,
+and the built_in function-call counts, 3611 in all, are:
+= -- 339
+> -- 98
 < -- 1
-+ -- 42
-- -- 22
-* -- 148
-:= -- 538
-add.period$ -- 69
-call.type$ -- 20
-change.case$ -- 18
++ -- 46
+- -- 25
+* -- 167
+:= -- 577
+add.period$ -- 73
+call.type$ -- 21
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 144
-empty$ -- 395
-format.name$ -- 22
-if$ -- 756
+cite$ -- 21
+duplicate$ -- 153
+empty$ -- 416
+format.name$ -- 25
+if$ -- 806
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 13
-newline$ -- 112
-num.names$ -- 20
+int.to.str$ -- 21
+missing$ -- 14
+newline$ -- 118
+num.names$ -- 21
 pop$ -- 78
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 59
+skip$ -- 62
 stack$ -- 0
-substring$ -- 169
-swap$ -- 21
+substring$ -- 185
+swap$ -- 22
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 34
-width$ -- 22
-write$ -- 228
+while$ -- 37
+width$ -- 23
+write$ -- 241
