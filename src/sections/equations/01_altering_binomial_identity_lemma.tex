@@ -19,20 +19,10 @@
             = \int_0^1 z^r \left( \sum_t \binom{r}{t} (-1)^t z^{t} \right) \, dz
             = \int_0^1 z^r (1 - z)^r \, dz
         \end{align*}
-        Thus,
-        \begin{align*}
-            \sum_t \binom{r}{t} (-1)^t \int_0^1 z^{r+t} \, dz
-            = \int_0^1 z^r \left( \sum_t \binom{r}{t} (-1)^t z^{t} \right) \, dz
-            = \int_0^1 z^r (1 - z)^r \, dz
-        \end{align*}
-        The work~\cite{sury2004identities} provides the identity $\binom{n}{k}^{-1}=(n+1)\int_0^1z^k(1-z)^{n-k}\,dz$.
+        The work~\cite{sury2004identities} provides the identity $\binom{n}{k}^{-1}=(n+1)\int_0^1 z^k(1-z)^{n-k}\,dz$.
         By setting $n=2r$ and $k=r$ yields
         \begin{align*}
-            \binom{2r}{r}^{-1}=(2r+1) \int_0^1 z^r (1-z)^{r}\,dz
-        \end{align*}
-        Therefore, for $j=0$
-        \begin{align*}
-            \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} = \binom{2r}{r}^{-1} \frac{1}{2r+1}
+            \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} = \int_0^1 z^r (1-z)^{r}\,dz = \binom{2r}{r}^{-1} \frac{1}{2r+1}
         \end{align*}
         This completes the proof for the case $j=0$.
 
@@ -53,23 +43,22 @@
         \end{align*}
         By factoring out $(1+z)^r$ from the sum
         \begin{align*}
-        [z^{j-1}]
-            \frac{1}{j} \sum_t \binom{r}{t} (-1)^t (1+z)^{r+t}
+            \frac{1}{j} [z^{j-1}] \sum_t \binom{r}{t} (-1)^t (1+z)^{r+t}
             &= \frac{1}{j} [z^{j-1}] (1+z)^r \sum_t \binom{r}{t} (-1)^t (1+z)^t
         \end{align*}
         Now apply the binomial theorem to the inner sum
         \begin{align*}
-            \sum_t \binom{r}{t} (-1)^t (1+z)^t = \left(1 - (1+z)\right)^r = (-z)^r
+            \sum_t \binom{r}{t} (-1)^t (1+z)^t = \left(1 - (1+z)\right)^r = (-z)^r = (-1)^r z^r
         \end{align*}
-        Hence,
+        Hence, for $j>0$
         \begin{align*}
-            \frac{1}{j} [z^{j-1}] (1+z)^r (-z)^r = \frac{1}{j} (-1)^r [z^{j-1}] (1+z)^r z^r
+            \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} \binom{r+t+1}{j} = \frac{(-1)^r}{j} [z^{j-1}] (1+z)^r z^r
         \end{align*}
         By applying the identity $[z^{p-q}]A(z)=[z^p]z^qA(z)$
         \begin{align*}
-            \frac{1}{j} (-1) ^r [z^{j-1}] (1+z)^r z^r = \frac{1}{j} (-1)^r [z^{j-1-r}] (1+z)^r = \frac{(-1)^r}{j} \binom{r}{j - 1 - r}
+            \frac{(-1)^r}{j}  [z^{j-1}] (1+z)^r z^r = \frac{(-1)^r}{j}  [z^{j-1-r}] (1+z)^r = \frac{(-1)^r}{j} \binom{r}{j - 1 - r}
         \end{align*}
-        Finally, use the symmetry $\binom{n}{k} = \binom{n}{n-k}$ to show that
+        Finally, we use the symmetry $\binom{n}{k} = \binom{n}{n-k}$ to show that
         \begin{align*}
             \frac{(-1)^r}{j} \binom{r}{j - 1 - r} = \frac{(-1)^r}{j} \binom{r}{2r - j + 1}
         \end{align*}

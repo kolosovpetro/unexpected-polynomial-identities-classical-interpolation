@@ -1,0 +1,23 @@
+\subsection{Sums of powers}\label{subsec:sums-of-powers}
+\begin{proposition}[Sums of odd powers]
+    \label{prop:sum-of-odd-powers}
+    \begin{align*}
+        \sum_{t=1}^{n} t^{2m+1} = \sum_{t=1}^{n} \sum_{k=1}^{t} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sums of odd powers forward decomposition]
+    \label{prop:sum-odd-power-decomposition-forward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sum of odd powers backward decomposition]
+    \label{prop:sum-odd-power-decomposition-backward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
+    \end{align*}
+\end{proposition}

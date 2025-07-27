@@ -11,35 +11,76 @@ The repository includes the following files:
     the usage of these functions to validate the manuscript’s results.
 \end{itemize}
 
-Below we list the Mathematica functions with their corresponding mathematical statements:
+\subsection*{Definitions}
 \begin{center}
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{ll}
         \toprule
-        \textbf{Mathematica Function}                       & \textbf{Validates / Prints}                                        \\
+        \textbf{Mathematica Function}             & \textbf{Validates / Prints}                                        \\
         \midrule
-        \texttt{A[m, r]}                                    & Coefficient $\coeffA{m}{r}$ (Definition~\ref{prop:coefficients_a}) \\
-        \texttt{OddPowerIdentity[n, m]}                     & Theorem~\ref{theorem:odd-power-identity}                           \\
-        \texttt{OddPowerIdentitySimplified[n, m]}           & Expanded form of Theorem~\ref{theorem:odd-power-identity}          \\
-        \texttt{PrintTriangleA[m]}                          & Triangle of $A_{n,k}$ values                                       \\
-        \texttt{BivariateSumT[m, n, k]}                     & Definition~\ref{def:bivariate-sum-Tm}                              \\
-        \texttt{BackwardRecurrenceForT[m, n, k]}            & Proposition~\ref{prop:Tm-recurrence-backward}                      \\
-        \texttt{ForwardRecurrenceForT[m, n, k]}             & Proposition~\ref{prop:Tm-recurrence-forward}                       \\
-        \texttt{CentralRecurrenceForT[m, n, k]}             & Proposition~\ref{prop:Tm-recurrence-central}                       \\
-        \texttt{OddPowerBackwardDecomposition[n, m]}        & Proposition~\ref{prop:odd-power-decomposition-backward}            \\
-        \texttt{OddPowerBackwardDecompositionMMinus1[n, m]} & Corollary~\ref{cor:odd-power-decomposition-m-1}                    \\
-        \texttt{OddPowerForwardDecomposition[n, m]}         & Proposition~\ref{prop:odd-power-decomposition-forward}             \\
-        \texttt{OddPowerForwardDecompositionShifted[n, m]}  & Corollary~\ref{prop:odd-power-decomposition-forward-shifted}       \\
-        \texttt{OddPowerBinomialForm[m, n, a]}              & Proposition~\ref{prop:odd-power-binomial}                          \\
-        \texttt{OddPowerBinomialFormShifted[m, n, a]}       & Corollary~\ref{prop:odd-power-binomial-shifted}                    \\
-        \texttt{TableFormBackwardRecurrenceForT[m, rows]}   & Triangle view of Proposition~\ref{prop:Tm-recurrence-backward}     \\
-        \texttt{TableFormForwardRecurrenceForT[m, rows]}    & Triangle view of Proposition~\ref{prop:Tm-recurrence-forward}      \\
-        \texttt{TableFormCentralRecurrenceForT[m, rows]}    & Triangle view of Proposition~\ref{prop:Tm-recurrence-central}      \\
-        \texttt{TableFormBivariateSumT[m, rows]}            & Triangle view of $T_m(n, k)$                                       \\
+        \texttt{A[m, r]}                          & Coefficient $\coeffA{m}{r}$ (Definition~\ref{prop:coefficients_a}) \\
+        \texttt{PrintTriangleA[m]}                & Triangle of $\coeffA{m}{r}$ values                                 \\
+        \texttt{OddPowerIdentity[n, m]}           & Theorem~\ref{theorem:odd-power-identity}                           \\
+        \texttt{OddPowerIdentitySimplified[n, m]} & Simplified form of Theorem~\ref{theorem:odd-power-identity}        \\
+        \texttt{BivariateSumT[m, n, k]}           & Definition~\ref{def:bivariate-sum-Tm}                              \\
+        \texttt{TableFormBivariateSumT[m, rows]}  & Triangle view of $T_m(n, k)$                                       \\
         \bottomrule
     \end{tabular}
 \end{center}
+\clearpage
 
-To test and experiment with these identities computationally, load the package and call any of the
-functions listed above with appropriate parameters.
+\subsection*{Forward decompositions}
+\begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Mathematica Function}                             & \textbf{Validates / Prints}                                        \\
+        \midrule
+        \texttt{ForwardRecurrenceForT[m, n, k]}                   & Proposition~\ref{prop:Tm-recurrence-forward}                       \\
+        \texttt{OddPowerForwardDecomposition[n, m]}               & Proposition~\ref{prop:odd-power-decomposition-forward}             \\
+        \texttt{OddPowerForwardDecompositionMMinus1[n, m]}        & Proposition~\ref{prop:odd-power-decomposition-forward-m-1}         \\
+        \texttt{OddPowerForwardDecompositionShifted[n, m]}        & Proposition~\ref{prop:odd-power-decomposition-forward-shifted}     \\
+        \texttt{OddPowerForwardDecompositionMMinus1Shifted[n, m]} & Proposition~\ref{prop:odd-power-decomposition-forward-m-1-shifted} \\
+        \texttt{TableFormForwardRecurrenceForT[m, rows]}          & Triangle view of Proposition~\ref{prop:Tm-recurrence-forward}      \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+\clearpage
+
+\subsection*{Backward decompositions}
+\begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Mathematica Function}                              & \textbf{Validates / Prints}                                     \\
+        \midrule
+        \texttt{BackwardRecurrenceForT[m, n, k]}                   & Proposition~\ref{prop:Tm-recurrence-backward}                   \\
+        \texttt{OddPowerBackwardDecomposition[n, m]}               & Proposition~\ref{prop:odd-power-decomposition-backward}         \\
+        \texttt{OddPowerBackwardDecompositionShifted[n, m]}        & Proposition~\ref{prop:odd-power-decomposition-backward-shifted} \\
+        \texttt{OddPowerBackwardDecompositionMMinus1[n, m]}        & Corollary~\ref{cor:odd-power-decomposition-m-1}                 \\
+        \texttt{OddPowerBackwardDecompositionMMinus1Shifted[n, m]} & Corollary~\ref{cor:odd-power-decomposition-m-1-shifted}         \\
+        \texttt{TableFormBackwardRecurrenceForT[m, rows]}          & Triangle view of Proposition~\ref{prop:Tm-recurrence-backward}  \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+\clearpage
+
+\subsection*{Binomial forms}
+\begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Mathematica Function}                        & \textbf{Validates / Prints}                                \\
+        \midrule
+        \texttt{BinomialForm[m, n, a]}                       & Corollary~\ref{prop:binomial-form}                         \\
+        \texttt{ShiftedBinomialForm[m, n, a]}                & Corollary~\ref{prop:shifted-binomial-form}                 \\
+        \texttt{CenteredBinomialForm[m, n, a]}               & Corollary~\ref{cor:centered-binomial-form}                 \\
+        \texttt{ShiftedCenteredBinomialForm[m, n, a]}        & Corollary~\ref{cor:shifted-centered-binomial-form}         \\
+        \texttt{NegatedBinomialForm[m, n, a]}                & Proposition~\ref{prop:negated-binomial-form}               \\
+        \texttt{ShiftedNegatedBinomialForm[m, n, a]}         & Corollary~\ref{prop:shifted-negated-binomial-form}         \\
+        \texttt{CenteredNegatedBinomialForm[m, n, a]}        & Corollary~\ref{cor:centered-negated-binomial-form}         \\
+        \texttt{ShiftedCenteredNegatedBinomialForm[m, n, a]} & Corollary~\ref{cor:shifted-centered-negated-binomial-form} \\
+        \bottomrule
+    \end{tabular}
+\end{center}
 

@@ -1,0 +1,74 @@
+\subsection{Binomial forms}\label{subsec:binomial-forms}
+
+\begin{corollary}[Binomial form]
+    \label{prop:binomial-form}
+    For integers $n$ and $a$ such that $n+2a \geq 0$
+    \begin{align*}
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a+1}^{n+a} \coeffA{m}{r} (k+a)^r (n+a-k)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Shifted binomial form]
+    \label{prop:shifted-binomial-form}
+    For integers $n$ and $a$ such that $n+2a \geq 0$
+    \begin{align*}
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a}^{n+a-1} \coeffA{m}{r} (k+a)^r (n+a-k)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Centered binomial form]
+    \label{cor:centered-binomial-form}
+    For integers $n$ and $a$ such that $n+a \geq 0$
+    \begin{align*}
+    (n+a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-\frac{a}{2}+1}^{n+\frac{a}{2}} \coeffA{m}{r} \left( k+\frac{a}{2} \right)^r \left( n+\frac{a}{2}-k \right)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Shifted centered binomial form]
+    \label{cor:shifted-centered-binomial-form}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n+a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-\frac{a}{2}}^{n+\frac{a}{2}-1} \coeffA{m}{r} \left( k+\frac{a}{2} \right)^r \left( n+\frac{a}{2}-k \right)^r
+    \end{align*}
+\end{corollary}
+
+\begin{proposition}[Negated binomial form]
+    \label{prop:negated-binomial-form}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-a-k)^r
+    \end{align*}
+    \begin{proof}
+        By observing the summation limits we can see that $k$ runs as $k=a+1,a+2,a+3,\ldots,a+n-a$, which
+        implies that $(k-a)=1,2,3,\ldots, n$.
+        By observing the term $(n-k-a)$ we see that $(n-k-a)=n-1,n-2,n-3,\ldots,0$.
+        Thus, by reindexing the sum
+        $(n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n-2a} \coeffA{m}{r} (a+k-a)^r (n-(a+k)-a)^r$
+        the statement~\eqref{prop:odd-power-binomial} is equivalent to~\eqref{theorem:odd-power-identity}
+        with setting $n \rightarrow n-2a$.
+    \end{proof}
+\end{proposition}
+
+\begin{corollary}[Shifted negated binomial form]
+    \label{prop:shifted-negated-binomial-form}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=a}^{n-a-1} \coeffA{m}{r} (k-a)^r (n-a-k)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Centered negated binomial form]
+    \label{cor:centered-negated-binomial-form}
+    For integers $n$ and $a$ such that $n-a \geq 0$
+    \begin{align*}
+    (n-a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=\frac{a}{2}}^{n-\frac{a}{2}-1} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left(n-\frac{a}{2}-k \right)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Shifted centered negated binomial form]
+    \label{cor:shifted-centered-negated-binomial-form}
+    For integers $n$ and $a$ such that $n-a \geq 0$
+    \begin{align*}
+    (n-a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=\frac{a}{2}+1}^{n-\frac{a}{2}} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left(n-\frac{a}{2}-k \right)^r
+    \end{align*}
+\end{corollary}

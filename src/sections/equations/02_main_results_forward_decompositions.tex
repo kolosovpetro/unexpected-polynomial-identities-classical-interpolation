@@ -1,0 +1,61 @@
+\subsection{Forward decompositions}\label{subsec:forward-decompositions}
+\begin{proposition}[Forward Recurrence for $T_m$]
+    \label{prop:Tm-recurrence-forward}
+    \begin{align*}
+        T_{m} (n,k) = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        The polynomial $T_{m} (n,k)$ is a polynomial of degree $m$ in $n$.
+        Thus, the forward difference with respect to $n$ is
+        $\Delta^{m+1} T_{m} (n, k) = \sum_{t=0}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n+t, k) = 0$.
+        By isolating $(-1)^{0} \binom{m+1}{0} T_{m} (n-0, k)$ yields
+        $T_{m} (n, k) = (-1) \sum_{t=1}^{m+1} (-1)^{t} \binom{m+1}{t} T_{m} (n+t, k)$.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition]
+    \label{prop:odd-power-decomposition-forward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}
+        and forward recurrence~\eqref{prop:Tm-recurrence-forward}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition $m-1$]
+    \label{prop:odd-power-decomposition-forward-m-1}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^{t+1} \binom{m}{t} T_{m-1} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-forward}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition shifted]
+    \label{prop:odd-power-decomposition-forward-shifted}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity},
+        forward recurrence~\eqref{prop:Tm-recurrence-forward}, and symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition $m-1$ shifted]
+    \label{prop:odd-power-decomposition-forward-m-1-shifted}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m} (-1)^{t+1} \binom{m}{t} T_{m-1} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-forward} and
+        by symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}
