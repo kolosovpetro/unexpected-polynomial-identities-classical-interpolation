@@ -73,6 +73,17 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{proof}
 \end{corollary}
 
+\begin{corollary}[Odd power backward decomposition $m-1$ shifted]
+    \label{cor:odd-power-decomposition-m-1-shifted}
+    \begin{align*}
+        n^{2m-1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m} (-1)^{t+1} \binom{m}{t} T_{m-1} (n-t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-backward-shifted}
+        and by symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{corollary}
+
 \begin{proposition}[Forward Recurrence for $T_m$]
     \label{prop:Tm-recurrence-forward}
     \begin{align*}
@@ -99,6 +110,17 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{proof}
 \end{proposition}
 
+\begin{proposition}[Odd power forward decomposition $m-1$]
+    \label{prop:odd-power-decomposition-forward-m-1}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^{t+1} \binom{m}{t} T_{m-1} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-forward}.
+    \end{proof}
+\end{proposition}
+
 \begin{proposition}[Odd power forward decomposition shifted]
     \label{prop:odd-power-decomposition-forward-shifted}
     For non-negative integers $m$ and $n$
@@ -108,6 +130,18 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \begin{proof}
         Direct consequence of~\eqref{theorem:odd-power-identity},
         forward recurrence~\eqref{prop:Tm-recurrence-forward}, and symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition $m-1$ shifted]
+    \label{prop:odd-power-decomposition-forward-m-1-shifted}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m} (-1)^{t+1} \binom{m}{t} T_{m-1} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-forward} and
+        by symmetry~\eqref{prop:Tm-symmetry}.
     \end{proof}
 \end{proposition}
 
@@ -153,14 +187,30 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     \end{align*}
 \end{corollary}
 
-\begin{proposition}[Sum of odd powers]
+\begin{corollary}[Odd power binomial form plus]
+    \label{prop:odd-power-binomial-plus}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a+1}^{n+a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Odd power binomial form plus shifted]
+    \label{prop:odd-power-binomial-plus-shifted}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a}^{n+a-1} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    \end{align*}
+\end{corollary}
+
+\begin{proposition}[Sums of odd powers]
     \label{prop:sum-of-odd-powers}
     \begin{align*}
         \sum_{t=1}^{n} t^{2m+1} = \sum_{t=1}^{n} \sum_{k=1}^{t} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
 \end{proposition}
 
-\begin{proposition}[Sum of odd powers forward decomposition]
+\begin{proposition}[Sums of odd powers forward decomposition]
     \label{prop:sum-odd-power-decomposition-forward}
     For non-negative integers $m$ and $n$
     \begin{align*}
