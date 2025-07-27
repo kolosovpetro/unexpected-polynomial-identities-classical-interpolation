@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Main results refactors
 - Update mathematica package
 - Update mathematica documentation
+- Main results binomial forms
 
 ## [1.0.1] - 2025-07-26
 
