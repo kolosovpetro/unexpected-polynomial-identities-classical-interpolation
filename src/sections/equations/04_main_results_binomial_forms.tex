@@ -1,0 +1,42 @@
+﻿\begin{proposition}[Odd power binomial form]
+    \label{prop:odd-power-binomial}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n-2a)
+        ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    \end{align*}
+    \begin{proof}
+        By observing the summation limits we can see that $k$ runs as $k=a+1,a+2,a+3,\ldots,a+n-a$, which
+        implies that $(k-a)=1,2,3,\ldots, n$.
+        By observing the term $(n-k-a)$ we see that $(n-k-a)=n-1,n-2,n-3,\ldots,0$.
+        Thus, by reindexing the sum
+        $(n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n-2a} \coeffA{m}{r} (a+k-a)^r (n-(a+k)-a)^r$
+        the statement~\eqref{prop:odd-power-binomial} is equivalent to~\eqref{theorem:odd-power-identity}
+        with setting $n \rightarrow n-2a$.
+    \end{proof}
+\end{proposition}
+
+\begin{corollary}[Odd power binomial form shifted]
+    \label{prop:odd-power-binomial-shifted}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n-2a)
+        ^{2m+1} = \sum_{r=0}^{m} \sum_{k=a}^{n-a-1} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Odd power binomial form plus]
+    \label{prop:odd-power-binomial-plus}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a+1}^{n+a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    \end{align*}
+\end{corollary}
+
+\begin{corollary}[Odd power binomial form plus shifted]
+    \label{prop:odd-power-binomial-plus-shifted}
+    For integers $n$ and $a$ such that $n-2a \geq 0$
+    \begin{align*}
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a}^{n+a-1} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    \end{align*}
+\end{corollary}

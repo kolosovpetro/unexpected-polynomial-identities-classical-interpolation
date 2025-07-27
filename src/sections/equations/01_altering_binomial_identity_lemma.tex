@@ -19,21 +19,11 @@
             = \int_0^1 z^r \left( \sum_t \binom{r}{t} (-1)^t z^{t} \right) \, dz
             = \int_0^1 z^r (1 - z)^r \, dz
         \end{align*}
-%        Thus,
-%        \begin{align*}
-%            \sum_t \binom{r}{t} (-1)^t \int_0^1 z^{r+t} \, dz
-%            = \int_0^1 z^r \left( \sum_t \binom{r}{t} (-1)^t z^{t} \right) \, dz
-%            = \int_0^1 z^r (1 - z)^r \, dz
-%        \end{align*}
         The work~\cite{sury2004identities} provides the identity $\binom{n}{k}^{-1}=(n+1)\int_0^1 z^k(1-z)^{n-k}\,dz$.
         By setting $n=2r$ and $k=r$ yields
         \begin{align*}
             \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} = \int_0^1 z^r (1-z)^{r}\,dz = \binom{2r}{r}^{-1} \frac{1}{2r+1}
         \end{align*}
-%        Therefore, for $j=0$
-%        \begin{align*}
-%            \sum_t \binom{r}{t} \frac{(-1)^t}{r+t+1} = \binom{2r}{r}^{-1} \frac{1}{2r+1}
-%        \end{align*}
         This completes the proof for the case $j=0$.
 
         For $j > 0$

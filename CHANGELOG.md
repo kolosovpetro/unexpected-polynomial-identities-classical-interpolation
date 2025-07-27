@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update acknowledgements
 - Update references
 - Recurrence relation section updates
+- Main results refactors
 
 ## [1.0.0] - 2025-07-24
 
