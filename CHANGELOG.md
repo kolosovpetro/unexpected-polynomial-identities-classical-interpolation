@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Main results binomial forms
 - Binomial forms naming
 - Mathematica programs for binomial forms
+- Mathematica binomial forms documentation
 
 ## [1.0.1] - 2025-07-26
 
