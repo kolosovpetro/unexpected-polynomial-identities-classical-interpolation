@@ -2,25 +2,25 @@
 
 \begin{corollary}[Binomial form]
     \label{prop:binomial-form}
-    For integers $n$ and $a$ such that $n-2a \geq 0$
+    For integers $n$ and $a$ such that $n+2a \geq 0$
     \begin{align*}
-    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a+1}^{n+a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a+1}^{n+a} \coeffA{m}{r} (k+a)^r (n+a-k)^r
     \end{align*}
 \end{corollary}
 
 \begin{corollary}[Shifted binomial form]
     \label{prop:shifted-binomial-form}
-    For integers $n$ and $a$ such that $n-2a \geq 0$
+    For integers $n$ and $a$ such that $n+2a \geq 0$
     \begin{align*}
-    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a}^{n+a-1} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    (n+2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-a}^{n+a-1} \coeffA{m}{r} (k+a)^r (n+a-k)^r
     \end{align*}
 \end{corollary}
 
 \begin{corollary}[Centered binomial form]
     \label{cor:centered-binomial-form}
-    For integers $n$ and $a$ such that $n-2a \geq 0$
+    For integers $n$ and $a$ such that $n+a \geq 0$
     \begin{align*}
-    (n+a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-\frac{a}{2}+1}^{n+\frac{a}{2}} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left( n-k-\frac{a}{2} \right)^r
+    (n+a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-\frac{a}{2}+1}^{n+\frac{a}{2}} \coeffA{m}{r} \left( k+\frac{a}{2} \right)^r \left( n+\frac{a}{2}-k \right)^r
     \end{align*}
 \end{corollary}
 
@@ -28,7 +28,7 @@
     \label{cor:shifted-centered-binomial-form}
     For integers $n$ and $a$ such that $n-2a \geq 0$
     \begin{align*}
-    (n+a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-\frac{a}{2}}^{n+\frac{a}{2}-1} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left( n-k-\frac{a}{2} \right)^r
+    (n+a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=-\frac{a}{2}}^{n+\frac{a}{2}-1} \coeffA{m}{r} \left( k+\frac{a}{2} \right)^r \left( n+\frac{a}{2}-k \right)^r
     \end{align*}
 \end{corollary}
 
@@ -36,7 +36,7 @@
     \label{prop:negated-binomial-form}
     For integers $n$ and $a$ such that $n-2a \geq 0$
     \begin{align*}
-    (n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    (n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=a+1}^{n-a} \coeffA{m}{r} (k-a)^r (n-a-k)^r
     \end{align*}
     \begin{proof}
         By observing the summation limits we can see that $k$ runs as $k=a+1,a+2,a+3,\ldots,a+n-a$, which
@@ -53,7 +53,7 @@
     \label{prop:shifted-negated-binomial-form}
     For integers $n$ and $a$ such that $n-2a \geq 0$
     \begin{align*}
-    (n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=a}^{n-a-1} \coeffA{m}{r} (k-a)^r (n-k-a)^r
+    (n-2a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=a}^{n-a-1} \coeffA{m}{r} (k-a)^r (n-a-k)^r
     \end{align*}
 \end{corollary}
 
@@ -61,7 +61,7 @@
     \label{cor:centered-negated-binomial-form}
     For integers $n$ and $a$ such that $n-a \geq 0$
     \begin{align*}
-    (n-a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=\frac{a}{2}}^{n-\frac{a}{2}-1} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left(n-k-\frac{a}{2} \right)^r
+    (n-a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=\frac{a}{2}}^{n-\frac{a}{2}-1} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left(n-\frac{a}{2}-k \right)^r
     \end{align*}
 \end{corollary}
 
@@ -69,6 +69,6 @@
     \label{cor:shifted-centered-negated-binomial-form}
     For integers $n$ and $a$ such that $n-a \geq 0$
     \begin{align*}
-    (n-a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=\frac{a}{2}+1}^{n-\frac{a}{2}} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left(n-k-\frac{a}{2} \right)^r
+    (n-a)^{2m+1} = \sum_{r=0}^{m} \sum_{k=\frac{a}{2}+1}^{n-\frac{a}{2}} \coeffA{m}{r} \left( k-\frac{a}{2} \right)^r \left(n-\frac{a}{2}-k \right)^r
     \end{align*}
 \end{corollary}
