@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update references
 - Recurrence relation section updates
 - Main results refactors
+- Update mathematica package
+- Update mathematica documentation
 
 ## [1.0.0] - 2025-07-24
 
