@@ -24,6 +24,8 @@ TableFormForwardRecurrenceForT::usage="Prints the forward recurrence for Tm in t
 TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in the form of triangle."
 TableFormBivariateSumT::usage="Prints Tm in the form of triangle."
 
+SumsOfOddPowers::usage="Validates the identity Sums of powers."
+
 BinomialForm::usage="Validates the identity Binomial form."
 ShiftedBinomialForm::usage="Validates the identity Shifted binomial form."
 CenteredBinomialForm::usage="Validates the identity Centered binomial form."
@@ -70,6 +72,8 @@ CentralRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * Bivariat
 TableFormCentralRecurrenceForT[m_, rows_]:= TableForm[Table[CentralRecurrenceForT[m, n, k], {n, -m/2, rows}, {k, 0, n+m/2}], TableAlignments -> Left];
 OddPowerCentralDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+(m/2)-t, k], {t, 1, m+1}], {k, 1, n+(m/2)}];
 
+SumsOfOddPowers[m_, p_]:= Sum[Sum[Sum[A[m, r]* k^r * (n-k)^r, {r, 0, m}], {k, 1, n}], {n, 1, p}];
+
 BinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a)^r * (n + a - k)^r, {k, -a+1, n + a}], {r, 0, m}];
 ShiftedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a)^r * (n + a - k)^r, {k, -a, n + a-1}], {r, 0, m}];
 CenteredBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a/2)^r * (n + a/2 - k)^r, {k, -a/2 + 1, n + a/2}], {r, 0, m}];
@@ -83,6 +87,9 @@ DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
 
 End[ ]
 EndPackage[ ]
+
+
+
 
 
 
