@@ -33,6 +33,8 @@ ShiftedNegatedBinomialForm::usage="Validates the identity Shifted negated binomi
 CenteredNegatedBinomialForm::usage="Validates the identity Centered negated binomial form."
 ShiftedCenteredNegatedBinomialForm::usage="Validates the identity Shifted centered negated binomial form."
 
+DoubleBivariateSumR::usage="Defines the Double bivaraite sum Rm."
+
 Begin["`Private`"]
 Unprotect[Power];
 Power[0|0., 0|0.] = 1;
@@ -77,11 +79,10 @@ ShiftedNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a)^r * (n - a - 
 CenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2, n - a/2 - 1}], {r, 0, m}];
 ShiftedCenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2+1, n - a/2}], {r, 0, m}];
 
+DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
+
 End[ ]
 EndPackage[ ]
-
-
-
 
 
 
