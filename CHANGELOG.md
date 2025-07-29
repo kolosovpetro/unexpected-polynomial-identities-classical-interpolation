@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add bivariate identities
 - Bivariate identities examples
 - Update mathematica package
+- Fix note on x^0 = 1
+- Explicit forms of odd power identity
+- Examples of odd power identity
 
 ### Changed
 
