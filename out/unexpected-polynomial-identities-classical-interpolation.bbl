@@ -162,4 +162,16 @@ Petro Kolosov.
   identity}, 2018.
 \newblock \url{https://oeis.org/A316387}.
 
+\bibitem{zumkeller2004entry}
+Reinhard Zumkeller.
+\newblock {Entry A094053 in The On-Line Encyclopedia of Integer Sequences},
+  2004.
+\newblock \url{https://oeis.org/A094053}.
+
+\bibitem{sloane2015triangular}
+{Sloane, N. J. A.}
+\newblock {Triangular numbers. Entry A000217 in The On-Line Encyclopedia of
+  Integer Sequences}, 2015.
+\newblock \url{https://oeis.org/A000217}.
+
 \end{thebibliography}
