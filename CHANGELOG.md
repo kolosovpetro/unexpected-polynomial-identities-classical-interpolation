@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add note about Pascal's identity
 - Add systems of linear equations examples
 - Add related OEIS sequences
+- Move license info to separate file
 
 ### Changed
 
