@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix note on x^0 = 1
 - Explicit forms of odd power identity
 - Examples of odd power identity
+- Add note about Pascal's identity
 
 ### Changed
 

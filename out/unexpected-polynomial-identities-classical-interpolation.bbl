@@ -107,6 +107,13 @@ Petro Kolosov.
   2018.
 \newblock \url{https://oeis.org/A304042}.
 
+\bibitem{macmillan2011proofs}
+{MacMillan, Kieren and Sondow, Jonathan}.
+\newblock {Proofs of power sum and binomial coefficient congruences via
+  Pascal's identity}.
+\newblock {\em {The American Mathematical Monthly}}, 118(6):549--551, 2011.
+\newblock \url{https://arxiv.org/abs/1011.0076}.
+
 \bibitem{kolosov2025efficient}
 Petro Kolosov.
 \newblock {An efficient method of spline approximation for power function}.

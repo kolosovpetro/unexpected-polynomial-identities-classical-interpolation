@@ -21,6 +21,15 @@ For example,
     \item $6^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 5^r + 8^r + 9^r + 8^r + 5^r + 0^r  \right]$
 \end{itemize}
 Assuming that $x^0=1$ for every $x$.
+Interestingly enough that the explicit form above is a Pascal-type identity,
+with similar pattern as Pascal's identity itself~\cite{macmillan2011proofs},
+in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$.
+We may see it by observing the Pascal's identity $(n+1)^{k+1}-1=\sum _{p=0}^{k}{\binom {k+1}{p}}(1^{p}+2^{p}+\dots +n^{p})$.
+In particular,
+\begin{align*}
+    n^{2m+1} - 1
+    = \sum_{r=0}^{m} \coeffA{m}{r} \left[ (n-1)^r + (2n-4)^r + (3n-9)^r + (4n-16)^r + \cdots +  (n-1)^r  \right]
+\end{align*}
 \begin{definition}[Bivariate sum $T_m$]
     For integers $n,k$ and $m \geq 0$
     \label{def:bivariate-sum-Tm}
