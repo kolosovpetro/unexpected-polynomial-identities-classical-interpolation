@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Explicit forms of odd power identity
 - Examples of odd power identity
 - Add note about Pascal's identity
+- Add systems of linear equations examples
+- Add related OEIS sequences
 
 ### Changed
 
