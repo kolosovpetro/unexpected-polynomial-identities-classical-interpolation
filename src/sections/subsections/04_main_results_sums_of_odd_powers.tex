@@ -5,6 +5,16 @@
         \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
 \end{proposition}
+In explicit view
+\begin{align*}
+    \sum_{n=1}^{p} n^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \bigg \{
+    &[0^r + 1^r + 2^r + 3^r + \cdots (n-1)^r] \\
+    + &[0^r + 2^r + 4^r + 6^r + \cdots (2n-4)^r] \\
+    + &[0^r + 3^r + 6^r + 9^r + \cdots (3n-9)^r] \\
+    + &[0^r + 4^r + 8^r + 12^r + \cdots (4n-16)^r] \\
+    + &\cdots + (p^2 - p^2)^r
+    \bigg \}
+\end{align*}
 
 \begin{proposition}[Sums of odd powers forward decomposition]
     \label{prop:sum-odd-power-decomposition-forward}
