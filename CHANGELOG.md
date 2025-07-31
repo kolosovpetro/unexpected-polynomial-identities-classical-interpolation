@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Same color for all links
 - Fix eq. reference
 - Power sum explicit view
+- Faulhaber's coefficients mathematica
 
 ## [1.0.2] - 2025-07-27
 
