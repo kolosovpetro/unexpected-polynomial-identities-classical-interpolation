@@ -37,6 +37,8 @@ ShiftedCenteredNegatedBinomialForm::usage="Validates the identity Shifted center
 
 DoubleBivariateSumR::usage="Defines the Double bivaraite sum Rm."
 
+FaulhaberCoefficients::usage="Faulhaber coefficients https://arxiv.org/pdf/math/9207222 page 14."
+
 Begin["`Private`"]
 Unprotect[Power];
 Power[0|0., 0|0.] = 1;
@@ -45,6 +47,10 @@ Protect[Power];
 A[n_, k_] := 0;
 A[n_, k_] := (2k + 1) * Binomial[2k, k] * Sum[A[n, j] * Binomial[j, 2k + 1] * (-1)^(j - 1) / (j - k) * BernoulliB[2j - 2k], {j, 2k + 1, n}] /; 0 <= k < n;
 A[n_, k_] := (2n + 1) * Binomial[2n, n] /; k == n;
+
+FaulhaberCoefficients[n_, k_]:= 0;
+FaulhaberCoefficients[n_, k_]:= (-1)^(n-k) * Sum[Binomial[2n, n-k-j]* Binomial[n-k+j, j] * (n-k-j)/(n-k+j) * BernoulliB[n+k+j], {j, 0, n-k}] /; 0 <= k < n;
+FaulhaberCoefficients[n_, k_]:= BernoulliB[2n] /; k == n;
 
 PrintTriangleA[m_]:= TableForm[Table[A[n, k], {n, 0, m}, {k, 0, n}], TableAlignments -> Left];
 
