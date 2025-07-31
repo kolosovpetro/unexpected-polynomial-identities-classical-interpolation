@@ -24,6 +24,8 @@ TableFormForwardRecurrenceForT::usage="Prints the forward recurrence for Tm in t
 TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in the form of triangle."
 TableFormBivariateSumT::usage="Prints Tm in the form of triangle."
 
+SumsOfOddPowers::usage="Validates the identity Sums of powers."
+
 BinomialForm::usage="Validates the identity Binomial form."
 ShiftedBinomialForm::usage="Validates the identity Shifted binomial form."
 CenteredBinomialForm::usage="Validates the identity Centered binomial form."
@@ -33,6 +35,10 @@ ShiftedNegatedBinomialForm::usage="Validates the identity Shifted negated binomi
 CenteredNegatedBinomialForm::usage="Validates the identity Centered negated binomial form."
 ShiftedCenteredNegatedBinomialForm::usage="Validates the identity Shifted centered negated binomial form."
 
+DoubleBivariateSumR::usage="Defines the Double bivaraite sum Rm."
+
+FaulhaberCoefficients::usage="Faulhaber coefficients https://arxiv.org/pdf/math/9207222 page 14."
+
 Begin["`Private`"]
 Unprotect[Power];
 Power[0|0., 0|0.] = 1;
@@ -41,6 +47,10 @@ Protect[Power];
 A[n_, k_] := 0;
 A[n_, k_] := (2k + 1) * Binomial[2k, k] * Sum[A[n, j] * Binomial[j, 2k + 1] * (-1)^(j - 1) / (j - k) * BernoulliB[2j - 2k], {j, 2k + 1, n}] /; 0 <= k < n;
 A[n_, k_] := (2n + 1) * Binomial[2n, n] /; k == n;
+
+FaulhaberCoefficients[n_, k_]:= 0;
+FaulhaberCoefficients[n_, k_]:= (-1)^(n-k) * Sum[Binomial[2n, n-k-j]* Binomial[n-k+j, j] * (n-k-j)/(n-k+j) * BernoulliB[n+k+j], {j, 0, n-k}] /; 0 <= k < n;
+FaulhaberCoefficients[n_, k_]:= BernoulliB[2n] /; k == n;
 
 PrintTriangleA[m_]:= TableForm[Table[A[n, k], {n, 0, m}, {k, 0, n}], TableAlignments -> Left];
 
@@ -68,6 +78,8 @@ CentralRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * Bivariat
 TableFormCentralRecurrenceForT[m_, rows_]:= TableForm[Table[CentralRecurrenceForT[m, n, k], {n, -m/2, rows}, {k, 0, n+m/2}], TableAlignments -> Left];
 OddPowerCentralDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+(m/2)-t, k], {t, 1, m+1}], {k, 1, n+(m/2)}];
 
+SumsOfOddPowers[m_, p_]:= Sum[Sum[Sum[A[m, r]* k^r * (n-k)^r, {r, 0, m}], {k, 1, n}], {n, 1, p}];
+
 BinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a)^r * (n + a - k)^r, {k, -a+1, n + a}], {r, 0, m}];
 ShiftedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a)^r * (n + a - k)^r, {k, -a, n + a-1}], {r, 0, m}];
 CenteredBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a/2)^r * (n + a/2 - k)^r, {k, -a/2 + 1, n + a/2}], {r, 0, m}];
@@ -76,6 +88,8 @@ NegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a)^r * (n - a - k)^r, {
 ShiftedNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a)^r * (n - a - k)^r, {k, a, n - a - 1}], {r, 0, m}];
 CenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2, n - a/2 - 1}], {r, 0, m}];
 ShiftedCenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2+1, n - a/2}], {r, 0, m}];
+
+DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
 
 End[ ]
 EndPackage[ ]
