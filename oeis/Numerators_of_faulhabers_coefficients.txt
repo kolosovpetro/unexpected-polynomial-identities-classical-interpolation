@@ -1,4 +1,4 @@
-﻿Triangle read by rows: T(n,k) is the numerator of A(n, k) defined by the identity Sum_{k=1..p} k^(2n-1) = 1/(2*n) * [A(n,0)*u^n + A(n, 1)*u^(n-1) + ... + A(n, n-1)*u^1), where u=p^2+p
+Triangle read by rows: T(n,k) is the numerator of A(n, k) defined by the identity Sum_{k=1..p} k^(2n-1) = 1/(2*n) * [A(n,0)*u^n + A(n, 1)*u^(n-1) + ... + A(n, n-1)*u^1), where u=p^2+p
 
 Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
 

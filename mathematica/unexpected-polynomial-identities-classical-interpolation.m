@@ -8,7 +8,9 @@ OddPowerIdentitySimplified::usage="Validates odd power identity expanded form."
 PrintTriangleA::usage="PrintTriangleA[m] prints triangle of coefficients A for given non negative integer m."
 BivariateSumT::usage="Defines bivariate sum T(m,n,k)."
 BackwardRecurrenceForT::usage="Validates the backward recurrence for the bivariate sum T(m,n,k)."
+BackwardRecurrenceForTMultifold::usage="Validates the multifold backward recurrence for the bivariate sum T(m,n,k)."
 ForwardRecurrenceForT::usage="Validates the forward recurrence for the bivariate sum T(m,n,k)."
+ForwardRecurrenceForTMultifold::usage="Validates the multifold forward recurrence for the bivariate sum T(m,n,k)."
 CentralRecurrenceForT::usage="Validates the central recurrence for the bivariate sum T(m,n,k)."
 OddPowerBackwardDecomposition::usage="Validates the identity Odd power backward decomposition."
 OddPowerBackwardDecompositionShifted::usage="Validates the identity Odd power backward decomposition shifted."
@@ -20,7 +22,9 @@ OddPowerForwardDecompositionMMinus1Shifted::usage="Validates the identity Odd po
 OddPowerForwardDecompositionShifted::usage="Validates the identity Odd power forward decomposition shifted."
 OddPowerCentralDecomposition::usage="Validates the identity Odd power central decomposition."
 TableFormBackwardRecurrenceForT::usage="Prints the backward recurrence for Tm in the form of triangle."
+TableFormBackwardRecurrenceForTMultifold::usage="Prints the multifold backward recurrence for Tm in the form of triangle."
 TableFormForwardRecurrenceForT::usage="Prints the forward recurrence for Tm in the form of triangle."
+TableFormForwardRecurrenceForTMultifold::usage="Prints the multifold forward recurrence for Tm in the form of triangle."
 TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in the form of triangle."
 TableFormBivariateSumT::usage="Prints Tm in the form of triangle."
 
@@ -67,12 +71,18 @@ OddPowerForwardDecompositionMMinus1Shifted[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomi
 OddPowerForwardDecompositionShifted[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+t, k], {t, 1, m+1}], {k, 0, n-1}];
 TableFormForwardRecurrenceForT[m_, rows_]:= TableForm[Table[ForwardRecurrenceForT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 
+ForwardRecurrenceForTMultifold[m_, n_, k_, s_]:= Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m, n+t, k], {t, 1, m+s}];
+TableFormForwardRecurrenceForTMultifold[m_, s_, rows_]:= TableForm[Table[ForwardRecurrenceForTMultifold[m, n, k, s], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+
 BackwardRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t-1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}];
 OddPowerBackwardDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}], {k, 1, n}];
 OddPowerBackwardDecompositionShifted[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}], {k, 0, n-1}];
 OddPowerBackwardDecompositionMMinus1[n_, m_]:= Sum[Sum[(-1)^(t-1) * Binomial[m, t] * BivariateSumT[m-1, n-t, k], {t, 1, m}], {k, 1, n}];
 OddPowerBackwardDecompositionMMinus1Shifted[n_, m_]:= Sum[Sum[(-1)^(t-1) * Binomial[m, t] * BivariateSumT[m-1, n-t, k], {t, 1, m}], {k, 0, n-1}];
 TableFormBackwardRecurrenceForT[m_, rows_]:= TableForm[Table[BackwardRecurrenceForT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+
+BackwardRecurrenceForTMultifold[m_, n_, k_, s_]:= Sum[(-1)^(t-1) * Binomial[m+s, t] * BivariateSumT[m, n-t, k], {t, 1, m+s}];
+TableFormBackwardRecurrenceForTMultifold[m_, s_, rows_]:= TableForm[Table[BackwardRecurrenceForTMultifold[m, n, k, s], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 
 CentralRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+(m/2)-t, k], {t, 1, m+1}];
 TableFormCentralRecurrenceForT[m_, rows_]:= TableForm[Table[CentralRecurrenceForT[m, n, k], {n, -m/2, rows}, {k, 0, n+m/2}], TableAlignments -> Left];
@@ -93,6 +103,9 @@ DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
 
 End[ ]
 EndPackage[ ]
+
+
+
 
 
 
