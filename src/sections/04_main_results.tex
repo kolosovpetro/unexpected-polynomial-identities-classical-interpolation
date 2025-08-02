@@ -25,11 +25,12 @@ Assuming that $x^0=1$ for every $x$.
 Interestingly enough that the explicit form above is a Pascal-type identity,
 in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$,
 with similar pattern as Pascal's identity itself~\cite{macmillan2011proofs}.
-We may see it by observing the Pascal's identity $(n+1)^{k+1}-1=\sum _{p=0}^{k}{\binom {k+1}{p}}(1^{p}+2^{p}+\dots +n^{p})$.
+We may see it by observing the Pascal's identity
+$(n+1)^{k+1}-1=\sum _{p=0}^{k}{\binom {k+1}{p}}(1^{p}+2^{p}+\dots +n^{p})$.
 In particular,
 \begin{align*}
-    n^{2m+1} - 1
-    = \sum_{r=0}^{m} \coeffA{m}{r} \left[ (n-1)^r + (2n-4)^r + (3n-9)^r + (4n-16)^r + \cdots +  (n-1)^r  \right]
+    n^{2k+1} - 1
+    = \sum_{p=0}^{k} \coeffA{k}{p} \left[ (n-1)^p + (2n-4)^p + (3n-9)^p + (4n-16)^p + \cdots +  (n-1)^p  \right]
 \end{align*}
 \begin{definition}[Bivariate sum $T_m$]
     For integers $n,k$ and $m \geq 0$
