@@ -12,7 +12,7 @@
     \label{prop:odd-power-decomposition-backward-multifold}
     For non-negative integers $m$, $n$ and $s \geq 1$
     \begin{align*}
-        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, k)
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, k)
     \end{align*}
     \begin{proof}
         Direct consequence of~\eqref{theorem:odd-power-identity}
@@ -24,7 +24,7 @@
     \label{prop:odd-power-decomposition-backward-shifted-multifold}
     For non-negative integers $m$, $n$ and $s \geq 1$
     \begin{align*}
-        n^{2m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, k)
+        n^{2m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, k)
     \end{align*}
     \begin{proof}
         Direct consequence of~\eqref{theorem:odd-power-identity},
@@ -37,7 +37,7 @@
     \label{cor:odd-power-decomposition-m-1-multifold}
     For non-negative integers $m$, $n$ and $s \geq 0$
     \begin{align*}
-        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n-t, k)
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n-t, k)
     \end{align*}
     \begin{proof}
         By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-backward-multifold}.
@@ -48,7 +48,7 @@
     \label{cor:odd-power-decomposition-m-1-shifted-multifold}
     For non-negative integers $m$, $n$ and $s \geq 0$
     \begin{align*}
-        n^{2m-1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n-t, k)
+        n^{2m-1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n-t, k)
     \end{align*}
     \begin{proof}
         By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-backward-shifted-multifold}
