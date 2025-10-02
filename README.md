@@ -11,3 +11,6 @@ A recurrence relation for these coefficients $\mathbf{A}_{m,r}$
 is obtained via a specific generating function, enabling recursive construction of the coefficients.
 The main results include several odd power identities, an identity for binomial version,
 and identities for sums of odd powers.
+
+- https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation
+- https://kolosovpetro.github.io/pdf/unexpected-polynomial-identities-classical-interpolation.pdf
