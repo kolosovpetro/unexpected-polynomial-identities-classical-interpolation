@@ -7,7 +7,7 @@ Reallocating 'name_of_file' (item size: 1) to 57 items.
 Database file #1: unexpected-polynomial-identities-classical-interpolation.bib
 You've used 28 entries,
             1791 wiz_defined-function locations,
-            618 strings with 9250 characters,
+            618 strings with 9236 characters,
 and the built_in function-call counts, 4604 in all, are:
 = -- 424
 > -- 126
