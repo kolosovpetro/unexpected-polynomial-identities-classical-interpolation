@@ -119,6 +119,24 @@ Petro Kolosov.
 \newblock {\em arXiv preprint arXiv:2503.07618}, 2025.
 \newblock \url{https://arxiv.org/abs/2503.07618}.
 
+\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_1}
+Petro Kolosov.
+\newblock {The coefficients U(m, l, k), m = 1 defined by the polynomial
+  identity}, 2018.
+\newblock \url{https://oeis.org/A320047}.
+
+\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_2}
+Petro Kolosov.
+\newblock {The coefficients U(m, l, k), m = 2 defined by the polynomial
+  identity}, 2018.
+\newblock \url{https://oeis.org/A316349}.
+
+\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_3}
+Petro Kolosov.
+\newblock {The coefficients U(m, l, k), m = 3 defined by the polynomial
+  identity}, 2018.
+\newblock \url{https://oeis.org/A316387}.
+
 \bibitem{barbero2020two}
 J.~Fernando Barbero~G., Juan Margalef-Bentabol, and Eduardo~J.S.
   Villase{\~n}or.
@@ -142,24 +160,6 @@ Petro Kolosov.
 \newblock {Numerical triangle, row sums give seventh power, Entry A300785 in
   The On-Line Encyclopedia of Integer Sequences}, 2018.
 \newblock \url{https://oeis.org/A300785}.
-
-\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_1}
-Petro Kolosov.
-\newblock {The coefficients U(m, l, k), m = 1 defined by the polynomial
-  identity}, 2018.
-\newblock \url{https://oeis.org/A320047}.
-
-\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_2}
-Petro Kolosov.
-\newblock {The coefficients U(m, l, k), m = 2 defined by the polynomial
-  identity}, 2018.
-\newblock \url{https://oeis.org/A316349}.
-
-\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_3}
-Petro Kolosov.
-\newblock {The coefficients U(m, l, k), m = 3 defined by the polynomial
-  identity}, 2018.
-\newblock \url{https://oeis.org/A316387}.
 
 \bibitem{zumkeller2004entry}
 Reinhard Zumkeller.

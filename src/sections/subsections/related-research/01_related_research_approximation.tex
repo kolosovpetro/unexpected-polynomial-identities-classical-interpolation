@@ -14,6 +14,21 @@ For example,
     P(2,X,3) &= 420X^2 - 2160X + 2943 \\
     P(2,X,4) &= 900X^2 - 6000X + 10624
 \end{align*}
+The reason behind this behavior lies in the implicit form of the polynomial $P(m,X,N)$,
+meaning that
+\begin{align*}
+    P(m,X,N) = \sum_{r=0}^{m} (-1)^{m-r} U(m, N, r) \cdot X^{r}
+\end{align*}
+where $U(m, N, r)$ is a polynomial defined as follows
+\begin{align*}
+    U(m, N, r) = (-1)^m \sum_{k=1}^{N} \sum_{j=r}^{m} \binom{j}{r} \coeffA{m}{j} k^{2j-r} (-1)^j
+\end{align*}
+which grows as $N$ increases.
+Few cases of coefficients $U(m, N, r)$ are registered as OEIS sequences~\cite{
+    oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_1,
+    oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_2,
+    oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_3}.
+
 The following plot demonstrates the approximation of fifth power $X^5$ by
 $P(2,X,4) = 900X^2 - 6000X + 10624$
 \begin{figure}[H]
