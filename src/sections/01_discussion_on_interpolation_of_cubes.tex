@@ -5,30 +5,31 @@ our young explorer always possessed a strong sense of mathematical beauty and ae
 The mathematical knowledge of the individual was limited by undergraduate level course, which includes the basics of
 matrix operations, basic calculus, and elementary linear algebra.
 One day, our student found himself observing the tables of finite differences,
-precisely finite differences of cubes
+in particular finite differences of cubes
 
 \input{sections/figures/01_fig_finite_differences_cubes}
 The first question that visited curious mind was
-\begin{question}
+\begin{problem}
     \label{quest:interpolation-cubes}
     How to reconstruct the value of $n^3$ from the values of its finite differences?
-\end{question}
-Precisely, the inquiry is to find a way to reconstruct the values of the sequence $\{0, 1, 8, 27, 64, \ldots\}$
-given the values of finite differences in the table~\eqref{tab:finite-differences-cubes},
-which refers to interpolation.
+\end{problem}
+Precisely, the inquiry was to find a way to reconstruct the values of the sequence $\{0, 1, 8, 27, 64, \ldots\}$
+given the values of its finite differences.
+Clearly, the inquiry refers to the process of interpolation.
 
-In its essence, the problem is so old that it can be traced back
+In its essence, the problem of interpolation is so old that it can be traced back
 to ancient Babylonian and Greek times, several centuries BC and first centuries AD~\cite{gautschi2012interpolation}.
-The process of finding new data points based on the range of a discrete set
-of known data points is called interpolation.
-Interpolation, as we know it today, was developed in 1674--1684 by Isaac Newton
-in his works referenced as foundation of classical interpolation theory~\cite{meijering2002chronology}.
-For instance, Newton's interpolation formula addresses the question~\eqref{quest:interpolation-cubes} immediately,
+Interpolation -- is the process of finding new data points based on the range of a discrete set
+of known data points.
+Interpolation, as we know it today, has been developed in between 1674--1684 by Sir Isaac Newton.
+His works in interpolation are frequently referenced as
+the foundation of classical interpolation theory~\cite{meijering2002chronology}.
+For instance, Newton's interpolation formula addresses the problem~\eqref{quest:interpolation-cubes} immediately,
 because
 \begin{align*}
     27 = 6 \binom{3}{3} + 6 \binom{3}{2} + 1 \binom{3}{1} + 0\binom{3}{0} = 6 + 18 + 3
 \end{align*}
-where $6,6,1,0$ is the first row in table~\eqref{tab:finite-differences-cubes}.
+where $6,6,1,0$ corresponds to the first row in table~\eqref{tab:finite-differences-cubes}.
 In general,
 \begin{align*}
     n^3 = 6 \binom{n}{3} + 6 \binom{n}{2} + 1\binom{n}{1} + 0 \binom{n}{0}
@@ -36,17 +37,17 @@ In general,
 because $f(x) = \sum_{k=0}^{d} \Delta^{d-k} f(0) \binom{x}{d-k}$, see~\cite[~p. 190]{graham1994concrete}.
 
 Great!
-But there is one thing, the student who has risen the question~\eqref{quest:interpolation-cubes}
+But there is one thing, the student which stated the problem~\eqref{quest:interpolation-cubes}
 had no clue about interpolation theory at all.
-What was decided then?
-Exactly, our inquirer has decided to find a solution himself, being driven by the pure feeling of mystery.
-His mind was occupied by only a single thought:
+What was the action taken next?
+Exactly, our inquirer decided to re-invent the solution himself, being driven by the pure feeling of mystery.
+Student's mind was occupied by only a single thought:
 \textit{All mathematical truths exist timelessly, we only reveal and describe them.}
-That mindset inspired our student to start his own mathematical journey.
+That mindset inspired our researcher to start his own mathematical journey.
 
 By observing the table of finite differences~\eqref{tab:finite-differences-cubes} we can notice that
-the first finite difference of cubes may be expressed in terms of its
-third finite differences $\Delta^3(n^3) = 6$, as follows
+the first order finite difference of cubes may be expressed in terms of its
+third order finite differences $\Delta^3(n^3) = 6$, as follows
 \begin{align*}
     \begin{split}
         \Delta(0^3) &= 1+6 \cdot 0 \\
@@ -65,7 +66,6 @@ By using sigma notation, we get
 However, there is a more beautiful way to prove that $\Delta(n^3) = 1 + 6 \sum_{k=0}^{n} k$.
 We refer to one of the finest articles in the area of polynomials and power sums,
 that is \textit{Johann Faulhaber and sums of powers} written by Donald Knuth~\cite{knuth1993johann}.
-Indeed, this article is a great mean to reach piece of mind in mathematics.
 We now focus on the odd power identities shown at~\cite[~p. 9]{knuth1993johann}
 \begin{align*}
     n^1 &= \binom{n}{1} \\
@@ -88,10 +88,13 @@ It easy to see that
 \end{align*}
 because $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$.
 
-Moreover, the concept above allows us to reach $N$-fold power sums $\sum^N k^{2m+1}$
-or finite differences $\Delta^N k^{2m+1}$ by simply altering
-binomial coefficients indexes.
+Moreover, the concept above allows us to reach $r$-fold power sums $\sum^r k^{2m+1}$
+or finite differences $\Delta^r k^{2m+1}$ by altering binomial coefficients indices.
 Quite strong and impressive.
+\begin{align*}
+    \Sigma^{r} k^3 &=  6 \binom{n+1+r}{3+r} + \binom{n+r}{1+r} \\
+    \Delta^{r} k^5 &= 120 \binom{n+2-r}{5-r} + 30 \binom{n+1-r}{3-r} + \binom{n-r}{1-r}
+\end{align*}
 
 We can observe that triangular numbers $\binom{n+1}{2}$ are equivalent to
 \begin{align*}
@@ -123,20 +126,23 @@ Because all what remains is to say that
     = \sum_{k=0}^{n-1} \left( 1 + 6 \sum_{t=0}^{k} t \right)
     = \sum_{k=0}^{n-1} 1 + 3 k + 3 k^2
 \end{align*}
-Thus, the formula for polynomial $n^3$ is derived successfully, and thus,
-our protégée's question~\eqref{quest:interpolation-cubes} is answered positively.
-Because we have successfully found the function that matches $n^3$ from the values of its finite differences from the
-table~\eqref{tab:finite-differences-cubes}.
+Thus, the formula for cubes $n^3$ was derived, and thus,
+our protégée's problem~\eqref{quest:interpolation-cubes} has been solved successfully.
+Because we have found a formula that recovers the cubes $n^3$ from their finite differences.
+Indeed, $5^3 = \sum_{k=0}^{4} 1 + 3 k + 3 k^2 = 1 + 7 + 19 + 37 + 61 = 125$ which is exactly
+the sum of terms of the first column of~\eqref{tab:finite-differences-cubes}.
 
 However, not this time.
-Luckily enough (say), the student who has stated the question~\eqref{quest:interpolation-cubes}
+Luckily enough (say), the student who stated the problem~\eqref{quest:interpolation-cubes}
 wasn't really aware of the approaches above neither.
 What a lazy student!
-Probably, that's exactly the case when unawareness leads to a fresh sight to classical questions,
+Probably, that's exactly the case when unawareness leads to a fresh sight into classical problems,
 leading to unexpected results and new insights.
-Instead, our investigator spotted a little bit different pattern in $\Delta n^3= 6 \binom{n+1}{2} + \binom{n}{0}$.
+Instead, our investigator spotted a little bit different pattern in
+$\Delta n^3= 6 \binom{n+1}{2} + \binom{n}{0} = 1 +  6 \sum_{k=0}^{n} k$.
 
 Consider the polynomial $n^3$ as sum of its finite differences
+$\Delta n^3 = 1 +  6 \sum_{k=0}^{n} k$
 \begin{align*}
     n^3
     &= [1+6\cdot0] \\
@@ -144,9 +150,9 @@ Consider the polynomial $n^3$ as sum of its finite differences
     &+ [1+6\cdot0+6\cdot1+6\cdot2] + \cdots \\
     &+ [1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
 \end{align*}
-We can observe that the term $1$ appears $n$ times, the item $6\cdot0$ appears $n-0$ times,
-the item $6\cdot1$ appears $n-1$ times and so on.
-By rearranging recurring common terms
+We can observe that the term $1$ appears $n$ times, while the term $6\cdot0$ appears $n-0$ times.
+The term $6\cdot1$ appears $n-1$ times and so on.
+By combining the recurring common terms, we get
 \begin{align*}
     n^3 = n
     &+ [(n-0) \cdot 6 \cdot 0] \\
@@ -174,7 +180,7 @@ Hence,
 \begin{align*}
     n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
 \end{align*}
-By arranging the values of $T_{1} (n,k)$ as a triangular array, we see that cube identities indeed are true
+By arranging the values of $T_{1} (n,k)$ as tabular, we see that the identities above are indeed true.
 \input{sections/figures/02_fig_triangle_row_sums_give_cubes}
 The following recurrence holds for $T_{1} (n,k)$
 \begin{align*}
@@ -184,28 +190,25 @@ Which is indeed true, because
 \begin{align*}
     T_{1} (5, 2) = 2 \cdot 25 - 13 = 37
 \end{align*}
-Finally, our curious learner has reached the first milestone, by finding his own
-answer to the question~\eqref{quest:interpolation-cubes} and the answer was positive.
+Finally, our curious learner has reached the first milestone, by finding an
+unusual solution to the problem~\eqref{quest:interpolation-cubes}.
 What an excitement it was!
-However, it wouldn't take long.
+However, the excitement would not take too long.
 Indeed, curiosity is not something that can be fulfilled completely,
 and thus new questions arise.
-Somehow, the inquirer got a strong feeling that something bigger, something even more general
-hides behind the identity $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$.
+Somehow, the inquirer got a strong feeling that more general
+law hides behind the identity $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$.
 That was quite intuitive.
-Fair enough that the next question was
-\begin{question}
-    Given that the identity $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$ holds for the polynomial $n^3$,
-    can it be extended or generalized to higher-degree powers, such as $n^4$ or $n^5$,
-    in a similar manner?
+Fair enough that the next problem was
+\begin{problem}
+    Is there a generalization of identity $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$ for higher-degree powers?
     \label{question:higher_powers}
-\end{question}
+\end{problem}
 
-However, this time it was not so easy for the young explorer to find identity for $n^4$ or $n^5$
-by simply observing the tables of finite differences.
+However, it was not so easy for our young explorer to generalize cube identity for higher powers $n^4$ or $n^5$
+by observing the tables of finite differences, as before.
 The previous approach to express the difference of cubes $\Delta n^3$ in terms of
-$\Delta^3 n^3 = 6$ and then express the cubes as $n^3 = \sum_k 6k (n-k) +1$ --- was not successful.
-Moreover, it wasn't even clear what is the generic form of an identity our student was looking for,
-a lot of concerns came from a simple interpolation task.
-Thus, the question~\eqref{question:higher_powers} was shared with the mathematical community.
-And there was an answer.
+$\Delta^3 n^3 = 6$, reaching the identity $n^3 = \sum_k 6k (n-k) +1$ --- was not successful.
+Moreover, it wasn't even clear what is the general form of an identity we are looking for.
+Thus, the problem~\eqref{question:higher_powers} was shared with the mathematical community,
+and there was an answer.
