@@ -1,0 +1,36 @@
+\subsection{Double bivariate identities}\label{subsec:double-bivariate-identities}
+\begin{definition}[Double bivaraite sum $R_{m}$]
+    \begin{align*}
+        R_{m}(n,t) = \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n+t-k)^r
+    \end{align*}
+\end{definition}
+\begin{proposition}[Odd power double bivariate]
+    \begin{align*}
+        n^{2m+1} = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} R_{m} (n, t)
+    \end{align*}
+\end{proposition}
+In explicit view
+\begin{align*}
+    n^{2m+1}
+    &=  \binom{m+1}{1} R_{m} (n, 1) - \binom{m+1}{2} R_{m} (n, 2) + \binom{m+1}{3} R_{m} (n, 3) \\
+    &- \binom{m+1}{4} R_{m} (n, 4) + \cdots
+\end{align*}
+For example,
+\begin{itemize}
+    \item $2^3 = \binom{2}{1} 26 - \binom{2}{2} 44$
+    \item $2^5 = \binom{3}{1} 242 - \binom{3}{2} 752 + \binom{3}{3} 1562$
+    \item $2^7 = \binom{4}{1} 2186 - \binom{4}{2} 12644 + \binom{4}{3} 39062 - \binom{4}{4} 89000$
+    \item $2^9 = \binom{5}{1} 19682 - \binom{5}{2} 211472 + \binom{5}{3} 976562 - \binom{5}{4} 2972672 + \binom{5}{4} 7114562$
+\end{itemize}
+\begin{proposition}[Odd power double bivariate negated]
+    \begin{align*}
+        n^{2m+1} = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} R_{m} (n, -t)
+    \end{align*}
+\end{proposition}
+For example,
+\begin{itemize}
+    \item $2^3 = -\binom{2}{1}10 + \binom{2}{2} 28$
+    \item $2^5 = \binom{3}{1} 122 - \binom{3}{2} 512 + \binom{3}{3} 1202$
+    \item $2^7 = -\binom{4}{1} 1090 + \binom{4}{2} 9028 - \binom{4}{3} 31246 + \binom{4}{4} 75304$
+    \item $2^9 = \binom{5}{1} 10322 - \binom{5}{2} 162512 + \binom{5}{3} 827522 - \binom{5}{4} 2632832 + \binom{5}{4} 6462962$
+\end{itemize}

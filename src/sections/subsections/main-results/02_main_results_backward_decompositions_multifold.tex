@@ -1,0 +1,57 @@
+\subsection{Backward decompositions multifold}
+\label{subsec:backward-decompositions-multifold}
+\begin{proposition}[Backward Recurrence for $T_m$ multifold]
+    \label{prop:Tm-recurrence-backward-multifold}
+    Integer $s \geq 1$
+    \begin{align*}
+        T_{m} (n, k) = \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Odd power backward decomposition multifold]
+    \label{prop:odd-power-decomposition-backward-multifold}
+    For non-negative integers $m$, $n$ and $s \geq 1$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}
+        and backward recurrence~\eqref{prop:Tm-recurrence-backward-multifold}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power backward decomposition shifted multifold]
+    \label{prop:odd-power-decomposition-backward-shifted-multifold}
+    For non-negative integers $m$, $n$ and $s \geq 1$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity},
+        backward recurrence~\eqref{prop:Tm-recurrence-backward-multifold},
+        and symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}
+
+\begin{corollary}[Odd power backward decomposition $m-1$ multifold]
+    \label{cor:odd-power-decomposition-m-1-multifold}
+    For non-negative integers $m$, $n$ and $s \geq 0$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n-t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-backward-multifold}.
+    \end{proof}
+\end{corollary}
+
+\begin{corollary}[Odd power backward decomposition $m-1$ shifted multifold]
+    \label{cor:odd-power-decomposition-m-1-shifted-multifold}
+    For non-negative integers $m$, $n$ and $s \geq 0$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n-t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-backward-shifted-multifold}
+        and by symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{corollary}

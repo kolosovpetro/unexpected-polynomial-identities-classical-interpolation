@@ -1,31 +1,29 @@
-In 2018, Albert Tkaczyk published two papers~\cite{tkaczyk2018problem, tkaczyk2018continuation}
-presenting analogous identities for polynomials $n^5, \; n^7$ and $n^9$
-derived in a manner similar to $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$.
-Further, these results were polished and published in \textit{Mathematical gazette}
-~\cite{unusual_identity_for_odd_powers}.
+In 2018, Albert Tkaczyk shared two preprints~\cite{tkaczyk2018problem, tkaczyk2018continuation}
+addressing the problem~\eqref{question:higher_powers}.
+These preprints discussed the cases for  $n^5, \; n^7$ and $n^9$ in context of problem~\eqref{question:higher_powers}.
+Furthermore, these results were polished and published in \textit{Mathematical gazette}
+~\cite{unusual_identity_for_odd_powers} in 2021.
 Tkaczyk assumed that the identity for $n^5$ takes the following explicit form
 \begin{align*}
     n^5 = \sum_{k=1}^{n} \left[ A k^2(n-k)^2 + Bk(n-k) + C \right]
 \end{align*}
-where $A,B,C$ are yet-unknown coefficients.
+where $A,B,C$ are unknown coefficients.
 We denote $A,B,C$ as $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
-to reach the compact form of double sum
+to get the compact form of double sum
 \begin{align*}
     n^5 = \sum_{k=1}^{n} \sum_{r=0}^{2} \coeffA{2}{r} k^r (n-k)^r
 \end{align*}
-By observing the equation above, the potential form of generalized odd-power identity becomes more obvious.
-One important note to add here, we define $0^x = 1$ for all $x$, see~\cite[~p. 162]{graham1994concrete}.
-This is because when $k=n$ and $r=0$ the term $k^r (n-k)^r = n^0 \cdot 0^0$, thus we define $0^x = 1$
+By observing the equation above, the form of generalized odd-power identity becomes more clear and obvious.
+One important note to add here, we define $x^0 = 1$ for all $x$, see~\cite[~p. 162]{graham1994concrete}.
+This is because when $k=n$ and $r=0$ the term $k^r (n-k)^r = n^0 \cdot 0^0$, thus we define $x^0 = 1$
 for all $x$.
 
 To evaluate the set of coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \coeffA{2}{2}$
-we construct and solve a certain system of linear equations, which is
-built as follows
+we have to build and solve a system of linear equations
 \begin{align*}
     n^5 = \coeffA{2}{0} \sum_{k=1}^{n} k^0 (n-k)^0 + \coeffA{2}{1} \sum_{k=1}^{n} k^1 (n-k)^1 + \coeffA{2}{2} \sum_{k=1}^{n} k^2 (n-k)^2
 \end{align*}
 By expanding the sums $\sum_{k=1}^{n} k^r (n-k)^r$ using Faulhaber's formula~\cite{beardon1996sums}, we get
-an equation
 \begin{equation*}
     \coeffA{2}{0} n
     + \coeffA{2}{1} \left[ \frac{1}{6} (n^3-n) \right]
@@ -68,7 +66,7 @@ Let be $T_2 (n,k) = 30k^2(n-k)^2 + 1$ then
 \begin{align*}
     T_2 (n,k) = T_2 (n,n-k)
 \end{align*}
-By arranging the values of $T_{2} (n,k)$ as a triangular array, we see that the identity for $n^5$ is indeed true
+By arranging the values of $T_{2} (n,k)$ as tabular, we see that the identity for $n^5$ is indeed true
 \input{sections/figures/03_fig_triangle_row_sums_give_fifth_power}
 The following recurrence holds for $T_2 (n,k)$
 \begin{align*}
@@ -79,22 +77,24 @@ Which is indeed true because
     T_2 (6,2) = 3 \cdot 1081 - 3 \cdot 481 + 271 = 1921
 \end{align*}
 
-Thus, our curious learner who stated the question~\eqref{question:higher_powers} got the answer, yet again
-green light was lit.
-This time, the answer contained even more than methodology to find
-a set of coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \ldots, \coeffA{2}{2}$ --- it contained a generic
-form of odd power identity $n^{2m+1}$ for any natural $m$.
-Hence, the part of questions-answers we discuss so far ends here, it is time to state a conjecture.
+Thus, our curious learner obtained a solution for the problem~\eqref{question:higher_powers}.
+This time, the solution contained even more than methodology to evaluate
+the coefficients $\coeffA{2}{0}, \coeffA{2}{1}, \ldots, \coeffA{2}{2}$ ---
+it pointed out to a general form of identity for odd powers.
+
+Hence, let be a conjecture
 \begin{conjecture}
     \label{conj:odd-power-identity}
-    There is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
+    For every integer $m \geq 0$,
+    there is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
     \begin{align*}
         n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
 \end{conjecture}
-We already know that to identify the coefficients we have to build and solve
-a certain system of linear equations, however, we cannot perform any kind of induction
-on that, hence conjecture cannot be proven just by building and solving endless
-systems of linear equations.
+We know already that to evaluate the coefficients $\coeffA{m}{r}$ we have to build and solve
+a system of linear equations.
+However, we cannot apply any sort of induction over these systems of linear equations.
+The conjecture~\eqref{conj:odd-power-identity} cannot be proven by building and solving countless
+systems of linear equations for any integer $m\geq 0$.
 There must be a formula that evaluates the set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$
 for every non-negative integer $m$ --- our young investigator thought.

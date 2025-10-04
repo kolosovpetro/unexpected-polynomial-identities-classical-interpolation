@@ -1,0 +1,56 @@
+\subsection{Forward decompositions multifold}
+\label{subsec:forward-decompositions-multifold}
+\begin{proposition}[Forward Recurrence for $T_m$ multifold]
+    Integer $s \geq 1$
+    \label{prop:Tm-recurrence-forward-multifold}
+    \begin{align*}
+        T_{m} (n,k) = \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n+t, k)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition multifold]
+    \label{prop:odd-power-decomposition-forward-multifold}
+    For non-negative integers $m$, $n$ and $s \geq 1$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=1}^{n} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}
+        and forward recurrence multifold~\eqref{prop:Tm-recurrence-forward-multifold}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition $m-1$ multifold]
+    \label{prop:odd-power-decomposition-forward-m-1-multifold}
+    For non-negative integers $m$, $n$ and $s\geq 0$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=1}^{n} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-forward-multifold}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition shifted multifold]
+    \label{prop:odd-power-decomposition-forward-shifted-multifold}
+    For non-negative integers $m$, $n$ and $s\geq 1$
+    \begin{align*}
+        n^{2m+1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity},
+        forward recurrence~\eqref{prop:Tm-recurrence-forward-multifold}, and symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}
+
+\begin{proposition}[Odd power forward decomposition $m-1$ shifted multifold]
+    \label{prop:odd-power-decomposition-forward-m-1-shifted-multifold}
+    For non-negative integers $m$, $n$ and $s\geq 0$
+    \begin{align*}
+        n^{2m-1} = \sum_{k=0}^{n-1} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m-1} (n+t, k)
+    \end{align*}
+    \begin{proof}
+        By setting $m \rightarrow m-1$ to~\eqref{prop:odd-power-decomposition-forward-multifold} and
+        by symmetry~\eqref{prop:Tm-symmetry}.
+    \end{proof}
+\end{proposition}

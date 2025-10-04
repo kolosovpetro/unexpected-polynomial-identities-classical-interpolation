@@ -7,7 +7,7 @@
 \usepackage{mathrsfs}
 \usepackage{colonequals}
 \usepackage[font=small,labelfont=bf]{caption}
-\usepackage[pdfpagelabels,hyperindex,colorlinks=true,linkcolor=blue,urlcolor=magenta,citecolor=green]{hyperref}
+\usepackage[unicode,pdfpagelabels,hyperindex,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 \usepackage{graphicx}
 \emergencystretch=1em
 \usepackage{array}
@@ -39,6 +39,7 @@
 \newtheorem{question}[theorem]{Question}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{problem}[theorem]{Problem}
 
 %\numberwithin{equation}{section}
 
@@ -81,11 +82,13 @@
 
 \begin{document}
 
-    \maketitle
-
     \begin{abstract}
         \input{sections/00_abstract}
     \end{abstract}
+
+    \addcontentsline{toc}{section}{Abstract}
+
+    \maketitle
 
     \tableofcontents
 
@@ -95,7 +98,7 @@
     \input{sections/01_discussion_on_interpolation_of_cubes}
 
 
-    \section{A system of linear equations}
+    \section{System of linear equations}
     \label{sec:system-of-linear-equations-approach}
     \input{sections/02_system_of_linear_equations_approach}
 
@@ -128,15 +131,7 @@
     \bibliographystyle{unsrt}
     \bibliography{unexpected-polynomial-identities-classical-interpolation}
 
-    \noindent \textbf{Version:} \input{sections/version}
-    \\[1em]
-    \noindent \textbf{License:} This work is licensed under a
-    \href{https://creativecommons.org/licenses/by/4.0/}
-    {\texttt{Creative Commons Attribution 4.0 International License (CC BY 4.0)}}.
-    \\[1em]
-    \noindent \textbf{Sources}:
-    \href{https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation}
-    {\texttt{github.com/kolosovpetro/surprising-polynomial-identities}}
+    \input{sections/license}
 
     \clearpage
 
@@ -150,8 +145,16 @@
     \section*{Application 2: Examples of coefficients A}
     \input{sections/application_2_coefficients_a}
 
+    \clearpage
 
-%    \section*{Application 2: Systems of linear equations examples}
-%    \input{sections/application_2_systems_of_linear_equations_examples}
+
+    \section*{Application 3: Systems of linear equations examples}
+    \input{sections/application_3_systems_of_linear_equations_examples}
+
+    \clearpage
+
+
+    \section*{Application 4: Related OEIS sequences}
+    \input{sections/application_4_related_oeis_sequences}
 
 \end{document}

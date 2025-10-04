@@ -1,0 +1,41 @@
+Triangle read by rows: T(n,k) is the numerator of A(n, k) defined by the identity Sum_{k=1..p} k^(2n-1) = 1/(2*n) * [A(n,0)*u^n + A(n, 1)*u^(n-1) + ... + A(n, n-1)*u^1), where u=p^2+p
+Triangle read by rows: T(n,k) is the numerator of A(n,k) defined by the sum of odd powers Sum_{k=1..p} k^(2n-1) = 1/(2*n) * (A(n,0)*u^n + A(n,1)*u^(n-1) + ... + A(n,n-1)*u^1), where u=p^2+p, integer p >= 1.
+Triangle read by rows: T(n,k) is the numerator of A(n,k), such that A(n,k) satisfies the identity for sums of odd powers: Sum_{k=1..p} k^(2n-1) = 1/(2*n) * (A(n,0)*u^n + A(n,1)*u^(n-1) + ... + A(n,n-1)*u^1), where u=p^2+p, for all integers p >= 1.
+Triangle read by rows: T(n,k) is the numerator of A(n,k), such that A(n,k) satisfies the identity for sums of odd powers: Sum_{k=1..p} k^(2n-1) = 1/(2*n) * Sum_{k=0..n-1} A(n,k) * (p^2+p)^(n-r), for all integers p >= 1.
+
+
+Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
+Petro Kolosov, <a href="https://kolosovpetro.github.io/pdf/faulhabers-coefficients-examples.pdf">Faulhaber's coefficients: Examples</a>, GitHub, 2025.
+Petro Kolosov, <a href="https://github.com/kolosovpetro/faulhabers-coefficients-examples/tree/main/mathematica">Mathematica programs</a>, GitHub, 2025.
+
+The companion triangle with the denominators is A386728.
+Extension of A093556 with k in the range 0 <= k <= n.
+
+
+1, 1, 1, 1, 0, -1, 1, -1, 0, 1, 1, -4, 2, 0, -1, 1, -5, 3, -3, 0, 5, 1, -4, 17, -10, 5, 0, -691, 1, -35, 287, -118, 691, -691, 0, 7, 1, -8, 112, -352, 718, -280, 140, 0, -3617, 1, -21, 66, -293, 4557, -3711, 10851, -10851, 0, 43867, 1, -40, 217, -4516, 2829, -26332, 750167, -438670, 219335, 0, -174611
+
+FaulhaberCoefficient[n_, k_] := 0;
+FaulhaberCoefficient[n_, k_] := (-1)^(n - k) * Sum[Binomial[2 n, n - k - j]* Binomial[n - k + j, j] * (n - k - j)/(n - k + j) * BernoulliB[n + k + j], {j, 0, n - k}] /; 0 <= k < n;
+FaulhaberCoefficient[n_, k_] := BernoulliB[2 n] /; k == n;
+Flatten[Table[Numerator[FaulhaberCoefficient[n, k]], {n, 0, 10}, {k, 0, n}]] (* ~~~~ *)
+
+Triangle begins:
+---------------------------------------------------------------------------------
+k =   0    1     2     3     4       5       6        7       8      9      10
+---------------------------------------------------------------------------------
+
+n=0:  1;
+n=1:  1,   1;
+n=2:  1,   0,  -1;
+n=3:  1,  -1,   0,     1;
+n=4:  1,  -4,   2,     0,   -1;
+n=5:  1,  -5,   3,    -3,    0,      5;
+n=6:  1,  -4,  17,   -10,    5,      0,   -691;
+n=7:  1, -35, 287,  -118,  691,   -691,      0,       7;
+n=8:  1,  -8, 112,  -352,  718,   -280,    140,       0,  -3617;
+n=9:  1, -21,  66,  -293, 4557,  -3711,  10851,  -10851,      0, 43867;
+n=10: 1, -40, 217, -4516, 2829, -26332, 750167, -438670, 219335,     0, -174611;
+...
+
+Cf. A303675, A304330, A304334, A304336, A335951, A093556, A093557.
+

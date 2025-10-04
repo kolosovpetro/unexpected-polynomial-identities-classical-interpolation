@@ -1,17 +1,17 @@
-In 2018, the recurrence relation~\cite{alekseyev2018mathoverflow} that evaluates the coefficients $\coeffA{m}{r}$ for
-non-negative integer $m$ was provided by Max Alekseyev, George Washington University.
+In 2018, the recurrence relation~\cite{alekseyev2018mathoverflow} for the coefficients $\coeffA{m}{r}$
+was provided by Dr. Max Alekseyev, George Washington University.
 The main idea of Alekseyev's approach was to utilize a generating function to evaluate the set of coefficients $\coeffA{m}{r}$
 starting from the base case $\coeffA{m}{m}$ and then evaluating the next coefficient $\coeffA{m}{m-1}$
-recursively, and so on up to $\coeffA{m}{0}$.
-We utilize Binomial theorem $(n-k)^r=\sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} k^t$ and a specific version
-of Faulhaber's formula~\cite{beardon1996sums} with upper bound $p+1$
+recursively, continuing similarly up to $\coeffA{m}{0}$.
+We utilize Binomial theorem and a specific version
+of Faulhaber's formula~\cite{beardon1996sums} with upper summation bound equal to $p+1$
 \begin{align*}
     \sum_{k=1}^{n} k^{p}
     = \frac{1}{p+1}\sum_{j=0}^{p} \binom{p+1}{j} \bernoulli{j} n^{p+1-j}
     &= \frac{1}{p+1} \left[ \sum_{j=0}^{p+1} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
 \end{align*}
 The reason we use the Faulhaber's formula above is because we tend to omit summation bounds, for simplicity.
-This helps us to collapse the common terms across complex sums, because now can extend the sum over all integers $j$,
+This helps us to collapse the common terms across complex sums, because now we can let the sum run over all integers $j$,
 while only finitely many terms $\binom{p+1}{j}$ are non-zero, see also~\cite{knuth1992two}.
 Hence,
 \begin{align}
@@ -20,6 +20,7 @@ Hence,
     = \frac{1}{p+1} \left[ \sum_{j} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
 \end{align}
 Now we expand the sum $\sum_{k=1}^{n} k^{r} (n-k)^{r}$ using Binomial theorem
+$(n-k)^r=\sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} k^t$
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r} = \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \sum_{k=1}^{n} k^{t+r}
 \end{align*}
@@ -204,7 +205,7 @@ Properties of the coefficients $\coeffA{m}{r}$
     \item $\coeffA{m}{m} = \binom{2m}{m}$.
     \item $\coeffA{m}{r} = 0$ for $r < 0$ and $r > m$.
     \item $\coeffA{m}{r} = 0$ for $m < 0$.
-    \item $\coeffA{m}{r} = 0$ for $\frac{m}{2} \leq r < m$.
+    \item $\coeffA{m}{r} = 0$ for $\lfloor \frac{m}{2} \rfloor \leq r < m$.
     \item $\coeffA{m}{0} = 1$ for $m \geq 0$.
     \item $\coeffA{m}{r}$ are all integers up to row $m = 11$.
     \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$.

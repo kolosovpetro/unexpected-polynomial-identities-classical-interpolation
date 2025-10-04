@@ -1,11 +1,21 @@
-This paper originates from a classical interpolation problem: how to reconstruct a cubic polynomial
-from its finite differences.
-The investigation leads to an unexpected identity expressing $n^3$ as a sum involving products of linear terms,
-revealing a hidden structure.
-This identity serves as a base case of a more general pattern.
-By solving systems of linear equations, a family of odd power identities $n^{2m+1}$
-involving special numbers $\mathbf{A}_{m,r}$ and symmetric bivariate sums.
-A recurrence relation for these coefficients $\mathbf{A}_{m,r}$
-is obtained via a specific generating function, enabling recursive construction of the coefficients.
-The main results include several odd power identities, an identity for binomial version,
-and identities for sums of odd powers.
+This manuscript originates from a classical interpolation problem: how to reconstruct the cubes $n^3$
+from their finite differences.
+The investigation leads to an unexpected identity expressing $n^3$ as sum of bivariate terms $k(n-k)$,
+such that $n^3=\sum_{k=1}^{n} 6k(n-k) + 1$.
+This identity serves as the base case for a more general identity for odd powers,
+involving rational numbers $\mathbf{A}_{m,r}$ that is
+$n^{2m+1} = \sum_{k=1}^{n} \sum_{r=0}^{m} \mathbf{A}_{m,r} k^r (n-k)^r$.
+We evaluate the set of coefficients $\mathbf{A}_{m,0}, \mathbf{A}_{m,1}, \cdots, \mathbf{A}_{m,m}$
+by solving a system of linear equations.
+Furthermore, this work provides a recurrence relation
+for coefficients $\mathbf{A}_{m,0}, \mathbf{A}_{m,1}, \cdots, \mathbf{A}_{m,m}$, by utilizing
+generating functions.
+The main results include odd power identities, identities for binomial forms,
+and identities for sums of powers.
+Apart that, we discuss the similarities between our findings and well-known results like Pascal's identity etc.
+Afterward, the manuscript continues with related works that are based on our findings,
+including approximation for powers,
+derivatives, Faulhaber-like formulas.
+This manuscript concludes with discussion of future research directions that include
+the topics of integration into mathematical literature, approximation methods, combinatorial interpretations,
+and $q$-derivatives.
