@@ -1,8 +1,8 @@
 Thus, the conjecture~\eqref{conj:odd-power-identity} is true
-
 \begin{theorem}[Odd power identity]
     \label{theorem:odd-power-identity}
-    There is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
+    For non-negative integers $m$ and $n \geq 1$,
+    there is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
     \begin{align*}
         n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
@@ -23,27 +23,48 @@ For example,
     \item $5^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 4^r + 6^r + 6^r + 4^r + 0^r  \right]$
     \item $6^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 5^r + 8^r + 9^r + 8^r + 5^r + 0^r  \right]$
 \end{itemize}
-We assume that $x^0=1$ for every $x$.
-Interestingly enough that the explicit form above is a Pascal-type identity for odd powers,
+We define $x^0 = 1$ for all $x$, see~\cite[~p. 162]{graham1994concrete}.
+This is because when $k=n$ and $r=0$ the term $k^r (n-k)^r = n^0 \cdot 0^0$, thus we define $x^0 = 1$
+for all $x$.
+
+Thus, the formula for sums of odd powers is straightforward
+\begin{proposition}[Sum of odd powers]
+    For integers $m\geq 0$ and $n \geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1}
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ \left( \sum_{k=0}^{n-1} k^r \right) +  \left( \sum_{k=0}^{n-2} (2k)^r \right) + \left( \sum_{k=0}^{n-3} (3k)^r \right)+ \cdots + \left( \sum_{k=0}^{n-n} (nk)^r \right) \right] \\
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ \left( \sum_{k=0}^{n-1} k^r \right) +  \left( 2^r \sum_{k=0}^{n-2} k^r \right) + \left( 3^r \sum_{k=0}^{n-3} k^r \right)+ \cdots + \left( n^r \sum_{k=0}^{n-n} k^r \right) \right]
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}.
+    \end{proof}
+\end{proposition}
+\begin{corollary}[Compact forms]
+    For integers $m\geq 0$ and $n \geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{t=1}^{n} \sum_{k=0}^{n-t} (tk)^r = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{t=1}^{n} \sum_{k=1}^{t} ((n-t)k)^r
+    \end{align*}
+\end{corollary}
+
+Interestingly enough that the odd power identity above is a Pascal-type identity
 in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$.
-We may see it by observing the Pascal's identity itself~\cite{macmillan2011proofs}
+We may see it by comparing the Pascal's identity itself~\cite{macmillan2011proofs}
 \begin{align*}
 (n+1)
-    ^{k+1}-1=\sum _{p=0}^{k}{\binom {k+1}{p}}(1^{p}+2^{p}+\dots +n^{p})
+    ^{m+1}-1 = \sum_{r=0}^{m} \binom{m+1}{r} \left( 1^{r}+2^{r} + \dots + n^{r} \right)
 \end{align*}
-Meanwhile, in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$ it is
-\begin{proposition}[Bivariate Pascal's identity]
+with identity in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$
+\begin{corollary}[Bivariate Pascal's identity]
+    For integers $n \geq 1$ and $m\geq 0$
     \begin{align*}
     (n+1)
-        ^{2k+1} - 1
-        &= \sum_{p=0}^{k} \coeffA{k}{p} \left[ 1^p n^p + 2^p (n-1)^p + 3^p (n-2)^p + 4^p (n-3)^p + \cdots +  n^p (n+1-n)^p  \right] \\
-        &= \sum_{p=0}^{k} \coeffA{k}{p} \left[ n^p + (2n-2)^p + (3n-6)^p + (4n-12)^p + \cdots +  n^p  \right] \\
-        &= \sum_{p=0}^{k} \coeffA{k}{p} \sum_{r=1}^{n} (r (n+1-r))^p
+        ^{2m+1} - 1
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ 1^r n^r + 2^r (n-1)^r + 3^r (n-2)^r + 4^r (n-3)^r + \cdots + n^r (n+1-n)^r  \right] \\
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ n^r + (2n-2)^r + (3n-6)^r + (4n-12)^r + \cdots + n^r  \right] \\
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} (k (n+1-k))^r
     \end{align*}
-\end{proposition}
-%\begin{align*}
-%    n^{2k+1} - 1 = \sum_{p=0}^{k} \coeffA{k}{p} \left[ (n-1)^p + (2n-4)^p + (3n-9)^p + (4n-16)^p + \cdots +  (n-1)^p  \right]
-%\end{align*}
+\end{corollary}
+
 \begin{definition}[Bivariate sum $T_m$]
     For integers $n,k$ and $m \geq 0$
     \label{def:bivariate-sum-Tm}

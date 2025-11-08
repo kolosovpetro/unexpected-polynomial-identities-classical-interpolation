@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ### Changed
 
-## [1.0.3] - In progress
+## [1.1.0] - 2025-08-11
 
 - Files structure
 - Add bivariate identities
@@ -20,13 +20,18 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add systems of linear equations examples
 - Add related OEIS sequences
 - Move license info to separate file
-- Same color for all links
 - Fix eq. reference
 - Power sum explicit view
 - Faulhaber's coefficients mathematica
 - Rearrange subsection folders
 - Multifold decompositions
 - Multifold decompositions mathematica
+- Metadata update
+- Red color for links and references
+- Update bibliography: references why B_1 = 1/2
+- Updates in recurrence relation section
+- Fix some warnings
+- Updates in main results
 
 ## [1.0.2] - 2025-07-27
 
