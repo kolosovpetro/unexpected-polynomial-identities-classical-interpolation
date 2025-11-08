@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update bibliography: references why B_1 = 1/2
 - Updates in recurrence relation section
 - Fix some warnings
+- Updates in main results
 
 ## [1.0.2] - 2025-07-27
 
