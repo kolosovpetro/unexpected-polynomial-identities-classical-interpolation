@@ -20,13 +20,14 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add systems of linear equations examples
 - Add related OEIS sequences
 - Move license info to separate file
-- Same color for all links
 - Fix eq. reference
 - Power sum explicit view
 - Faulhaber's coefficients mathematica
 - Rearrange subsection folders
 - Multifold decompositions
 - Multifold decompositions mathematica
+- Metadata update
+- Red color for links and references
 
 ## [1.0.2] - 2025-07-27
 
