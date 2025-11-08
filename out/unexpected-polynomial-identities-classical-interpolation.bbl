@@ -89,10 +89,23 @@ B.~Sury, Tianming Wang, and Feng-Zhen Zhao.
 \newblock {\em {J. Integer Seq}}, 7(2):04--2, 2004.
 \newblock \url{https://cs.uwaterloo.ca/journals/JIS/VOL7/Sury/sury99.pdf}.
 
-\bibitem{bateman1953higher}
-Harry Bateman.
-\newblock {\em {Higher transcendental functions [volumes i-iii]}}, volume~1.
-\newblock {McGRAW-HILL book company}, 1953.
+\bibitem{weisstein2002bernoulli}
+{Weisstein, Eric W.}
+\newblock {Bernoulli number}.
+\newblock {\em {Wolfram Research, Inc.}}, 2002.
+\newblock \url{https://mathworld.wolfram.com/BernoulliNumber.html}.
+
+\bibitem{luschny2020introduction}
+{Luschny, Peter HN}.
+\newblock {An introduction to the Bernoulli function}.
+\newblock {\em {arXiv preprint arXiv:2009.06743}}, 2020.
+\newblock \url{https://arxiv.org/abs/2009.06743}.
+
+\bibitem{luschny2021manifesto}
+{Luschny, Peter HN}.
+\newblock {The Bernoulli Manifesto}.
+\newblock 2021.
+\newblock \url{http://luschny.de/math/zeta/The-Bernoulli-Manifesto.html}.
 
 \bibitem{oeis_numerators_of_the_coefficient_a_m_r}
 Petro Kolosov.

@@ -1,10 +1,11 @@
-In 2018, the recurrence relation~\cite{alekseyev2018mathoverflow} for the coefficients $\coeffA{m}{r}$
-was provided by Dr. Max Alekseyev, George Washington University.
-The main idea of Alekseyev's approach was to utilize a generating function to evaluate the set of coefficients $\coeffA{m}{r}$
-starting from the base case $\coeffA{m}{m}$ and then evaluating the next coefficient $\coeffA{m}{m-1}$
-recursively, continuing similarly up to $\coeffA{m}{0}$.
-We utilize Binomial theorem and a specific version
-of Faulhaber's formula~\cite{beardon1996sums} with upper summation bound equal to $p+1$
+In 2018, a recurrence formula~\cite{alekseyev2018mathoverflow} for coefficients $\coeffA{m}{r}$
+was proposed by Dr. Max Alekseyev, George Washington University.
+The main idea of Alekseyev's approach was to utilize certain generating function to evaluate
+the set of coefficients $\coeffA{m}{r}$,
+starting from the base case $\coeffA{m}{m}$, then to compute the previous coefficient $\coeffA{m}{m-1}$
+recursively, similarly up to $\coeffA{m}{0}$.
+We use Binomial theorem and specific version
+of Faulhaber's formula~\cite{beardon1996sums} with upper summation bound set to $p+1$
 \begin{align*}
     \sum_{k=1}^{n} k^{p}
     = \frac{1}{p+1}\sum_{j=0}^{p} \binom{p+1}{j} \bernoulli{j} n^{p+1-j}
@@ -19,26 +20,23 @@ Hence,
     \sum_{k=1}^{n} k^{p}
     = \frac{1}{p+1} \left[ \sum_{j} \binom{p+1}{j} \bernoulli{j} n^{p+1-j} \right] - \frac{\bernoulli{p+1}}{p+1}
 \end{align}
-Now we expand the sum $\sum_{k=1}^{n} k^{r} (n-k)^{r}$ using Binomial theorem
-$(n-k)^r=\sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} k^t$
-\begin{align*}
-    \sum_{k=1}^{n} k^{r} (n-k)^{r} = \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \sum_{k=1}^{n} k^{t+r}
-\end{align*}
-By applying Faulhaber's formula~\eqref{eq:modified-faulhabers-formula}, we obtain
+Now we expand the sum $\sum_{k=1}^{n} k^{r} (n-k)^{r}$ using binomial theorem
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r}
-    = \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \left[ \left( \frac{1}{t+r+1} \sum_{j} \binom{t+r+1}{j} \bernoulli{j} n^{t+r+1-j} \right) - \frac{\bernoulli{t+r+1}}{t+r+1} \right]
+    = \sum_{k=1}^{n} k^{r} \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} k^{t}
+    = \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \sum_{k=1}^{n} k^{t+r}
 \end{align*}
-By moving the common term $\frac{(-1)^t}{t+r+1}$ out of brackets
+By applying Faulhaber's formula~\eqref{eq:modified-faulhabers-formula} to $\sum_{k=1}^{n} k^{t+r}$, we get
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r}
-    = \sum_{t=0}^{r} \binom{r}{t} \frac{(-1)^t}{t+r+1} \left[ \sum_{j} \binom{t+r+1}{j} \bernoulli{j} n^{2r+1-j} - \bernoulli{t+r+1} n^{r-t} \right]
+    &= \sum_{t=0}^{r} (-1)^t \binom{r}{t} n^{r-t} \left[ \left( \frac{1}{t+r+1} \sum_{j} \binom{t+r+1}{j} \bernoulli{j} n^{t+r+1-j} \right) - \frac{\bernoulli{t+r+1}}{t+r+1} \right] \\
+    &= \sum_{t=0}^{r} \binom{r}{t} \frac{(-1)^t}{t+r+1} \left[ \left( \sum_{j} \binom{t+r+1}{j} \bernoulli{j} n^{2r+1-j}  \right) - \bernoulli{t+r+1} n^{r-t} \right]
 \end{align*}
-By expanding the brackets
+By expanding brackets
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r}
-    &= \left[ \sum_{t=0}^{r} \binom{r}{t} \frac{(-1)^t}{t+r+1} \sum_{j} \binom{t+r+1}{j} \bernoulli{j} n^{2r+1-j}  \right] \\
-    &- \left[ \sum_{t=0}^{r} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
+    = \left[ \sum_{t=0}^{r} \binom{r}{t} \frac{(-1)^t}{t+r+1} \sum_{j} \binom{t+r+1}{j} \bernoulli{j} n^{2r+1-j}  \right]
+    - \left[ \sum_{t=0}^{r} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
 \end{align*}
 By moving the sum in $j$ and omitting summation bounds in $t$
 \begin{align*}
@@ -54,114 +52,119 @@ By rearranging the sums we obtain
     &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right] \nonumber
 \end{align}
 We can notice that
-\input{sections/equations/01_altering_binomial_identity_lemma}
-To simplify~\eqref{eq:rearranging-terms} using lemma~\eqref{lem:altering-binomial-identity}, we have to move $j=0$ out of
-the sum $\Sigma$
-in~\eqref{eq:rearranging-terms} to avoid division by zero in $\frac{(-1)^r}{j}$.
+\input{sections/subsections//01_altering_binomial_identity_lemma}
+To simplify equation~\eqref{eq:rearranging-terms} using binomial identity~\eqref{lem:piecewise-binomial-identity}, we have to move $j=0$ out of
+summation, to avoid division by zero in $\frac{(-1)^r}{j}$.
 Therefore,
 \begin{equation*}
     \begin{split}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}
-        &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
+        &= \frac{n^{2r+1}}{(2r+1) \binom{2r}r}
         + \left[ \sum_{j = 1}^{\infty} \bernoulli{j} n^{2r+1-j} \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \binom{t+r+1}{j} \right] \\
         &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
     \end{split}
 \end{equation*}
-Hence, we simplify the equation~\eqref{eq:rearranging-terms} by using lemma~\eqref{lem:altering-binomial-identity}
+Hence, we simplify equation~\eqref{eq:rearranging-terms} by using binomial identity~\eqref{lem:piecewise-binomial-identity}
 \begin{equation*}
     \begin{split}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}
-        &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
+        &= \frac{n^{2r+1}}{(2r+1) \binom{2r}r}
         + \left[ \sum_{j=1}^{\infty} \frac{(-1)^r}{j} \binom{r}{2r-j+1} \bernoulli{j} n^{2r-j+1} \right] \\
         &- \left[ \sum_{t} \binom{r}{t} \frac{(-1)^t}{t+r+1} \bernoulli{t+r+1} n^{r-t} \right]
     \end{split}
 \end{equation*}
-By setting $\ell=2r-j+1$ to the sum $\sum_{j=1}^{\infty}$, and $\ell=r-t$ to the sum $\sum_{t}$,
-we collapse the common terms across two sums, thus
+By setting $\ell=2r-j+1$ to $\sum_{j=1}^{\infty}$, and $\ell=r-t$ to $\sum_{t}$,
+we collapse common terms across two sums
 \begin{align*}
     \sum_{k=1}^{n} k^{r} (n-k)^{r}
-    &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
+    &= \frac{n^{2r+1}}{(2r+1) \binom{2r}r}
     + \left[ \sum_{\ell} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell} \right] \\
     &- \left[ \sum_{\ell} \binom{r}{\ell} \frac{(-1)^{r-\ell}}{2r+1-\ell} \bernoulli{2r+1-\ell} n^{\ell} \right]\\
-    &= \frac{1}{(2r+1) \binom{2r}r} n^{2r+1} + 2 \sum_{\mathrm{odd \; \ell}} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell}
+    &= \frac{n^{2r+1}}{(2r+1) \binom{2r}r} + 2 \sum_{\mathrm{odd \; \ell}} \frac{(-1)^r}{2r+1-\ell} \binom{r}{\ell} \bernoulli{2r+1-\ell} n^{\ell}
 \end{align*}
-By replacing odd $\ell$ by $\ell = 2k+1$, and by simplifying 2's, we get
+By replacing odd $\ell = 2k+1$, we get
 \begin{proposition}[Bivariate Faulhaber's Formula]
+    For integers $r \geq 0$ and $n \geq 1$
     \label{prop:bivariate-faulhabers-formula}
     \begin{align*}
         \sum_{k=1}^{n} k^{r} (n-k)^{r}
-        = \frac{1}{(2r+1) \binom{2r}r} n^{2r+1}
-        + \sum_{k=0}^{\infty} \frac{(-1)^r}{r-k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}
+        = \frac{n^{2r+1}}{(2r+1) \binom{2r}{r}}
+        + (-1)^r \sum_{k=0}^{r-1} \binom{r}{2k+1} \frac{\bernoulli{2r-2k}}{r-k} n^{2k+1}
     \end{align*}
 \end{proposition}
-
-Assuming that $\coeffA{m}{r}$ is defined
-by the odd-power identity in conjecture~\eqref{conj:odd-power-identity},
+Assuming that coefficients $\coeffA{m}{r}$ are defined
+by odd-power identity~\eqref{conj:odd-power-identity},
 we obtain the following relation for polynomials in $n$
-\begin{align*}
-    \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}{r}} n^{2r+1} + \sum_{r=0}^{m} \sum_{k=0}^{\infty} \coeffA{m}{r} \frac{(-1)^r}{r-k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}  - n^{2m+1} = 0
-\end{align*}
-We denote it as
 \begin{align}
     \label{eq:generating-function}
-    F_{m} = \sum_{r=0}^{m} \coeffA{m}{r} \frac{1}{(2r+1) \binom{2r}{r}} n^{2r+1} + \sum_{r=0}^{m} \sum_{k=0}^{\infty} \coeffA{m}{r} \frac{(-1)^r}{r-k} \binom{r}{2k+1} \bernoulli{2r-2k} n^{2k+1}  - n^{2m+1}
+    R_{m} = \sum_{r=0}^{\infty} \coeffA{m}{r} \frac{n^{2r+1}}{(2r+1) \binom{2r}{r}}
+    + \left[ \sum_{r=0}^{\infty} (-1)^r \sum_{k=0}^{\infty} \coeffA{m}{r} \binom{r}{2k+1} \frac{\bernoulli{2r-2k}}{r-k} n^{2k+1} \right]
+    - n^{2m+1} \equiv 0
 \end{align}
-Basically, the relation~\eqref{eq:generating-function} is the generating function we utilize to
-evaluate the values of $\coeffA{m}{m}, \coeffA{m}{m-1}, \ldots, \coeffA{m}{0}$.
-We now fix the unused values of $\coeffA{m}{r}$ so that $\coeffA{m}{r} = 0$ for every $r < 0$ or $r > m$.
-
-Extracting the coefficient of $n^{2m+1}$ in~\eqref{eq:generating-function} yields
+We now fix the unused values of $\coeffA{m}{r}$ so that $\coeffA{m}{r} = 0$ for every $r < 0$ or $r > m$,
+thus we can let $r$ running over all integers.
+By extracting the coefficient of $n^{2m+1}$ in~\eqref{eq:generating-function} implies
 \begin{align*}
     \coeffA{m}{m} = (2m+1)\binom{2m}{m}
 \end{align*}
-because $\coeffA{m}{m} \frac{1}{(2m+1) \binom{2m}{m}} = 1$.
-
-That's may not be immediately clear why the coefficient of $n^{2m+1}$ is $(2m+1)\binom{2m}{m}$.
-To extract the coefficient of $n^{2m+1}$ from the generating function~\eqref{eq:generating-function},
-we isolate the relevant terms by setting $r = m$ in the first sum,
-and $k = m$ in the second sum.
-This gives
+because $[n^{2m+1}]R_m = \coeffA{m}{m} \frac{1}{(2m+1) \binom{2m}{m}} - 1 = 0$.
+To extract the coefficient of $n^{2m+1}$ from the series~\eqref{eq:generating-function},
+we isolate the relevant terms by setting $r = m$ in $\sum_{r=0}^{m} \coeffA{m}{r} \frac{n^{2r+1}}{(2r+1) \binom{2r}{r}}$
+and $k = m$ in $\sum_{r=0}^{m} (-1)^r \sum_{k=0}^{\infty} \coeffA{m}{r} \binom{r}{2k+1} \frac{\bernoulli{2r-2k}}{r-k} n^{2k+1}$,
+which gives
 \begin{align*}
-[n^{2m+1}] F_{m}
+[n^{2m+1}]
+    R_{m}
     = \coeffA{m}{m} \frac{1}{(2m+1) \binom{2m}{m}}
-    + \sum_{r=0}^{m} \coeffA{m}{r} \frac{(-1)^r}{r - m} \binom{r}{2m+1} \bernoulli{2r - 2m}
-    - 1
+    + \left[ \sum_{r=2m+1}^{\infty} (-1)^r \coeffA{m}{r} \binom{r}{2m+1} \frac{\bernoulli{2r-2m}}{r-m} \right]
+    - 1 = 0
 \end{align*}
 We observe that the sum
 \begin{align*}
-    \sum_{r=0}^{m} \coeffA{m}{r} \frac{(-1)^r}{r - m} \binom{r}{2m+1} \bernoulli{2r - 2m}
+    \sum_{r=2m+1}^{\infty} (-1)^r \coeffA{m}{r} \binom{r}{2m+1} \frac{\bernoulli{2r-2m}}{r-m}
 \end{align*}
-does not contribute to the determination of the coefficients $\coeffA{m}{r}$, because the binomial coefficient
-$\binom{r}{2m+1}$ vanishes for all $r \leq m$.
+does not contribute to the determination of the coefficients $\coeffA{m}{r}$, because $\coeffA{m}{r}$ is zero
+for all $r > m$, by definition.
 Consequently, all terms in the sum are zero.
 Thus,
 \begin{align*}
     \coeffA{m}{m} \frac{1}{(2m+1) \binom{2m}{m}}  - 1 = 0 \implies \coeffA{m}{m} = (2m+1) \binom{2m}{m}
 \end{align*}
-
-Taking the coefficient of $n^{2d+1}$ for an integer $d$ in the range $\frac{m}{2} \leq d \leq m-1$ in~\eqref{eq:generating-function} gives
+Taking the coefficient of $n^{2d+1}$ for an integer $d$ in range $\frac{m}{2} \leq d \leq m-1$
+in~\eqref{eq:generating-function} gives
 \begin{align*}
-[n^{2d+1}] F_m = \coeffA{m}{d} \frac{1}{(2d+1) \binom{2d}{d}} + \sum_{r=0}^m \coeffA{m}{r} \frac{(-1)^r}{r-d} \binom{r}{2d+1} \bernoulli{2r-2d}.
+[n^{2d+1}]
+    R_m
+    = \coeffA{m}{d} \frac{1}{(2d+1) \binom{2d}{d}}
+    + \sum_{r=2d+1}^{\infty} (-1)^r \coeffA{m}{r} \binom{r}{2d+1} \frac{\bernoulli{2r-2d} }{r-d}
+    = 0
 \end{align*}
-For every $\frac{m}{2} \leq d$, the binomial coefficient $\binom{r}{2d+1}$ vanishes, because for all $r \leq m$
-holds $r < 2d+1$.
-As a particular example, when $r = m$ and $d = \frac{m}{2}$, we have
-\begin{align*}
-    \binom{m}{m+1} = 0.
-\end{align*}
-Therefore, the entire sum involving $\binom{r}{2d+1}$ vanishes, and we conclude
-that for all integers $d$ such that $\frac{m}{2} \leq d \leq m-1$ the coefficients $\coeffA{m}{d}$
-are zeroes
+which implies
 \begin{align*}
     \coeffA{m}{d} \frac{1}{(2d+1) \binom{2d}{d}} = 0 \implies \coeffA{m}{d} = 0.
 \end{align*}
-In contrast, for values $d \leq \frac{m}{2} - 1$, the binomial coefficient $\binom{r}{2d+1}$ can be nonzero; for instance, if $r = m$ and $d = \frac{m}{2} - 1$, then
-\begin{align*}
-    \binom{m}{m - 1} \neq 0,
-\end{align*}
-allowing the corresponding terms to contribute to the determination of $\coeffA{m}{d}$.
-
-Taking the coefficient of $n^{2d+1}$ for $d$ in the range $\frac{m}{4} \leq d < \frac{m}{2}$ in~\eqref{eq:generating-function}, we obtain
+because the sum $\sum_{r=2d+1}^{\infty} (-1)^r \coeffA{m}{r} \binom{r}{2d+1} \frac{\bernoulli{2r-2d} }{r-d}$ is zero
+for all $d$ in range $\frac{m}{2} \leq d \leq m-1$.
+For example: let $d=m-1$, then $r= 2d+1 = 2m-1$, thus $\coeffA{m}{2m-1}=0$, by definition.
+Let be $d=\frac{m}{2}$, then $r=2d+1 = m+1$, thus $\coeffA{m}{m+1}=0$, by definition.
+%For every $\frac{m}{2} \leq d$, the binomial coefficient $\binom{r}{2d+1}$ vanishes, because for all $r \leq m$
+%holds $r < 2d+1$.
+%As a particular example, when $r = m$ and $d = \frac{m}{2}$, we have
+%\begin{align*}
+%    \binom{m}{m+1} = 0.
+%\end{align*}
+%Therefore, the entire sum involving $\binom{r}{2d+1}$ vanishes, and we conclude
+%that for all integers $d$ such that $\frac{m}{2} \leq d \leq m-1$ the coefficients $\coeffA{m}{d}$
+%are zeroes
+%\begin{align*}
+%    \coeffA{m}{d} \frac{1}{(2d+1) \binom{2d}{d}} = 0 \implies \coeffA{m}{d} = 0.
+%\end{align*}
+%In contrast, for values $d \leq \frac{m}{2} - 1$, the binomial coefficient $\binom{r}{2d+1}$ can be nonzero; for instance, if $r = m$ and $d = \frac{m}{2} - 1$, then
+%\begin{align*}
+%    \binom{m}{m - 1} \neq 0,
+%\end{align*}
+%allowing the corresponding terms to contribute to the determination of $\coeffA{m}{d}$.
+Taking the coefficient of $n^{2d+1}$ for $d$ in range $\frac{m}{4} \leq d \leq \frac{m}{2}-1$ in~\eqref{eq:generating-function}, we obtain
 \begin{align*}
     \coeffA{m}{d} \frac{1}{(2d+1) \binom{2d}{d}}
     + 2 (2m+1) \binom{2m}{m} \binom{m}{2d+1} \frac{(-1)^m}{2m - 2d} \bernoulli{2m - 2d} = 0.
@@ -171,19 +174,17 @@ Solving for $\coeffA{m}{d}$ yields
     \coeffA{m}{d}
     = (-1)^{m-1} \frac{(2m+1)!}{d! \, d! \, m! \, (m - 2d - 1)!} \cdot \frac{1}{m - d} \bernoulli{2m - 2d}.
 \end{equation*}
-
-Proceeding recursively, we can compute each coefficient $\coeffA{m}{r}$ for integers $r$ in the ranges
-$\frac{m}{2^{s+1}} \leq r < \frac{m}{2^s}, \quad \text{for } s = 1, 2, \ldots$,
-by using previously computed values $\coeffA{m}{d}$ for $d > r$, via the relation
+Proceeding recursively, we can compute each coefficient $\coeffA{m}{r}$ for integers $r$ in range
+$\frac{m}{2^{s+1}} \leq r \leq \frac{m}{2^s}-1$ for $s = 1, 2, \ldots$,
+by using previously computed values $\coeffA{m}{d}$
 \begin{equation*}
     \coeffA{m}{r} =
     (2r+1) \binom{2r}{r} \sum_{d = 2r+1}^{m}
     \coeffA{m}{d} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d - r} \bernoulli{2d - 2r}.
 \end{equation*}
-
 Finally, we define the following recurrence relation for coefficients $\coeffA{m}{r}$
 \begin{proposition}
-    For integers $m$ and $r$
+    For integers $m\geq0$ and $r$
     \label{prop:coefficients_a}
     \begin{align*}
         \coeffA{m}{r} =
@@ -195,14 +196,14 @@ Finally, we define the following recurrence relation for coefficients $\coeffA{m
             0 & \mathrm{if} \; r<0 \; \mathrm{or} \; r>m
         \end{cases}
     \end{align*}
-    where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher}.
-    It is assumed that $\bernoulli{1}=\frac{1}{2}$.
+    where $\bernoulli{t}$ are Bernoulli numbers~\cite{weisstein2002bernoulli}.
+    We assume that $\bernoulli{1}=\frac{1}{2}$ because~\cite{luschny2020introduction,luschny2021manifesto}.
 \end{proposition}
 For example,
 \input{sections/figures/05_fig_coefficients_a}
 Properties of the coefficients $\coeffA{m}{r}$
 \begin{itemize}
-    \item $\coeffA{m}{m} = \binom{2m}{m}$.
+    \item $\coeffA{m}{m} = (2m+1)\binom{2m}{m}$.
     \item $\coeffA{m}{r} = 0$ for $r < 0$ and $r > m$.
     \item $\coeffA{m}{r} = 0$ for $m < 0$.
     \item $\coeffA{m}{r} = 0$ for $\lfloor \frac{m}{2} \rfloor \leq r < m$.
@@ -210,12 +211,3 @@ Properties of the coefficients $\coeffA{m}{r}$
     \item $\coeffA{m}{r}$ are all integers up to row $m = 11$.
     \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$.
 \end{itemize}
-For instance,
-\begin{align*}
-    n^3 &= \sum_{k=1}^{n} 6k(n-k) + 1 \\
-    n^5 &= \sum_{k=1}^{n} 30k^2(n-k)^2 + 1 \\
-    n^7 &= \sum_{k=1}^{n} 140 k^3 (n-k)^3 - 14k(n-k) + 1 \\
-    n^9 &= \sum_{k=1}^{n} 630 k^4(n-k)^4 - 120k(n-k) + 1 \\
-    n^{11} &= \sum_{k=1}^{n} 2772 k^5(n-k)^5 + 660 k^2(n-k)^2 - 1386k(n-k) + 1 \\
-    n^{13} &= \sum_{k=1}^{n} 51480 k^7(n-k)^7 - 60060 k^3(n-k)^3 + 491400k^2(n-k)^{2} - 450054k(n-k) + 1
-\end{align*}
