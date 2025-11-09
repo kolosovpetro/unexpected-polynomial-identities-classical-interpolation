@@ -20,6 +20,10 @@ This manuscript concludes with discussion of future research directions that inc
 the topics of integration into mathematical literature, approximation methods, combinatorial interpretations,
 and $q$-derivatives.
 
+- **MSC2010**: 05A19, 05A10, 41A15, 11B83, 68W30
+- **Keywords**: Polynomial identities, Finite differences, Binomial coefficients, Faulhaber's formula, Sums of powers,
+  Bernoulli numbers, Combinatorics, Pascal's triangle, OEIS
+
 ## Links
 
 - https://kolosovpetro.github.io/pdf/unexpected-polynomial-identities-classical-interpolation.pdf
@@ -27,25 +31,40 @@ and $q$-derivatives.
 
 ## Related projects
 
-- [Finding the derivative of polynomials via double limit (2024)](https://github.com/kolosovpetro/FindingTheDerivativeOfPolynomialsViaDoubleLimit)
+- [Discussion on coefficients of odd polynomial identity (2025)](https://github.com/kolosovpetro/DiscussionOnCoefficientsOfOddPolynomialIdentity)
+- [An efficient method of spline approximation for power function (2025)](https://github.com/kolosovpetro/AnEfficientMethodOfSplineApproximation)
+- [An unusual identity for odd-powers (2021-2022)](https://arxiv.org/abs/2101.00227)
+- [Odd-power identity via multiplication of certain matrices (2024)](https://github.com/kolosovpetro/OddPowerIdentityViaMultiplicationOfCertainMatrices)
+- [A novel proof of power rule in Calculus (2024)](https://github.com/kolosovpetro/ANovelProofOfPowerRuleInCalculus)
 - [Polynomial identity involving Binomial Theorem and Faulhaber's formula (2024)](https://github.com/kolosovpetro/PolynomialIdentityInvolvingBTandFaulhaber)
 - [Another approach to get derivative of odd-power (2023)](https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower)
+- [Finding the derivative of polynomials via double limit (2024)](https://github.com/kolosovpetro/FindingTheDerivativeOfPolynomialsViaDoubleLimit)
 - [On the link between binomial theorem and discrete convolution (2016-2022)](https://github.com/kolosovpetro/OnTheBinomialTheoremAndDiscreteConvolution)
 - [A study on partial dynamic equation on time scales involving derivatives of polynomials (2016-2022)](https://github.com/kolosovpetro/AStudyOnDynamicEquations)
 
-## Contributing
+## 🎉 Contributing 🎉
 
 Contributions are welcome! 🎉
 
 Please refer to open issues or propose your own changes.
 
-It's better to [create an issue](https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation/issues/new)
+It's better
+to [create an issue](https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation/issues/new)
 with description of your potential contribution before creating pull requests.
 
-## Build the manuscript
+## 🛠 Build the manuscript 🛠
 
-Refer to the documentation: [BUILD.md](BUILD.md)
+Refer to the build documentation: [BUILD.md](BUILD.md)
 
-## Licensing
+## ⭐ Support open science on GitHub ⭐
+
+If you found this repository helpful or interesting, please consider giving it a star! ⭐
+
+This simple gesture goes a long way in supporting the project and acknowledging the effort put into its development.
+
+Your star helps boost the project's visibility, making it easier for others to discover and benefit from it as well.
+Plus, it serves as motivation for the maintainers to continue improving and adding new features.
+
+## 📜 License 📜
 
 This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
