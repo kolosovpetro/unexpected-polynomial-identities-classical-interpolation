@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Fix LaTeX render issues in README
 - Add BUILD.md documentation
+- Update README
 
 ### Changed
 
