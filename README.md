@@ -20,6 +20,10 @@ This manuscript concludes with discussion of future research directions that inc
 the topics of integration into mathematical literature, approximation methods, combinatorial interpretations,
 and $q$-derivatives.
 
+- **MSC2010**: 05A19, 05A10, 41A15, 11B83, 68W30
+- **Keywords**: Polynomial identities, Finite differences, Binomial coefficients, Faulhaber's formula, Sums of powers,
+  Bernoulli numbers, Combinatorics, Pascal's triangle, OEIS
+
 ## Links
 
 - https://kolosovpetro.github.io/pdf/unexpected-polynomial-identities-classical-interpolation.pdf
