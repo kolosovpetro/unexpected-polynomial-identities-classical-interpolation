@@ -14,7 +14,7 @@ generating functions.
 The main results include odd power identities, identities for binomial forms, and identities for sums of powers.
 Apart that, we discuss the similarities between our findings and well-known results like Pascal's identity etc.
 Afterward, the manuscript continues with related works that are based on our findings,
-'including approximation for powers,
+including approximation for powers,
 derivatives, Faulhaber-like formulas.
 This manuscript concludes with discussion of future research directions that include
 the topics of integration into mathematical literature, approximation methods, combinatorial interpretations,
