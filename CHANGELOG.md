@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ### Changed
 
-## [1.1.0] - 2025-08-11
+## [1.1.1] - 2025-11-09
+
+- Fix LaTeX render issues in README
+- Add BUILD.md documentation
+- Update README
+- Fix definition spaces
+- Add mathematica functions
+
+### Changed
+
+## [1.1.0] - 2025-11-08
 
 - Files structure
 - Add bivariate identities

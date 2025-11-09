@@ -26,7 +26,8 @@ TableFormBackwardRecurrenceForTMultifold::usage="Prints the multifold backward r
 TableFormForwardRecurrenceForT::usage="Prints the forward recurrence for Tm in the form of triangle."
 TableFormForwardRecurrenceForTMultifold::usage="Prints the multifold forward recurrence for Tm in the form of triangle."
 TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in the form of triangle."
-TableFormBivariateSumT::usage="Prints Tm in the form of triangle."
+TriangleFormBivariateSumT::usage="Prints Tm in the form of triangle."
+TableFormBivariateSumT::usage="Prints Tm in the form of table."
 
 SumsOfOddPowers::usage="Validates the identity Sums of powers."
 
@@ -62,7 +63,8 @@ OddPowerIdentity[n_, m_]:= Sum[Sum[A[m,r] * k^r * (n-k)^r, {k, 1, n}], {r, 0, m}
 OddPowerIdentitySimplified[n_, m_]:= Expand[Sum[Sum[A[m,r] * k^r * (n-k)^r, {k, 1, n}], {r, 0, m}]];
 
 BivariateSumT[m_, n_, k_]:= Sum[A[m, r] * k^r (n-k)^r, {r, 0, m}];
-TableFormBivariateSumT[m_, rows_]:=TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+TriangleFormBivariateSumT[m_, rows_]:= TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+TableFormBivariateSumT[m_, rows_, columns_]:= TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, columns}], TableAlignments -> Left];
 
 ForwardRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+t, k], {t, 1, m+1}];
 OddPowerForwardDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+t, k], {t, 1, m+1}], {k, 1, n}];
@@ -103,9 +105,6 @@ DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
 
 End[ ]
 EndPackage[ ]
-
-
-
 
 
 
