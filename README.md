@@ -56,7 +56,7 @@ with description of your potential contribution before creating pull requests.
 
 Refer to the build documentation: [BUILD.md](BUILD.md)
 
-## ⭐ Support open science on GitHub ⭐
+## ⭐ Support this project on GitHub ⭐
 
 If you found this repository helpful or interesting, please consider giving it a star! ⭐
 
