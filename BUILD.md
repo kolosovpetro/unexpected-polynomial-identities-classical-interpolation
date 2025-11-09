@@ -3,7 +3,8 @@
 - Install `MikTeX`: https://miktex.org/download
 - Update `MikTeX` packages
 - Install `SumatraPDF` viewer: https://www.sumatrapdfreader.org/download-free-pdf-viewer
-- `.\src\Initialize-Workspace.ps1` configures workspace, renames files and patches CI/CD values
+- Clone this repository locally: `git clone git@github.com:kolosovpetro/unexpected-polynomial-identities-classical-interpolation.git`
+- `cd unexpected-polynomial-identities-classical-interpolation`
 - `.\src\Build-Latex.ps1` to build LaTeX and BibTeX
 
 ## Build and run in JetBrains Rider (Windows)
