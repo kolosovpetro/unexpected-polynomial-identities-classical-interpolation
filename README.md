@@ -22,5 +22,30 @@ and $q$-derivatives.
 
 ## Links
 
-- https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation
 - https://kolosovpetro.github.io/pdf/unexpected-polynomial-identities-classical-interpolation.pdf
+- https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation
+
+## Related projects
+
+- [Finding the derivative of polynomials via double limit (2024)](https://github.com/kolosovpetro/FindingTheDerivativeOfPolynomialsViaDoubleLimit)
+- [Polynomial identity involving Binomial Theorem and Faulhaber's formula (2024)](https://github.com/kolosovpetro/PolynomialIdentityInvolvingBTandFaulhaber)
+- [Another approach to get derivative of odd-power (2023)](https://github.com/kolosovpetro/AnotherApproachToGetDerivativeOfOddPower)
+- [On the link between binomial theorem and discrete convolution (2016-2022)](https://github.com/kolosovpetro/OnTheBinomialTheoremAndDiscreteConvolution)
+- [A study on partial dynamic equation on time scales involving derivatives of polynomials (2016-2022)](https://github.com/kolosovpetro/AStudyOnDynamicEquations)
+
+## Contributing
+
+Contributions are welcome! 🎉
+
+Please refer to open issues or propose your own changes.
+
+It's better to [create an issue](https://github.com/kolosovpetro/unexpected-polynomial-identities-classical-interpolation/issues/new)
+with description of your potential contribution before creating pull requests.
+
+## Build the manuscript
+
+Refer to the documentation: [BUILD.md](BUILD.md)
+
+## Licensing
+
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.

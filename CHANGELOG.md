@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ## [1.x.x] - In progress
 
+- Fix LaTeX render issues in README
+- Add BUILD.md documentation
+
 ### Changed
 
 ## [1.1.0] - 2025-08-11
