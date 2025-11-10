@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    111545,       2844]
-NotebookOptionsPosition[     94134,       2527]
-NotebookOutlinePosition[     94540,       2543]
-CellTagsIndexPosition[     94497,       2540]
+NotebookDataLength[    112141,       2858]
+NotebookOptionsPosition[     94732,       2541]
+NotebookOutlinePosition[     95135,       2557]
+CellTagsIndexPosition[     95092,       2554]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2492,12 +2492,13 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"m", "=", "0"}], ";", 
+  RowBox[{"m", "=", "3"}], ";", 
   RowBox[{"n", "=", "2"}], ";", 
   RowBox[{"Table", "[", 
    RowBox[{
     RowBox[{"DoubleBivariateSumR", "[", 
-     RowBox[{"m", ",", " ", "n", ",", " ", "t"}], "]"}], ",", " ", 
+     RowBox[{"m", ",", " ", "n", ",", " ", 
+      RowBox[{"-", "t"}]}], "]"}], ",", " ", 
     RowBox[{"{", 
      RowBox[{"t", ",", " ", "1", ",", " ", "10"}], "}"}]}], "]"}]}]], "Input",\
 
@@ -2507,26 +2508,39 @@ Cell[BoxData[
   3.9717877621492662`*^9, 3.971787762197237*^9}, {3.9717878625486946`*^9, 
   3.9717878626685896`*^9}, {3.971789713464881*^9, 3.971789713528449*^9}, {
   3.97179119356376*^9, 3.9717911935825477`*^9}, {3.971791611646659*^9, 
-  3.9717916314671803`*^9}, {3.971791712248141*^9, 3.9717917392228365`*^9}},
+  3.9717916314671803`*^9}, {3.971791712248141*^9, 3.9717917392228365`*^9}, {
+  3.971800072214656*^9, 3.97180007873403*^9}, {3.9718001135345325`*^9, 
+  3.9718001428054657`*^9}, {3.971800185234309*^9, 3.971800185246217*^9}, {
+  3.9718002851308556`*^9, 3.9718002851468563`*^9}},
  CellLabel->
-  "In[737]:=",ExpressionUUID->"fa35b0bb-0f48-4e27-9de2-eea326861663"],
+  "In[100]:=",ExpressionUUID->"fa35b0bb-0f48-4e27-9de2-eea326861663"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-  "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", 
-   ",", "2", ",", "2"}], "}"}]], "Output",
+   RowBox[{"-", "1090"}], ",", 
+   RowBox[{"-", "9028"}], ",", 
+   RowBox[{"-", "31246"}], ",", 
+   RowBox[{"-", "75304"}], ",", 
+   RowBox[{"-", "148762"}], ",", 
+   RowBox[{"-", "259180"}], ",", 
+   RowBox[{"-", "414118"}], ",", 
+   RowBox[{"-", "621136"}], ",", 
+   RowBox[{"-", "887794"}], ",", 
+   RowBox[{"-", "1221652"}]}], "}"}]], "Output",
  CellChangeTimes->{
   3.971787354440828*^9, 3.9717874015568867`*^9, 3.9717876545223446`*^9, 
    3.9717877626892786`*^9, 3.9717878631602173`*^9, 3.971789715299047*^9, 
    3.971791194049301*^9, {3.97179161209239*^9, 3.9717916318735933`*^9}, {
-   3.971791712875023*^9, 3.971791739668764*^9}},
+   3.971791712875023*^9, 3.971791739668764*^9}, {3.9718000633387957`*^9, 
+   3.9718000791230974`*^9}, {3.971800114104782*^9, 3.971800143117733*^9}, 
+   3.971800185857501*^9, 3.971800285841374*^9},
  CellLabel->
-  "Out[737]=",ExpressionUUID->"802b1806-080a-47c0-aeff-ab9b97c42fb3"]
+  "Out[100]=",ExpressionUUID->"dc47f6dc-a6fe-46c8-a1cf-20aca11a2d2a"]
 }, Open  ]]
 },
-WindowSize->{1280, 732},
-WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+WindowSize->{1269., 726.5},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"7354c940-be81-4421-9309-a16476218f93"
@@ -2843,8 +2857,8 @@ Cell[92116, 2475, 318, 6, 28, "Input",ExpressionUUID->"2327d007-ef28-43d0-a3a1-7
 Cell[92437, 2483, 178, 4, 32, "Output",ExpressionUUID->"0ca77caf-c88e-4a8a-87f8-f62310c8901b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[92652, 2492, 930, 19, 28, "Input",ExpressionUUID->"fa35b0bb-0f48-4e27-9de2-eea326861663"],
-Cell[93585, 2513, 533, 11, 79, "Output",ExpressionUUID->"802b1806-080a-47c0-aeff-ab9b97c42fb3"]
+Cell[92652, 2492, 1152, 23, 28, "Input",ExpressionUUID->"fa35b0bb-0f48-4e27-9de2-eea326861663"],
+Cell[93807, 2517, 909, 21, 54, "Output",ExpressionUUID->"dc47f6dc-a6fe-46c8-a1cf-20aca11a2d2a"]
 }, Open  ]]
 }
 ]
