@@ -186,4 +186,10 @@ Reinhard Zumkeller.
   Integer Sequences}, 2015.
 \newblock \url{https://oeis.org/A000217}.
 
+\bibitem{kolosov2019entry}
+{Kolosov, Petro}.
+\newblock {Entry A306548 in The On-Line Encyclopedia of Integer Sequences
+  "Shifted self-convolution of powers"}, 2019.
+\newblock \url{https://oeis.org/A306548}.
+
 \end{thebibliography}
