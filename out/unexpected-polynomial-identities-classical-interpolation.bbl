@@ -169,6 +169,15 @@ Petro Kolosov.
 \newblock {\em {arXiv preprint arXiv:1603.02468}}, 2016.
 \newblock \url{https://arxiv.org/abs/1603.02468}.
 
+\bibitem{glaisher19121n}
+J.W.L Glaisher.
+\newblock On 1n (x- 1) m+ 2n (x- 2)
+  m+{\textperiodcentered}{\textperiodcentered}{\textperiodcentered}+(x- 1) n1m
+  and other similar series.
+\newblock {\em The Quarterly journal of pure and applied mathematics},
+  43:101--122, 1912.
+\newblock \url{https://zbmath.org/30.0254.01}.
+
 \bibitem{neuman1977evaluation}
 {Neuman, C.P. and Schonbach, D.I.}
 \newblock {Evaluation of sums of convolved powers using Bernoulli numbers}.
