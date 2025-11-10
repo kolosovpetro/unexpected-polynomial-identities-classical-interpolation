@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ### Changed
 
-## [1.x.x] - In Progress
+## [1.2.0] - In Progress
 
 - Updates in README
 - Updates in Bibliography
+- Add related research discrete convolution
+- Minor flow improvements
 
 ### Changed
 

@@ -163,6 +163,24 @@ Petro Kolosov.
 \newblock {\em arXiv preprint arXiv:2310.07804}, 2023.
 \newblock \url{https://arxiv.org/abs/2310.07804}.
 
+\bibitem{on_the_link_between_binomial_theorem_and_discrete_convolution}
+{Kolosov, Petro}.
+\newblock {On the link between binomial theorem and discrete convolution}.
+\newblock {\em {arXiv preprint arXiv:1603.02468}}, 2016.
+\newblock \url{https://arxiv.org/abs/1603.02468}.
+
+\bibitem{neuman1977evaluation}
+{Neuman, CP and Schonbach, DI}.
+\newblock {Evaluation of sums of convolved powers using Bernoulli numbers}.
+\newblock {\em {SIAM Review}}, 19(1):90--99, 1977.
+\newblock \url{https://doi.org/10.1137/1019006}.
+
+\bibitem{carlitz1977note}
+{Carlitz, L.}
+\newblock Note on some convolved power sums.
+\newblock {\em {SIAM Journal on Mathematical Analysis}}, 8(4):701--709, 1977.
+\newblock \url{https://doi.org/10.1137/0508054}.
+
 \bibitem{scheuer2023mathstackexchange}
 {Scheuer, Markus}.
 \newblock {MathStackExchange answer 4724343/463487}, 2023.
