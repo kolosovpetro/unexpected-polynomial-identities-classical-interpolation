@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Updates in Bibliography
 - Add related research discrete convolution
 - Minor flow improvements
+- Add Mathematica functions for double bivariate formulas
 
 ### Changed
 

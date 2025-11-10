@@ -28,7 +28,7 @@ function Test-Encoding
 
     # List of file extensions (with leading dots) to ignore. Case-insensitive.
         [string[]] $ExcludeExtensions = @(
-        '.dotsettings', '.pdf'
+        '.dotsettings', '.pdf', '.m', '.nb'
     )
     )
 

@@ -44,6 +44,12 @@ DoubleBivariateSumR::usage="Defines the Double bivaraite sum Rm."
 
 FaulhaberCoefficients::usage="Faulhaber coefficients https://arxiv.org/pdf/math/9207222 page 14."
 
+OddPowerDoubleBivariate::usage="Verifies odd power double bivariate proposition 4.39."
+OddPowerDoubleBivariateMultifold::usage="Verifies odd power double bivariate proposition 4.41."
+
+OddPowerDoubleBivariateNegated::usage="Verifies odd power double bivariate negated proposition 4.40."
+OddPowerDoubleBivariateNegatedMultifold::usage="Verifies odd power double bivariate negated proposition 4.42."
+
 Begin["`Private`"]
 Unprotect[Power];
 Power[0|0., 0|0.] = 1;
@@ -102,6 +108,11 @@ CenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a
 ShiftedCenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2+1, n - a/2}], {r, 0, m}];
 
 DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
+
+OddPowerDoubleBivariate[n_, m_]:=Sum[(-1)^(t+1) * Binomial[m+1, t] * DoubleBivariateSumR[m, n, t], {t, 1, m+1}];
+OddPowerDoubleBivariateMultifold[n_, m_, s_]:=Sum[(-1)^(t+1) * Binomial[m+s, t] * DoubleBivariateSumR[m, n, t], {t, 1, m+s}];
+OddPowerDoubleBivariateNegated[n_, m_]:=Sum[(-1)^(t+1) * Binomial[m+1, t] * DoubleBivariateSumR[m, n, -t], {t, 1, m+1}];
+OddPowerDoubleBivariateNegatedMultifold[n_, m_, s_]:=Sum[(-1)^(t+1) * Binomial[m+s, t] * DoubleBivariateSumR[m, n, -t], {t, 1, m+s}];
 
 End[ ]
 EndPackage[ ]
