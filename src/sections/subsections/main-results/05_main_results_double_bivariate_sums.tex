@@ -1,11 +1,14 @@
-\subsection{Double bivariate identities}\label{subsec:double-bivariate-identities}
+\subsection{Double bivariate identities}
+\label{subsec:double-bivariate-identities}
 \begin{definition}[Double bivaraite sum $R_{m}$]
+    \label{def:double-bivariate-sum-r}
     For non-negative integers $m,n$ and $t$
     \begin{align*}
         R_{m}(n,t) = \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n+t-k)^r
     \end{align*}
 \end{definition}
 \begin{proposition}[Odd power double bivariate]
+    \label{prop:odd-power-double-bivariate}
     For non-negative integers $m,n$
     \begin{align*}
         n^{2m+1} = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} R_{m} (n, t)
@@ -25,6 +28,7 @@ For example,
     \item $2^9 = \binom{5}{1} 19682 - \binom{5}{2} 211472 + \binom{5}{3} 976562 - \binom{5}{4} 2972672 + \binom{5}{4} 7114562$
 \end{itemize}
 \begin{proposition}[Odd power double bivariate negated]
+    \label{prop:odd-power-double-bivariate-negated}
     For non-negative integers $m,n$
     \begin{align*}
         n^{2m+1} = \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} R_{m} (n, -t)
@@ -38,12 +42,14 @@ For example,
     \item $2^9 = \binom{5}{1} 10322 - \binom{5}{2} 162512 + \binom{5}{3} 827522 - \binom{5}{4} 2632832 + \binom{5}{4} 6462962$
 \end{itemize}
 \begin{proposition}[Odd power double bivariate multifold]
+    \label{prop:odd-power-double-bivariate-multifold}
     For non-negative integers $m,n$ and $s\geq 1$
     \begin{align*}
         n^{2m+1} = \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} R_{m} (n, t)
     \end{align*}
 \end{proposition}
 \begin{proposition}[Odd power double bivariate negated multifold]
+    \label{prop:odd-power-double-bivariate-negated-multifold}
     For non-negative integers $m,n$ and $s \geq 1$
     \begin{align*}
         n^{2m+1} = \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} R_{m} (n, -t)

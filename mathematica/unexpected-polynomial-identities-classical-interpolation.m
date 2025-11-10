@@ -72,32 +72,39 @@ BivariateSumT[m_, n_, k_]:= Sum[A[m, r] * k^r (n-k)^r, {r, 0, m}];
 TriangleFormBivariateSumT[m_, rows_]:= TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 TableFormBivariateSumT[m_, rows_, columns_]:= TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, columns}], TableAlignments -> Left];
 
+(*BEGIN: Forward decompositions *)
 ForwardRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+t, k], {t, 1, m+1}];
 OddPowerForwardDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+t, k], {t, 1, m+1}], {k, 1, n}];
 OddPowerForwardDecompositionMMinus1[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m, t] * BivariateSumT[m-1, n+t, k], {t, 1, m}], {k, 1, n}];
-OddPowerForwardDecompositionMMinus1Shifted[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m, t] * BivariateSumT[m-1, n+t, k], {t, 1, m}], {k, 0, n-1}];
 OddPowerForwardDecompositionShifted[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+t, k], {t, 1, m+1}], {k, 0, n-1}];
+OddPowerForwardDecompositionMMinus1Shifted[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m, t] * BivariateSumT[m-1, n+t, k], {t, 1, m}], {k, 0, n-1}];
 TableFormForwardRecurrenceForT[m_, rows_]:= TableForm[Table[ForwardRecurrenceForT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+(*END: Forward decompositions *)
 
+(*BEGIN: Forward decompositions multifold *)
 ForwardRecurrenceForTMultifold[m_, n_, k_, s_]:= Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m, n+t, k], {t, 1, m+s}];
 TableFormForwardRecurrenceForTMultifold[m_, s_, rows_]:= TableForm[Table[ForwardRecurrenceForTMultifold[m, n, k, s], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+(*END: Forward decompositions multifold *)
 
+(*BEGIN: Backward decompositions *)
 BackwardRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t-1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}];
 OddPowerBackwardDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}], {k, 1, n}];
 OddPowerBackwardDecompositionShifted[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n-t, k], {t, 1, m+1}], {k, 0, n-1}];
 OddPowerBackwardDecompositionMMinus1[n_, m_]:= Sum[Sum[(-1)^(t-1) * Binomial[m, t] * BivariateSumT[m-1, n-t, k], {t, 1, m}], {k, 1, n}];
 OddPowerBackwardDecompositionMMinus1Shifted[n_, m_]:= Sum[Sum[(-1)^(t-1) * Binomial[m, t] * BivariateSumT[m-1, n-t, k], {t, 1, m}], {k, 0, n-1}];
 TableFormBackwardRecurrenceForT[m_, rows_]:= TableForm[Table[BackwardRecurrenceForT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+(*END: Backward decompositions *)
 
+(*BEGIN: Backward decompositions multifold *)
 BackwardRecurrenceForTMultifold[m_, n_, k_, s_]:= Sum[(-1)^(t-1) * Binomial[m+s, t] * BivariateSumT[m, n-t, k], {t, 1, m+s}];
 TableFormBackwardRecurrenceForTMultifold[m_, s_, rows_]:= TableForm[Table[BackwardRecurrenceForTMultifold[m, n, k, s], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
+(*END: Backward decompositions multifold *)
 
 CentralRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+(m/2)-t, k], {t, 1, m+1}];
 TableFormCentralRecurrenceForT[m_, rows_]:= TableForm[Table[CentralRecurrenceForT[m, n, k], {n, -m/2, rows}, {k, 0, n+m/2}], TableAlignments -> Left];
 OddPowerCentralDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+(m/2)-t, k], {t, 1, m+1}], {k, 1, n+(m/2)}];
 
-SumsOfOddPowers[m_, p_]:= Sum[Sum[Sum[A[m, r]* k^r * (n-k)^r, {r, 0, m}], {k, 1, n}], {n, 1, p}];
-
+(*BEGIN: Binomial Forms *)
 BinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a)^r * (n + a - k)^r, {k, -a+1, n + a}], {r, 0, m}];
 ShiftedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a)^r * (n + a - k)^r, {k, -a, n + a-1}], {r, 0, m}];
 CenteredBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a/2)^r * (n + a/2 - k)^r, {k, -a/2 + 1, n + a/2}], {r, 0, m}];
@@ -106,13 +113,19 @@ NegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a)^r * (n - a - k)^r, {
 ShiftedNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a)^r * (n - a - k)^r, {k, a, n - a - 1}], {r, 0, m}];
 CenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2, n - a/2 - 1}], {r, 0, m}];
 ShiftedCenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2+1, n - a/2}], {r, 0, m}];
+(*END: Binomial Forms *)
 
+(*BEGIN: Sums of powers *)
+SumsOfOddPowers[m_, p_]:= Sum[Sum[Sum[A[m, r]* k^r * (n-k)^r, {r, 0, m}], {k, 1, n}], {n, 1, p}];
+(*END: Sums of powers *)
+
+(*BEGIN: Double bivariate identities *)
 DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
-
 OddPowerDoubleBivariate[n_, m_]:=Sum[(-1)^(t+1) * Binomial[m+1, t] * DoubleBivariateSumR[m, n, t], {t, 1, m+1}];
 OddPowerDoubleBivariateMultifold[n_, m_, s_]:=Sum[(-1)^(t+1) * Binomial[m+s, t] * DoubleBivariateSumR[m, n, t], {t, 1, m+s}];
 OddPowerDoubleBivariateNegated[n_, m_]:=Sum[(-1)^(t+1) * Binomial[m+1, t] * DoubleBivariateSumR[m, n, -t], {t, 1, m+1}];
 OddPowerDoubleBivariateNegatedMultifold[n_, m_, s_]:=Sum[(-1)^(t+1) * Binomial[m+s, t] * DoubleBivariateSumR[m, n, -t], {t, 1, m+s}];
+(*END: Double bivariate identities *)
 
 End[ ]
 EndPackage[ ]
