@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Flow corrections
 - Grammar fixes
 - Update metadata
+- Refactors in Mathematica package
 
 ### Changed
 
