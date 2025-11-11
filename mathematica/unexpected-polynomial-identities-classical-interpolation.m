@@ -28,6 +28,10 @@ TableFormForwardRecurrenceForT::usage="Prints the forward recurrence for Tm in t
 
 (*BEGIN: Forward decompositions multifold *)
 ForwardRecurrenceForTMultifold::usage="Validates the multifold forward recurrence for the bivariate sum T(m,n,k)."
+OddPowerForwardDecompositionMultifold::usage=""
+OddPowerForwardDecompositionMMinus1Multifold::usage=""
+OddPowerForwardDecompositionShiftedMultifold::usage=""
+OddPowerForwardDecompositionMMinus1ShiftedMultifold::usage=""
 TableFormForwardRecurrenceForTMultifold::usage="Prints the multifold forward recurrence for Tm in the form of triangle."
 (*END: Forward decompositions multifold *)
 
@@ -42,6 +46,10 @@ TableFormBackwardRecurrenceForT::usage="Prints the backward recurrence for Tm in
 
 (*BEGIN: Backward decompositions multifold *)
 BackwardRecurrenceForTMultifold::usage="Validates the multifold backward recurrence for the bivariate sum T(m,n,k)."
+OddPowerBackwardDecompositionMultifold::usage=""
+OddPowerBackwardDecompositionShiftedMultifold::usage=""
+OddPowerBackwardDecompositionMMinus1Multifold::usage=""
+OddPowerBackwardDecompositionMMinus1ShiftedMultifold::usage=""
 TableFormBackwardRecurrenceForTMultifold::usage="Prints the multifold backward recurrence for Tm in the form of triangle."
 (*END: Backward decompositions multifold *)
 
@@ -112,6 +120,10 @@ TableFormForwardRecurrenceForT[m_, rows_]:= TableForm[Table[ForwardRecurrenceFor
 
 (*BEGIN: Forward decompositions multifold *)
 ForwardRecurrenceForTMultifold[m_, n_, k_, s_]:= Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m, n+t, k], {t, 1, m+s}];
+OddPowerForwardDecompositionMultifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m, n+t, k], {t, 1, m+s}], {k, 1, n}];
+OddPowerForwardDecompositionMMinus1Multifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m-1, n+t, k], {t, 1, m+s}], {k, 1, n}];
+OddPowerForwardDecompositionShiftedMultifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m, n+t, k], {t, 1, m+s}], {k, 0, n-1}];
+OddPowerForwardDecompositionMMinus1ShiftedMultifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m-1, n+t, k], {t, 1, m+s}], {k, 0, n-1}];
 TableFormForwardRecurrenceForTMultifold[m_, s_, rows_]:= TableForm[Table[ForwardRecurrenceForTMultifold[m, n, k, s], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 (*END: Forward decompositions multifold *)
 
@@ -126,6 +138,10 @@ TableFormBackwardRecurrenceForT[m_, rows_]:= TableForm[Table[BackwardRecurrenceF
 
 (*BEGIN: Backward decompositions multifold *)
 BackwardRecurrenceForTMultifold[m_, n_, k_, s_]:= Sum[(-1)^(t-1) * Binomial[m+s, t] * BivariateSumT[m, n-t, k], {t, 1, m+s}];
+OddPowerBackwardDecompositionMultifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m, n-t, k], {t, 1, m+s}], {k, 1, n}];
+OddPowerBackwardDecompositionShiftedMultifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m, n-t, k], {t, 1, m+s}], {k, 0, n-1}];
+OddPowerBackwardDecompositionMMinus1Multifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m-1, n-t, k], {t, 1, m+s}], {k, 1, n}];
+OddPowerBackwardDecompositionMMinus1ShiftedMultifold[n_, m_, s_] := Sum[Sum[(-1)^(t+1) * Binomial[m+s, t] * BivariateSumT[m-1, n-t, k], {t, 1, m+s}], {k, 0, n-1}];
 TableFormBackwardRecurrenceForTMultifold[m_, s_, rows_]:= TableForm[Table[BackwardRecurrenceForTMultifold[m, n, k, s], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 (*END: Backward decompositions multifold *)
 
