@@ -1,7 +1,7 @@
 In 2018, Albert Tkaczyk shared two preprints~\cite{tkaczyk2018problem, tkaczyk2018continuation}
 addressing the problem~\eqref{question:higher_powers}.
-These preprints discussed the cases for  $n^5, \; n^7$ and $n^9$ in context of problem~\eqref{question:higher_powers}.
-Furthermore, these results were polished and published in \textit{Mathematical gazette}
+These preprints discussed the cases of  $n^5, \; n^7$ and $n^9$ in context of problem~\eqref{question:higher_powers}.
+Furthermore, these results were refined and published in \textit{Mathematical gazette}
 ~\cite{unusual_identity_for_odd_powers} in 2021.
 Tkaczyk assumed that the identity for $n^5$ takes the following explicit form
 \begin{align*}
@@ -13,7 +13,7 @@ to get the compact form of double sum
 \begin{align*}
     n^5 = \sum_{k=1}^{n} \sum_{r=0}^{2} \coeffA{2}{r} k^r (n-k)^r
 \end{align*}
-By observing the equation above, the general form of odd-power identity becomes more clear and obvious.
+By observing the equation above, the general form of the odd-power identity becomes clearer.
 We define $x^0 = 1$ for all $x$, see~\cite[~p. 162]{graham1994concrete},
 because when $k=n$ and $r=0$ the term $k^r (n-k)^r = n^0 \cdot 0^0$, thus we define $x^0 = 1$
 for all $x$.
@@ -29,11 +29,11 @@ By expanding the sums $\sum_{k=1}^{n} k^r (n-k)^r$ using Faulhaber's formula~\ci
     + \coeffA{2}{1} \left[ \frac{1}{6} (n^3-n) \right]
     + \coeffA{2}{2} \left[ \frac{1}{30} (n^5-n) \right] - n^5 = 0
 \end{equation*}
-By multiplying by $30$ both, RHS and LHS, we get
+By multiplying both sides by $30$, we get
 \begin{equation*}
     30 \coeffA{2}{0} n + 5 \coeffA{2}{1} (n^3-n) + \coeffA{2}{2} (n^5-n) - 30n^5 = 0
 \end{equation*}
-By expanding the brackets and rearranging the terms yields
+Expanding the brackets and rearranging the terms yields
 \begin{equation*}
     30 \coeffA{2}{0} - 5 \coeffA{2}{1} n + 5 \coeffA{2}{1} n^3 - \coeffA{2}{2} n + \coeffA{2}{2} n^5 - 30n^5 = 0
 \end{equation*}
@@ -66,7 +66,7 @@ Let be $T_2 (n,k) = 30k^2(n-k)^2 + 1$ then
 \begin{align*}
     T_2 (n,k) = T_2 (n,n-k)
 \end{align*}
-By arranging the values of $T_{2} (n,k)$ as tabular, we may observe that the identity for $n^5$ above is indeed true
+By arranging the values of $T_{2} (n,k)$ in a table, we may observe that the identity for $n^5$ above is indeed true
 \input{sections/figures/03_fig_triangle_row_sums_give_fifth_power}
 The following recurrence holds for $T_2 (n,k)$
 \begin{align*}
@@ -91,7 +91,7 @@ Hence, let be a conjecture
         n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
 \end{conjecture}
-As we already know, we have to build and solve a system of linear equation to evaluate the set of coefficients
+As we already know, we have to build and solve a system of linear equations to evaluate the set of coefficients
 $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$.
 However, the conjecture~\eqref{conj:odd-power-identity} cannot be proven by building and solving countless
 systems of linear equations for any integer $m \geq 0$.
