@@ -69,9 +69,11 @@ TriangleFormBivariateSumT[m_, rows_]:= TableForm[Table[BivariateSumT[m, n, k], {
 TableFormBivariateSumT[m_, rows_, columns_]:= TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, columns}], TableAlignments -> Left];
 (*END: Definitions *)
 
+(*BEGIN: Faulhaber's coefficients *)
 FaulhaberCoefficients[n_, k_]:= 0;
 FaulhaberCoefficients[n_, k_]:= (-1)^(n-k) * Sum[Binomial[2n, n-k-j]* Binomial[n-k+j, j] * (n-k-j)/(n-k+j) * BernoulliB[n+k+j], {j, 0, n-k}] /; 0 <= k < n;
 FaulhaberCoefficients[n_, k_]:= BernoulliB[2n] /; k == n;
+(*END: Faulhaber's coefficients *)
 
 (*BEGIN: Forward decompositions *)
 ForwardRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+t, k], {t, 1, m+1}];
@@ -101,9 +103,11 @@ BackwardRecurrenceForTMultifold[m_, n_, k_, s_]:= Sum[(-1)^(t-1) * Binomial[m+s,
 TableFormBackwardRecurrenceForTMultifold[m_, s_, rows_]:= TableForm[Table[BackwardRecurrenceForTMultifold[m, n, k, s], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 (*END: Backward decompositions multifold *)
 
+(*BEGIN: Central decompositions *)
 CentralRecurrenceForT[m_, n_, k_]:= Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+(m/2)-t, k], {t, 1, m+1}];
 TableFormCentralRecurrenceForT[m_, rows_]:= TableForm[Table[CentralRecurrenceForT[m, n, k], {n, -m/2, rows}, {k, 0, n+m/2}], TableAlignments -> Left];
 OddPowerCentralDecomposition[n_, m_]:= Sum[Sum[(-1)^(t+1) * Binomial[m+1, t] * BivariateSumT[m, n+(m/2)-t, k], {t, 1, m+1}], {k, 1, n+(m/2)}];
+(*END: Central decompositions *)
 
 (*BEGIN: Binomial Forms *)
 BinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k + a)^r * (n + a - k)^r, {k, -a+1, n + a}], {r, 0, m}];
