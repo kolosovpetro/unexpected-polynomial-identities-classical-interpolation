@@ -5,9 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
-### Changed
-
 ## [1.2.0] - In Progress
+
+### Changed
 
 - Updates in README
 - Updates in Bibliography
@@ -20,9 +20,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update metadata
 - Refactors in Mathematica package
 
-### Changed
-
 ## [1.1.1] - 2025-11-09
+
+### Changed
 
 - Fix LaTeX render issues in README
 - Add BUILD.md documentation
@@ -30,9 +30,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix definition spaces
 - Add mathematica functions
 
-### Changed
-
 ## [1.1.0] - 2025-11-08
+
+### Changed
 
 - Files structure
 - Add bivariate identities
