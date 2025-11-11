@@ -4,13 +4,13 @@ it can be written as
     \coeffA{m}{r} =
     \begin{cases}
     (2r+1)
-        \binom{2r}{r}, & \text{if } r=m; \\
-        \sum_{d \geq 2r+1}^{m} \coeffA{m}{d} \underbrace{(2r+1) \binom{2r}{r} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d-r} \bernoulli{2d-2r}}_{T(d,r)}, & \text{if } 0 \leq r<m; \\
-        0, & \text{if } r<0 \text{ or } r>m,
+        \binom{2r}{r} & \text{if } r=m \\
+        \sum_{d=2r+1}^{m} \coeffA{m}{d} \underbrace{(2r+1) \binom{2r}{r} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d-r} \bernoulli{2d-2r}}_{T(d,r)} & \text{if } 0 \leq r<m \\
+        0 & \text{if } r<0 \text{ or } r>m
     \end{cases}
 \end{equation*}
 Let be the definition of the polynomial $T(d,r)$
-\begin{definition}
+\begin{definition} For integers $d,r$ such that $r \neq d$
     \begin{equation*}
         T(d,r) = (2r+1) \binom{2r}{r} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d-r} \bernoulli{2d-2r}
     \end{equation*}

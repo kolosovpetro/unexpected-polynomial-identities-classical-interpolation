@@ -10,6 +10,7 @@ OddPowerIdentitySimplified::usage="Validates odd power identity expanded form."
 BivariateSumT::usage="Defines bivariate sum T(m,n,k)."
 TriangleFormBivariateSumT::usage="Prints Tm in the form of triangle."
 TableFormBivariateSumT::usage="Prints Tm in the form of table."
+T::usage="Coefficient T(d,r) see Application 2: Examples of coefficients A."
 (*END: Definitions *)
 
 (*BEGIN: Faulhaber's coefficients *)
@@ -91,6 +92,7 @@ OddPowerIdentitySimplified[n_, m_]:= Expand[Sum[Sum[A[m,r] * k^r * (n-k)^r, {k, 
 BivariateSumT[m_, n_, k_]:= Sum[A[m, r] * k^r (n-k)^r, {r, 0, m}];
 TriangleFormBivariateSumT[m_, rows_]:= TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, n}], TableAlignments -> Left];
 TableFormBivariateSumT[m_, rows_, columns_]:= TableForm[Table[BivariateSumT[m, n, k], {n, 0, rows}, {k, 0, columns}], TableAlignments -> Left];
+T[d_,r_]:= (2r+1) * Binomial[2r,r] * Binomial[d, 2r+1] * (-1)^(d-1)/(d-r) * BernoulliB[2d-2r];
 (*END: Definitions *)
 
 (*BEGIN: Faulhaber's coefficients *)
