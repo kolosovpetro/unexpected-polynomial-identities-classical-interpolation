@@ -39,14 +39,20 @@ OddPowerBackwardDecompositionMMinus1Shifted::usage="Validates the identity Odd p
 TableFormBackwardRecurrenceForT::usage="Prints the backward recurrence for Tm in the form of triangle."
 (*END: Backward decompositions *)
 
+(*BEGIN: Backward decompositions multifold *)
 BackwardRecurrenceForTMultifold::usage="Validates the multifold backward recurrence for the bivariate sum T(m,n,k)."
+TableFormBackwardRecurrenceForTMultifold::usage="Prints the multifold backward recurrence for Tm in the form of triangle."
+(*END: Backward decompositions multifold *)
+
+(*BEGIN: Central decompositions *)
 CentralRecurrenceForT::usage="Validates the central recurrence for the bivariate sum T(m,n,k)."
 OddPowerCentralDecomposition::usage="Validates the identity Odd power central decomposition."
-TableFormBackwardRecurrenceForTMultifold::usage="Prints the multifold backward recurrence for Tm in the form of triangle."
 TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in the form of triangle."
+(*END: Central decompositions *)
 
 SumsOfOddPowers::usage="Validates the identity Sums of powers."
 
+(*BEGIN: Binomial Forms *)
 BinomialForm::usage="Validates the identity Binomial form."
 ShiftedBinomialForm::usage="Validates the identity Shifted binomial form."
 CenteredBinomialForm::usage="Validates the identity Centered binomial form."
@@ -55,14 +61,16 @@ NegatedBinomialForm::usage="Validates the identity Negated binomial form."
 ShiftedNegatedBinomialForm::usage="Validates the identity Shifted negated binomial form."
 CenteredNegatedBinomialForm::usage="Validates the identity Centered negated binomial form."
 ShiftedCenteredNegatedBinomialForm::usage="Validates the identity Shifted centered negated binomial form."
+(*END: Binomial Forms *)
 
+(*BEGIN: Double bivariate identities *)
 DoubleBivariateSumR::usage="Defines the Double bivaraite sum Rm."
-
 OddPowerDoubleBivariate::usage="Verifies odd power double bivariate proposition 4.39."
 OddPowerDoubleBivariateMultifold::usage="Verifies odd power double bivariate proposition 4.41."
-
 OddPowerDoubleBivariateNegated::usage="Verifies odd power double bivariate negated proposition 4.40."
 OddPowerDoubleBivariateNegatedMultifold::usage="Verifies odd power double bivariate negated proposition 4.42."
+(*END: Double bivariate identities *)
+(* =========================================================================DOCS END=================================================================== *)
 
 (*BEGIN: Define 0^x = 1 for all x *)
 Begin["`Private`"]
@@ -70,6 +78,8 @@ Unprotect[Power];
 Power[0|0., 0|0.] = 1;
 Protect[Power];
 (*END: Define 0^x = 1 for all x *)
+
+(* =========================================================================FUNCTIONS BEGIN=========================================================== *)
 
 (*BEGIN: Definitions *)
 A[n_, k_] := 0;
