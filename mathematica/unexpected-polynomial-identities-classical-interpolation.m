@@ -2,32 +2,48 @@
 
 BeginPackage["SurprisingPolynomialIdentitiesClassicalInterpolation`"]
 
+(*BEGIN: Definitions *)
 A::usage="A[n, k] returns the real coefficient A of non-negative integers n, k such that n <= k."
+PrintTriangleA::usage="PrintTriangleA[m] prints triangle of coefficients A for given non negative integer m."
 OddPowerIdentity::usage="Validates odd power identity."
 OddPowerIdentitySimplified::usage="Validates odd power identity expanded form."
-PrintTriangleA::usage="PrintTriangleA[m] prints triangle of coefficients A for given non negative integer m."
 BivariateSumT::usage="Defines bivariate sum T(m,n,k)."
-BackwardRecurrenceForT::usage="Validates the backward recurrence for the bivariate sum T(m,n,k)."
-BackwardRecurrenceForTMultifold::usage="Validates the multifold backward recurrence for the bivariate sum T(m,n,k)."
+TriangleFormBivariateSumT::usage="Prints Tm in the form of triangle."
+TableFormBivariateSumT::usage="Prints Tm in the form of table."
+(*END: Definitions *)
+
+(*BEGIN: Faulhaber's coefficients *)
+FaulhaberCoefficients::usage="Faulhaber coefficients https://arxiv.org/pdf/math/9207222 page 14."
+(*END: Faulhaber's coefficients *)
+
+(*BEGIN: Forward decompositions *)
 ForwardRecurrenceForT::usage="Validates the forward recurrence for the bivariate sum T(m,n,k)."
-ForwardRecurrenceForTMultifold::usage="Validates the multifold forward recurrence for the bivariate sum T(m,n,k)."
-CentralRecurrenceForT::usage="Validates the central recurrence for the bivariate sum T(m,n,k)."
-OddPowerBackwardDecomposition::usage="Validates the identity Odd power backward decomposition."
-OddPowerBackwardDecompositionShifted::usage="Validates the identity Odd power backward decomposition shifted."
-OddPowerBackwardDecompositionMMinus1::usage="Validates the identity Odd power backward decomposition m-1."
-OddPowerBackwardDecompositionMMinus1Shifted::usage="Validates the identity Odd power backward decomposition m-1 shifted."
 OddPowerForwardDecomposition::usage="Validates the identity Odd power forward decomposition."
 OddPowerForwardDecompositionMMinus1::usage="Validates the identity Odd power forward decomposition m-1."
 OddPowerForwardDecompositionMMinus1Shifted::usage="Validates the identity Odd power forward decomposition m-1 shifted."
 OddPowerForwardDecompositionShifted::usage="Validates the identity Odd power forward decomposition shifted."
-OddPowerCentralDecomposition::usage="Validates the identity Odd power central decomposition."
-TableFormBackwardRecurrenceForT::usage="Prints the backward recurrence for Tm in the form of triangle."
-TableFormBackwardRecurrenceForTMultifold::usage="Prints the multifold backward recurrence for Tm in the form of triangle."
 TableFormForwardRecurrenceForT::usage="Prints the forward recurrence for Tm in the form of triangle."
+(*END: Forward decompositions *)
+
+(*BEGIN: Forward decompositions multifold *)
+ForwardRecurrenceForTMultifold::usage="Validates the multifold forward recurrence for the bivariate sum T(m,n,k)."
 TableFormForwardRecurrenceForTMultifold::usage="Prints the multifold forward recurrence for Tm in the form of triangle."
+(*END: Forward decompositions multifold *)
+
+(*BEGIN: Backward decompositions *)
+BackwardRecurrenceForT::usage="Validates the backward recurrence for the bivariate sum T(m,n,k)."
+OddPowerBackwardDecomposition::usage="Validates the identity Odd power backward decomposition."
+OddPowerBackwardDecompositionShifted::usage="Validates the identity Odd power backward decomposition shifted."
+OddPowerBackwardDecompositionMMinus1::usage="Validates the identity Odd power backward decomposition m-1."
+OddPowerBackwardDecompositionMMinus1Shifted::usage="Validates the identity Odd power backward decomposition m-1 shifted."
+TableFormBackwardRecurrenceForT::usage="Prints the backward recurrence for Tm in the form of triangle."
+(*END: Backward decompositions *)
+
+BackwardRecurrenceForTMultifold::usage="Validates the multifold backward recurrence for the bivariate sum T(m,n,k)."
+CentralRecurrenceForT::usage="Validates the central recurrence for the bivariate sum T(m,n,k)."
+OddPowerCentralDecomposition::usage="Validates the identity Odd power central decomposition."
+TableFormBackwardRecurrenceForTMultifold::usage="Prints the multifold backward recurrence for Tm in the form of triangle."
 TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in the form of triangle."
-TriangleFormBivariateSumT::usage="Prints Tm in the form of triangle."
-TableFormBivariateSumT::usage="Prints Tm in the form of table."
 
 SumsOfOddPowers::usage="Validates the identity Sums of powers."
 
@@ -41,8 +57,6 @@ CenteredNegatedBinomialForm::usage="Validates the identity Centered negated bino
 ShiftedCenteredNegatedBinomialForm::usage="Validates the identity Shifted centered negated binomial form."
 
 DoubleBivariateSumR::usage="Defines the Double bivaraite sum Rm."
-
-FaulhaberCoefficients::usage="Faulhaber coefficients https://arxiv.org/pdf/math/9207222 page 14."
 
 OddPowerDoubleBivariate::usage="Verifies odd power double bivariate proposition 4.39."
 OddPowerDoubleBivariateMultifold::usage="Verifies odd power double bivariate proposition 4.41."
