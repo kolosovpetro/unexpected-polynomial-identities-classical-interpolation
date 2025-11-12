@@ -18,6 +18,22 @@ We define $x^0 = 1$ for all $x$, see~\cite[~p. 162]{graham1994concrete}.
 This is because when $k=n$ and $r=0$ the term $k^r (n-k)^r = n^0 \cdot 0^0$, thus we define $x^0 = 1$
 for all $x$.
 
+\begin{definition}[Bivariate sum $T_m$]
+    For integers $n,k$ and $m \geq 0$
+    \label{def:bivariate-sum-Tm}
+    \begin{align*}
+        T_{m}(n,k) = \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
+    \end{align*}
+\end{definition}
+
+\begin{proposition}[Symmetry of $T_m$]
+    \label{prop:Tm-symmetry}
+    For integers $n, k$ and $m$
+    \begin{align*}
+        T_{m} (n, k) = T_{m} (n, n-k)
+    \end{align*}
+\end{proposition}
+
 \input{sections/subsections/main-results/01_main_results_sums_of_odd_powers}
 \input{sections/subsections/main-results/02_main_results_forward_decompositions}
 \input{sections/subsections/main-results/03_main_results_forward_decompositions_multifold}

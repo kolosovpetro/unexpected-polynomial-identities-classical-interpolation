@@ -60,10 +60,11 @@ TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in t
 (*END: Central decompositions *)
 
 (*BEGIN: Sums of powers *)
-SumOfOddPowers::usage=""
-SumOfOddPowers1::usage=""
-SumOfOddPowers2::usage=""
-SumOfOddPowers3::usage=""
+SumsOfPowers::usage=""
+SumsOfOddPowers::usage=""
+SumsOfOddPowersRearranged::usage=""
+SumsOfOddPowersReindexed::usage=""
+SumsOfOddPowersTriple::usage=""
 (*END: Sums of powers *)
 
 
@@ -187,10 +188,11 @@ BivaraiteFaulhabersFormula[n_, r_]:= n^(2r+1)/((2r+1)*Binomial[2r,r]) + (-1)^r *
 (*END: Bivariate Faulhaber's formula *)
 
 (*BEGIN: Sums of powers *)
-SumsOfOddPowers[m_, p_]:= Sum[Sum[Sum[A[m, r]* k^r * (n-k)^r, {r, 0, m}], {k, 1, n}], {n, 1, p}];
-SumsOfOddPowers2[m_, p_]:= Sum[Sum[Sum[A[m, r] * (t*k)^r, {k, 0, p-t}], {t, 1, p}], {r, 0, m}];
-SumsOfOddPowers3[m_, p_]:= Sum[Sum[Sum[A[m, r] * ((p-t)*k)^r, {k, 1, t}], {t, 1, p}], {r, 0, m}];
-SumOfPowers[m_, p_]:= Sum[k^(2m+1), {k, 1, p}];
+SumsOfPowers[n_, r_]:= Expand[Sum[k^r, {k, 1, n}]];
+SumsOfOddPowers[n_, m_]:= Sum[A[m,r] * Sum[Sum[(t*k)^r, {k, 0, n-t}], {t, 1, n}], {r, 0, m}]; 
+SumsOfOddPowersRearranged[n_, m_]:= Sum[A[m,r] * Sum[ t^r * Sum[(k)^r, {k, 0, n-t}], {t, 1, n}], {r, 0, m}]; 
+SumsOfOddPowersReindexed[n_, m_]:= Sum[A[m,r] * Sum[Sum[((n-t)*k)^r, {k, 1, t}], {t, 1, n}], {r, 0, m}];
+SumsOfOddPowersTriple[n_, m_]:= Sum[A[m,r] * Sum[Sum[j^r * (k-j)^r, {j, 1, k}], {k, 1, n}], {r, 0, m}];
 (*END: Sums of powers *)
 
 End[ ]

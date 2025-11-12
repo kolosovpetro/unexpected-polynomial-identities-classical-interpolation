@@ -26,7 +26,8 @@ Thus, the formula for sums of odd powers is straightforward
     For integers $m\geq 0$ and $n \geq 1$
     \begin{align*}
         \sum_{k=1}^{n} k^{2m+1}
-        = \sum_{r=0}^{m} \coeffA{m}{r} \left[ \left( \sum_{k=0}^{n-1} k^r \right) +  \left( 2^r \sum_{k=0}^{n-2} k^r \right) + \left( 3^r \sum_{k=0}^{n-3} k^r \right)+ \cdots + \left( n^r \sum_{k=0}^{n-n} k^r \right) \right]
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ \left( \sum_{k=0}^{n-1} k^r \right) +  \left( 2^r \sum_{k=0}^{n-2} k^r \right) + \left( 3^r \sum_{k=0}^{n-3} k^r \right)+ \cdots + \left( n^r \sum_{k=0}^{n-n} k^r \right) \right] \\
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \sum_{t=1}^{n} t^r \sum_{k=0}^{n-t} k^r
     \end{align*}
 \end{corollary}
 \begin{corollary}[Sums of odd powers compact form]
@@ -50,17 +51,17 @@ Thus, the formula for sums of odd powers is straightforward
     \label{prop:sums-of-odd-powers-triple}
     For non-negative integers $n$ and $m$
     \begin{align*}
-        \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} \sum_{j=1}^{k} j^r (k-j)^r
     \end{align*}
 \end{proposition}
 In explicit view
 \begin{align*}
-    \sum_{n=1}^{p} n^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \bigg \{
-    &[0^r + 1^r + 2^r + 3^r + \cdots (n-1)^r] \\
-    + &[0^r + 2^r + 4^r + 6^r + \cdots (2n-4)^r] \\
-    + &[0^r + 3^r + 6^r + 9^r + \cdots (3n-9)^r] \\
-    + &[0^r + 4^r + 8^r + 12^r + \cdots (4n-16)^r] \\
-    + &\cdots + (p^2 - p^2)^r
+    \sum_{k=1}^{n} k^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \bigg \{
+    &[0^r + 1^r + 2^r + 3^r + \cdots (k-1)^r] \\
+    + &[0^r + 2^r + 4^r + 6^r + \cdots (2k-4)^r] \\
+    + &[0^r + 3^r + 6^r + 9^r + \cdots (3k-9)^r] \\
+    + &[0^r + 4^r + 8^r + 12^r + \cdots (4k-16)^r] \\
+    + &\cdots + (n^2 - n^2)^r
     \bigg \}
 \end{align*}
 
@@ -68,7 +69,7 @@ In explicit view
     \label{prop:sums-of-odd-power-decomposition-forward}
     For non-negative integers $m$ and $n$
     \begin{align*}
-        \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, k)
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, j)
     \end{align*}
 \end{proposition}
 
@@ -76,11 +77,27 @@ In explicit view
     \label{prop:sums-of-odd-power-decomposition-backward}
     For non-negative integers $m$ and $n$
     \begin{align*}
-        \sum_{n=1}^{p} n^{2m+1} = \sum_{n=1}^{p} \sum_{k=1}^{n} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, k)
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, j)
     \end{align*}
 \end{proposition}
 
-Interestingly enough that the odd power identity above is a Pascal-type identity
+\begin{proposition}[Sums of odd powers forward decomposition multifold]
+    \label{prop:sums-of-odd-power-decomposition-forward-multifold}
+    For non-negative integers $m,n$ and $s\geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n+t, j)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sums of odd powers backward decomposition multifold]
+    \label{prop:sums-of-odd-power-decomposition-backward-multifold}
+    For non-negative integers $m,n$ and $s\geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, j)
+    \end{align*}
+\end{proposition}
+
+Interestingly enough that the odd power identity~\eqref{theorem:odd-power-identity} is a Pascal-type identity
 in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$.
 We may see it by comparing the Pascal's identity itself~\cite{macmillan2011proofs}
 \begin{align*}
