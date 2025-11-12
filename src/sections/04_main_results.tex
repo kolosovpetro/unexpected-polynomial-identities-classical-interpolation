@@ -4,7 +4,7 @@ Thus, the conjecture~\eqref{conj:odd-power-identity} is true
     For non-negative integers $m$ and $n \geq 1$,
     there is a set of coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
     \begin{align*}
-        n^{2m+1} = \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r
+        n^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} k^r (n-k)^r
     \end{align*}
 \end{theorem}
 In explicit form
@@ -25,7 +25,7 @@ for all $x$.
         T_{m}(n,k) = \sum_{r=0}^{m} \coeffA{m}{r} k^r (n-k)^r
     \end{align*}
 \end{definition}
-
+The polynomial $T_m(n,k)$ is a polynomial of degree $m$ in $n$, and of degree $2m$ in $k$.
 \begin{proposition}[Symmetry of $T_m$]
     \label{prop:Tm-symmetry}
     For integers $n, k$ and $m$

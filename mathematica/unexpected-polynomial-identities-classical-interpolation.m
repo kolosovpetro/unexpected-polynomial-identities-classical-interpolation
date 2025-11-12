@@ -67,7 +67,6 @@ SumsOfOddPowersReindexed::usage=""
 SumsOfOddPowersTriple::usage=""
 (*END: Sums of powers *)
 
-
 (*BEGIN: Binomial Forms *)
 BinomialForm::usage="Validates the identity Binomial form."
 ShiftedBinomialForm::usage="Validates the identity Shifted binomial form."
