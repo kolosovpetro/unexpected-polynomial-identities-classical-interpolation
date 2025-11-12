@@ -59,7 +59,13 @@ OddPowerCentralDecomposition::usage="Validates the identity Odd power central de
 TableFormCentralRecurrenceForT::usage="Prints the central recurrence for Tm in the form of triangle."
 (*END: Central decompositions *)
 
-SumsOfOddPowers::usage="Validates the identity Sums of powers."
+(*BEGIN: Sums of powers *)
+SumOfOddPowers::usage=""
+SumOfOddPowers1::usage=""
+SumOfOddPowers2::usage=""
+SumOfOddPowers3::usage=""
+(*END: Sums of powers *)
+
 
 (*BEGIN: Binomial Forms *)
 BinomialForm::usage="Validates the identity Binomial form."
@@ -79,6 +85,11 @@ OddPowerDoubleBivariateMultifold::usage="Verifies odd power double bivariate pro
 OddPowerDoubleBivariateNegated::usage="Verifies odd power double bivariate negated proposition 4.40."
 OddPowerDoubleBivariateNegatedMultifold::usage="Verifies odd power double bivariate negated proposition 4.42."
 (*END: Double bivariate identities *)
+
+(*BEGIN: Bivariate Faulhaber's formula *)
+SumOfConvolvedPowers::usage=""
+BivaraiteFaulhabersFormula::usage=""
+(*END: Bivariate Faulhaber's formula *)
 (* =========================================================================DOCS END=================================================================== *)
 
 (*BEGIN: Define 0^x = 1 for all x *)
@@ -162,10 +173,6 @@ CenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a
 ShiftedCenteredNegatedBinomialForm[m_, n_, a_] := Sum[A[m, r]* Sum[(k - a/2)^r * (n - a/2 - k)^r, {k, a/2+1, n - a/2}], {r, 0, m}];
 (*END: Binomial Forms *)
 
-(*BEGIN: Sums of powers *)
-SumsOfOddPowers[m_, p_]:= Sum[Sum[Sum[A[m, r]* k^r * (n-k)^r, {r, 0, m}], {k, 1, n}], {n, 1, p}];
-(*END: Sums of powers *)
-
 (*BEGIN: Double bivariate identities *)
 DoubleBivariateSumR[m_, n_, t_]:= Sum[BivariateSumT[m, n+t, k], {k, 1, n}];
 OddPowerDoubleBivariate[n_, m_]:=Sum[(-1)^(t+1) * Binomial[m+1, t] * DoubleBivariateSumR[m, n, t], {t, 1, m+1}];
@@ -173,6 +180,18 @@ OddPowerDoubleBivariateMultifold[n_, m_, s_]:=Sum[(-1)^(t+1) * Binomial[m+s, t] 
 OddPowerDoubleBivariateNegated[n_, m_]:=Sum[(-1)^(t+1) * Binomial[m+1, t] * DoubleBivariateSumR[m, n, -t], {t, 1, m+1}];
 OddPowerDoubleBivariateNegatedMultifold[n_, m_, s_]:=Sum[(-1)^(t+1) * Binomial[m+s, t] * DoubleBivariateSumR[m, n, -t], {t, 1, m+s}];
 (*END: Double bivariate identities *)
+
+(*BEGIN: Bivariate Faulhaber's formula *)
+SumOfConvolvedPowers[n_, r_]:=Sum[k^r * (n-k)^r, {k, 1, n}];
+BivaraiteFaulhabersFormula[n_, r_]:= n^(2r+1)/((2r+1)*Binomial[2r,r]) + (-1)^r * Sum[Binomial[r, 2k+1]*BernoulliB[2r-2k]/(r-k) * n^(2k+1), {k, 0, r-1}];
+(*END: Bivariate Faulhaber's formula *)
+
+(*BEGIN: Sums of powers *)
+SumsOfOddPowers[m_, p_]:= Sum[Sum[Sum[A[m, r]* k^r * (n-k)^r, {r, 0, m}], {k, 1, n}], {n, 1, p}];
+SumsOfOddPowers2[m_, p_]:= Sum[Sum[Sum[A[m, r] * (t*k)^r, {k, 0, p-t}], {t, 1, p}], {r, 0, m}];
+SumsOfOddPowers3[m_, p_]:= Sum[Sum[Sum[A[m, r] * ((p-t)*k)^r, {k, 1, t}], {t, 1, p}], {r, 0, m}];
+SumOfPowers[m_, p_]:= Sum[k^(2m+1), {k, 1, p}];
+(*END: Sums of powers *)
 
 End[ ]
 EndPackage[ ]
