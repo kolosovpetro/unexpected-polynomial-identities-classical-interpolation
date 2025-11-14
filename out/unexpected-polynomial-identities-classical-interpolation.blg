@@ -6,45 +6,45 @@ The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 57 items.
 Database file #1: unexpected-polynomial-identities-classical-interpolation.bib
 Warning--empty journal in luschny2021manifesto
-You've used 35 entries,
+You've used 37 entries,
             1791 wiz_defined-function locations,
-            661 strings with 10480 characters,
-and the built_in function-call counts, 5795 in all, are:
-= -- 545
-> -- 154
+            675 strings with 10859 characters,
+and the built_in function-call counts, 6284 in all, are:
+= -- 598
+> -- 162
 < -- 0
-+ -- 74
-- -- 39
-* -- 243
-:= -- 931
-add.period$ -- 123
-call.type$ -- 35
-change.case$ -- 34
++ -- 78
+- -- 41
+* -- 280
+:= -- 1006
+add.period$ -- 131
+call.type$ -- 37
+change.case$ -- 36
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 246
-empty$ -- 672
-format.name$ -- 39
-if$ -- 1293
+cite$ -- 38
+duplicate$ -- 264
+empty$ -- 723
+format.name$ -- 41
+if$ -- 1399
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 20
-newline$ -- 196
-num.names$ -- 35
+int.to.str$ -- 37
+missing$ -- 22
+newline$ -- 208
+num.names$ -- 37
 pop$ -- 131
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 104
+skip$ -- 110
 stack$ -- 0
-substring$ -- 279
-swap$ -- 34
+substring$ -- 338
+swap$ -- 36
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 59
-width$ -- 37
-write$ -- 399
+while$ -- 65
+width$ -- 39
+write$ -- 425
 (There was 1 warning)
