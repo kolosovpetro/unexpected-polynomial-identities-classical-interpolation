@@ -190,6 +190,19 @@ J.W.L Glaisher.
 \newblock {\em {SIAM Journal on Mathematical Analysis}}, 8(4):701--709, 1977.
 \newblock \url{https://doi.org/10.1137/0508054}.
 
+\bibitem{neumann1977survey}
+{Neumann, C.P. and Schonbach, D.I.}
+\newblock {Discrete weighted residual methods A survey}.
+\newblock {\em International Journal of Systems Science}, 8(9):985--1007, 1977.
+\newblock \url{https://doi.org/10.1080/00207727708942097}.
+
+\bibitem{neuman1977discrete}
+{Neuman, C.P and Schonbach, D.I}.
+\newblock {Discrete weighted residual methods Multi-interval methods}.
+\newblock {\em International Journal of Systems Science}, 8(11):1281--1298,
+  1977.
+\newblock \url{https://doi.org/10.1080/00207727708942121}.
+
 \bibitem{scheuer2023mathstackexchange}
 {Scheuer, Markus}.
 \newblock {MathStackExchange answer 4724343/463487}, 2023.

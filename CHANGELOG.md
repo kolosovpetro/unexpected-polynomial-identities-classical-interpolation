@@ -5,18 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
-### Changed
-
 ## [1.2.0] - In Progress
+
+### Changed
 
 - Updates in README
 - Updates in Bibliography
 - Add related research discrete convolution
 - Minor flow improvements
-
-### Changed
+- Add Mathematica functions for double bivariate formulas
+- Add double bivariate polynomials examples
+- Flow corrections
+- Grammar fixes
+- Update metadata
+- Refactors in Mathematica package
+- Update Mathematica documentation
+- Edit abstract
+- Merge sums of powers under the same subsection
+- Rename subsection files of main results
+- Add comments about degrees of polynomials
+- Updates in future research
 
 ## [1.1.1] - 2025-11-09
+
+### Changed
 
 - Fix LaTeX render issues in README
 - Add BUILD.md documentation
@@ -24,9 +36,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix definition spaces
 - Add mathematica functions
 
-### Changed
-
 ## [1.1.0] - 2025-11-08
+
+### Changed
 
 - Files structure
 - Add bivariate identities

@@ -1,0 +1,118 @@
+\subsection{Sums of powers}
+\label{subsec:sums-of-powers}
+We have
+\begin{itemize}
+    \item $1^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 0^r  \right]$
+    \item $2^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 1^r + 0^r  \right]$
+    \item $3^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 2^r + 2^r + 0^r  \right]$
+    \item $4^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 3^r + 4^r + 3^r + 0^r  \right]$
+    \item $5^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 4^r + 6^r + 6^r + 4^r + 0^r  \right]$
+    \item $6^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \left[ 5^r + 8^r + 9^r + 8^r + 5^r + 0^r  \right]$
+\end{itemize}
+Thus, the formula for sums of odd powers is straightforward
+\begin{proposition}[Sums of odd powers]
+    \label{prop:sums-of-odd-powers}
+    For integers $m\geq 0$ and $n \geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1}
+        = \sum_{r=0}^{m} \coeffA{m}{r} \left[ \left( \sum_{k=0}^{n-1} k^r \right) +  \left( \sum_{k=0}^{n-2} (2k)^r \right) + \left( \sum_{k=0}^{n-3} (3k)^r \right)+ \cdots + \left( \sum_{k=0}^{n-n} (nk)^r \right) \right]
+    \end{align*}
+    \begin{proof}
+        Direct consequence of~\eqref{theorem:odd-power-identity}.
+    \end{proof}
+\end{proposition}
+\begin{corollary}[Sums of odd powers rearranged]
+    \label{prop:sums-of-odd-powers-rearranged}
+    For integers $m\geq 0$ and $n \geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1}
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ \left( \sum_{k=0}^{n-1} k^r \right) +  \left( 2^r \sum_{k=0}^{n-2} k^r \right) + \left( 3^r \sum_{k=0}^{n-3} k^r \right)+ \cdots + \left( n^r \sum_{k=0}^{n-n} k^r \right) \right] \\
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \sum_{t=1}^{n} t^r \sum_{k=0}^{n-t} k^r
+    \end{align*}
+\end{corollary}
+\begin{corollary}[Sums of odd powers compact form]
+    \label{cor:sums-of-odd-powers-compact-form}
+    For integers $m\geq 0$ and $n \geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1}
+        = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{t=1}^{n} \sum_{k=0}^{n-t} (tk)^r
+    \end{align*}
+\end{corollary}
+\begin{corollary}[Sums of odd powers compact form reindexed]
+    \label{cor:sums-of-odd-powers-compact-form-reindexed}
+    For integers $m\geq 0$ and $n \geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1}
+        = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{t=1}^{n} \sum_{k=1}^{t} ((n-t)k)^r
+    \end{align*}
+\end{corollary}
+
+\begin{proposition}[Sums of odd powers triple]
+    \label{prop:sums-of-odd-powers-triple}
+    For non-negative integers $n$ and $m$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} \sum_{j=1}^{k} j^r (k-j)^r
+    \end{align*}
+\end{proposition}
+In explicit view
+\begin{align*}
+    \sum_{k=1}^{n} k^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \bigg \{
+    &[0^r + 1^r + 2^r + 3^r + \cdots (k-1)^r] \\
+    + &[0^r + 2^r + 4^r + 6^r + \cdots (2k-4)^r] \\
+    + &[0^r + 3^r + 6^r + 9^r + \cdots (3k-9)^r] \\
+    + &[0^r + 4^r + 8^r + 12^r + \cdots (4k-16)^r] \\
+    + &\cdots + (n^2 - n^2)^r
+    \bigg \}
+\end{align*}
+
+\begin{proposition}[Sums of odd powers forward decomposition]
+    \label{prop:sums-of-odd-power-decomposition-forward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n+t, j)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sums of odd powers backward decomposition]
+    \label{prop:sums-of-odd-power-decomposition-backward}
+    For non-negative integers $m$ and $n$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+1} (-1)^{t+1} \binom{m+1}{t} T_{m} (n-t, j)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sums of odd powers forward decomposition multifold]
+    \label{prop:sums-of-odd-power-decomposition-forward-multifold}
+    For non-negative integers $m,n$ and $s\geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n+t, j)
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Sums of odd powers backward decomposition multifold]
+    \label{prop:sums-of-odd-power-decomposition-backward-multifold}
+    For non-negative integers $m,n$ and $s\geq 1$
+    \begin{align*}
+        \sum_{k=1}^{n} k^{2m+1} = \sum_{k=1}^{n} \sum_{j=1}^{k} \sum_{t=1}^{m+s} (-1)^{t+1} \binom{m+s}{t} T_{m} (n-t, j)
+    \end{align*}
+\end{proposition}
+
+Interestingly enough that the odd power identity~\eqref{theorem:odd-power-identity} is a Pascal-type identity
+in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$.
+We may see it by comparing the Pascal's identity itself~\cite{macmillan2011proofs}
+\begin{align*}
+(n+1)
+    ^{m+1}-1 = \sum_{r=0}^{m} \binom{m+1}{r} \left( 1^{r}+2^{r} + \dots + n^{r} \right)
+\end{align*}
+with identity in terms of bivariate function $k(n-k)$ and numbers $\coeffA{m}{r}$
+\begin{corollary}[Bivariate Pascal's identity]
+    \label{cor:bibariate-pascals-identity}
+    For integers $n \geq 1$ and $m\geq 0$
+    \begin{align*}
+    (n+1)
+        ^{2m+1} - 1
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ 1^r n^r + 2^r (n-1)^r + 3^r (n-2)^r + 4^r (n-3)^r + \cdots + n^r (n+1-n)^r  \right] \\
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \left[ n^r + (2n-2)^r + (3n-6)^r + (4n-12)^r + \cdots + n^r  \right] \\
+        &= \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{n} (k (n+1-k))^r
+    \end{align*}
+\end{corollary}
